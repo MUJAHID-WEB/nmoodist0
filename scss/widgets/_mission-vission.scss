@@ -1,53 +1,114 @@
-.mission_vision {
-  padding: 120px 0 150px;
+.mission-vission-wrapper{
+  background: var(--bg-body);
+  padding: 6.125rem 0;
 
-  @include desktop-small {
-    padding: 40px 0 80px;
+  @include desktop-small{
+    padding: 4rem 0;
   }
 
-  .container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .mission_vision_top {
-    padding: 40px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-
-    .title {
-      color: var(--color-white);
-      text-transform: uppercase;
-      @include typography(display-md, semibold)
+  .container{
+    padding: 0 2rem;
+    @include desktop-small{
+      padding: 0 1rem;
     }
 
-    .mission_vision_text {
-      @include typography(text-xl, regular);
-      font-family: var(--secondary-font);
-      color: var(--color-white);
+    .mission-vission{
       display: flex;
-      flex-direction: column;
-      gap: 10px;
+      align-items: flex-start;
 
-      span {
-        text-transform: lowercase;
+      @include desktop-small{
+        flex-direction: column;
+      }
+
+      .mv_content{
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 4rem ;
+        gap: 2rem;
+
+        @include desktop-small{
+          padding: 2rem;
+        }
+
+        .title{
+          color: var(--color-primary);
+          @include typography(display-lg, bold);
+          @include desktop-small {
+            @include typography(display-md, bold);
+          }
+        }
+        .description{
+          color: var(--color-text-dark);
+          @include typography(text-xl, regular);
+          @include desktop-small {
+            @include typography(text-lg, regular);
+          }
+        }
+      }
+
+    }
+
+    .img_stats{
+      display: flex;
+      align-items: flex-start;
+
+      @include desktop-small{
+        flex-direction: column;
+      }
+      
+      .image{
+        display: flex;
+        flex: 1;
+
+        @include desktop-small{
+          width: 100%;
+        }
+
+        .main-img{
+          width: 100%;
+        }
+      }
+
+      .stats{
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 2px;
+        flex: 1;
+
+        @include desktop-small{
+          flex-direction: column;
+          width: 100%;
+        }
+
+        .stats_content{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;  
+          gap: 6px;
+          background: var(--color-primary);
+          color: var(--color-white);
+          border-radius: 32px;
+          padding: 1.5rem;
+          flex-grow: 1;
+          width: 100%;
+
+          .count{
+            
+            @include typography(display-lg, bold);
+            @include desktop-small {
+              @include typography(display-md, bold);
+            }
+          }
+
+          .details{
+            @include typography(text-lg, regular);
+          }
+        }
       }
     }
-  }
 
-  .mission_vision_bottom {
-    display: flex;
-    gap: 10px;
-    justify-content: space-between;
-
-    @include desktop-small {
-      flex-direction: column;
-    }
   }
 }

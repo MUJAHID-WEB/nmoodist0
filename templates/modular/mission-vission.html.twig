@@ -1,37 +1,49 @@
 {% extends 'partials/variables.html.twig' %}
 
-{% set module = page.header.module %}
-{% set bg = page.media[module.bg_image].url ?? '' %}
-
-
+{% set module = page.header.contents %}
+{% set mv = page.header.about_mission_vission %}
+{% set statistics = page.header.about_company_statistics %}
+{% set image = page.media[module.image] %}
 
 {% block render_block %}
-    <div class="mission_vision">
-        <div class="container">
-            <div class="mission_vision_top" style="{% if(bg) %}background-image: url('{{ bg }}'){% endif %}">
+	<div class="mission-vission-wrapper slide-up">
 
-                {% if module.title %}
-                    <h3 class="title">{{ module.title.translatable|raw }}</h3>
-                {% endif %}
+		<div class="container">
+            <div class="mission-vission">
+                {% for item in mv %}
+                    <div class="mv_content">
+                        <h4 class="title">
+                            {{ item.title.translatable|raw }}
+                        </h4>
+                        <p class="description">
+                            {{ item.brief.translatable|raw }}
+                        </p>
+                    </div>
+                {% endfor %}
+            </div>
 
-                {% for mission_vision in page.header.mission_vision_blocks %}
-                    {% if mission_vision.title != '' %}
-                        <div class="mission_vision_text">
-                            <p>
-                                <span>{{ mission_vision.title.translatable }}</span>
-                                {% if mission_vision.description != '' %}
-                                    {{ mission_vision.description.translatable }}
-                                {% endif %}
+            <div class="img_stats">
+                <div class="image">
+                    <img class="main-img" src="{{ image.url }}" alt="Mission Vission Image"/>
+                </div>
+
+                 <div class="stats">
+                    {% for item in statistics %}
+                        <div class="stats_content">
+                            <h4 class="count">
+                                {{ item.count.translatable|raw }}
+                            </h4>
+                            <p class="details">
+                                {{ item.brief.translatable|raw }}
                             </p>
                         </div>
-                    {% endif %}
-                {% endfor %}
+                    {% endfor %}
+            
+                </div>
+            
             </div>
-            <div class="mission_vision_bottom">
-                {% for mission_vision_image in page.header.mission_vision_images %}
-                    <img class="" src="{{ page.media[mission_vision_image.image].url }}" alt="icon"/>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
+
+		</div>
+
+	</div>
 {% endblock %}

@@ -27,11 +27,6 @@ form:
                   label: Hero Text
                   classes: 'translatable'
 
-                header.hero.overlay_text.translatable:
-                  type: textarea
-                  label: Hero Overlay Text
-                  classes: 'translatable'
-
                 header.hero.hero_btn_text.translatable:
                   type: text
                   label: Hero BTN Text
@@ -43,22 +38,10 @@ form:
 
                 header.hero.image:
                     type: pagemediaselect
-                    label: Hero bg image
+                    label: Hero image
                     preview_images: true
 
-                header.hero_slider_section:
-                    # ordering@: 4
-                    type: section
-                    title: Hero Slider Images
-                    underline: false
-                    label: false
-                    fields:
-                      header.slider_img:
-                        type: list
-                        fields:
-                          
-                          .image:
-                            type: pagemediaselect
-                            label: Slider Image
-
-       
+                header.hero.image_for_mobile:
+                    type: pagemediaselect
+                    label: Hero image for Mobile
+                    preview_images: true

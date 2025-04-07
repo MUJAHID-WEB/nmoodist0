@@ -1,4 +1,4 @@
-title: Mission Vision
+title: Mission Vission
 extends@: default
 
 form:
@@ -6,66 +6,51 @@ form:
     tabs:
       fields:
         content:
-          fields:
-            module_section:
-              ordering@: 3
-              type: section
-              title: Module blocks
-              underline: true
-              fields:
-                header.module.title.translatable:
-                  type: text
-                  label: Title
-                  classes: 'translatable'
-                header.module.image:
-                  type: pagemediaselect
-                  label: Left Image
-                  preview_images: true
-                header.module.bg_image:
-                  type: pagemediaselect
-                  label: Background Image
-                  preview_images: true
-                header.module.button.translatable:
-                  type: text
-                  label: Button Text
-                  classes: 'translatable'
-                header.module.button_link:
-                  type: text
-                  label: Button Link
+          type: tab
+          title: Content
 
-            header.mission_vision_section:
-              ordering@: 4
+          fields:
+            header.contents.image:
+              type: pagemediaselect
+              label: Image
+              preview_images: true
+
+            header.about_company_mission_section:
               type: section
-              title: Mission Vision blocks
-              underline: false
-              label: false
+              title: Mission Vission
+              underline: true
+              label: true
               fields:
-                header.mission_vision_blocks:
+                header.about_mission_vission:
                   type: list
                   fields:
                     .title.translatable:
                       type: text
                       label: Title
                       classes: 'translatable'
-                    .description.translatable:
+                    .brief.translatable:
                       type: textarea
-                      label: Description
+                      label: Brief
                       classes: 'translatable'
-            header.mission_vision_image_section:
-              ordering@: 4
+ 
+            header.about_company_statistics_section:
               type: section
-              title: Mission Vision Images
-              underline: false
-              label: false
+              title: Statistics List
+              underline: true
+              label: true
               fields:
-                header.mission_vision_images:
+                header.about_company_statistics:
                   type: list
                   fields:
-                    .image:
-                      type: pagemediaselect
-                      label: Image
-                      preview_images: true
+                    .count.translatable:
+                      type: text
+                      label: Count
+                      classes: 'translatable'
+                    .brief.translatable:
+                      type: text
+                      label: Brief
+                      classes: 'translatable'
+   
+
             header.media_order:
               ordering@: 99
-
-
