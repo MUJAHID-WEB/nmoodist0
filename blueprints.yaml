@@ -1,0 +1,125 @@
+name: New Moodist 0 Theme v1.1.0
+slug: nmoodist0
+type: theme
+version: 0.1.0
+description: Custom Skeleton Webshop theme that extends the Metricalo Base theme
+icon: shopping-basket
+license: MIT
+
+dependencies:
+  - { name: grav, version: '>=1.6.0' }
+
+form:
+  fields:
+
+    content:
+      unset@: true
+
+    css_section:
+      type: section
+      title: Css Section
+      underline: true
+      fields:
+        css_scripts:
+          type: textarea
+          rows: 10
+          label: Extra  Custom Css
+          placeholder: '.hero-image{
+            width:80% !important;
+          }
+
+          '
+
+    settings_section:
+      type: section
+      title: Settings
+      underline: true
+      fields:
+        body_background_color:
+          label: Body Background
+          type: colorpicker
+          default: '#ffffff'
+
+
+    notices_section:
+      type: section
+      title: Notices
+      underline: true
+
+      fields:
+
+        notices:
+          type: list
+          label:
+          style: vertical
+          collapsed: true
+
+          fields:
+
+            .content:
+              type: text
+              label: Notice Content
+            .enabled:
+              type: toggle
+              label: Enabled
+              highlight: 1
+              options:
+                1: PLUGIN_ADMIN.YES
+                0: PLUGIN_ADMIN.NO
+              validate:
+                type: bool
+            .only_homepage:
+              type: toggle
+              label: Only Homepage
+              highlight: 1
+              options:
+                1: PLUGIN_ADMIN.YES
+                0: PLUGIN_ADMIN.NO
+              validate:
+                type: bool
+            .type:
+              type: select
+              label: Type
+              default: alert
+              options:
+                alert: Alert (blue)
+                critical: Critical (red)
+                note: Note (yellow)
+            .learn_more_link:
+              type: text
+              label: Learn More Link
+
+    footer_section:
+      type: section
+      title: Footer Section
+      underline: true
+
+      fields:
+        footer.links:
+          type: array
+          label: Footer Links
+          value_only: true
+
+    tracking_section:
+      type: section
+      title: Tracking Section
+      underline: true
+      fields:
+        tracking_envs:
+          type: selectize
+          size: large
+          label: Tracking Environments
+          classes: fancy
+          validate:
+            type: commalist
+        tracking_scripts:
+          type: textarea
+          rows: 10
+          label: Tracking Scripts
+          placeholder: <script>console.log('tracking script example');</script>
+
+    summary:
+      ordering@: 99
+
+    routes:
+      ordering@: 99

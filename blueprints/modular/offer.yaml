@@ -1,0 +1,43 @@
+title: Offer
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+
+          fields:
+            content:
+              unset@: true
+            header.media_order:
+                ordering@: 99
+            offer_section:
+              type: section
+              title: Offer Section
+              underline: true
+              fields:
+  
+                header.offer.h1.translatable:
+                  type: text
+                  label: H1 Hero Header
+                  classes: 'translatable'
+                header.offer.text.translatable:
+                  type: textarea
+                  label: Hero Text
+                  classes: 'translatable'
+                header.offer.offer_bg:
+                  type: pagemediaselect
+                  label: Hero background image
+                header.offer.buttons:
+                  type: list
+                  label: offer Buttons
+                  style: vertical
+                  fields:
+                    .text.translatable:
+                      type: text
+                      label: Button Text
+                      classes: 'translatable'
+                    .link:
+                      type: text
+                      label: Button Link

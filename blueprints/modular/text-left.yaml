@@ -1,0 +1,54 @@
+title: Text left
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+
+          fields:
+            header.text_left.subtitle.translatable:
+              type: text
+              label: Sub Title
+              classess: 'translatable'
+            header.text_left.title.translatable:
+              type: text
+              label: Title
+              classess: 'translatable'
+            header.text_left.image:
+              type: pagemediaselect
+              label: Image left
+            header.text_left.classes:
+              label: Background Color
+              type: selectize
+              selectize:
+                  options:
+                      - text: "Primary"
+                        value: "bg-primary"
+                      - text: "Primary Light"
+                        value: "bg-primary-light"
+                      - text: "Background Color"
+                        value: "bg-color"
+                      - text: "Black"
+                        value: "bg-black"
+                      - text: "White"
+                        value: "bg-white"
+
+            header.text_left.buttons:
+                  type: list
+                  label: Text Left Buttons
+                  style: vertical
+                  fields:
+                    .text.translatable:
+                      type: text
+                      label: Button Text
+                      classes: 'translatable'
+                    .link:
+                      type: text
+                      label: Button Link
+
+            header.media_order:
+                ordering@: 99
+
+

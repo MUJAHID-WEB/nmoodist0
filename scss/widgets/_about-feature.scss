@@ -1,0 +1,209 @@
+.about_features {
+  display: flex;
+  padding: 75px 0rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.625rem;
+  align-self: stretch;
+  // background-color: var(--feature-bg-container);
+
+  @include desktop-small {
+    padding: 40px 0rem;
+  }
+
+  .container{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+
+    .about_features-header-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      text-align: left;
+      // width: 50%;
+      // opacity: 0;
+
+      @include desktop-small{
+        flex-direction: column;
+        text-align: left;
+        width: 100%;
+        gap: 16px;
+      }
+      
+      h3 {
+        @include typography(display-lg, medium);
+        font-family: var(--secondary-font);
+        color: var(--color-text-dark);
+        flex-basis: 45%;
+  
+        @include desktop-small {
+          @include typography(display-sm, medium);
+        }
+  
+        span{
+          display: block;
+          font-family: var(--secondary-font);
+          color: var(--color-primary);
+          @include typography(display-xl, medium);
+  
+          @include desktop-small {
+            @include typography(display-sm, medium);
+          }
+
+          @include desktop-small{
+            display: inline;
+          }
+        }
+        
+      }
+      h4{
+        @include typography(text-lg, semibold);
+        // opacity: 0;
+        color: var(--color-tertiary);
+        margin-bottom: 18px;
+  
+        @include desktop-small {
+          @include typography(text-md, semibold);
+        }
+        
+      }
+
+      p {
+        // max-width: 40%;
+        color: var(--color-tertiary);
+        @include typography(text-xl, regular);
+        @include mobile{
+          @include typography(text-md, regular);
+        }
+
+        @include desktop-small{
+          max-width: 100%;
+        }
+      }
+
+      .description{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+        flex-basis: 50%;
+  
+        .features-section-description {
+          // opacity: 0;
+          p {
+            color: var(--color-text-light);
+            @include typography(text-xl, regular);
+            @include mobile{
+              @include typography(text-md, regular);
+            }
+          }
+        }
+  
+        .button{
+          align-self: flex-start;
+          display: flex;
+          align-items: center;
+          @include typography(text-lg, medium);
+  
+          @include desktop-small {
+            @include typography(text-md, medium);
+          }
+  
+          background: var(--color-primary);
+          color: var(--color-white);
+          border-radius: 8px;
+          position: relative;
+     
+
+        }
+      }
+    }
+  
+    .about_features-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      align-content: flex-start;
+      gap: 1.5rem;
+
+  
+      @include desktop-small {
+        flex-direction: column;
+        width: 100%;
+      }
+  
+      .about_feature {
+        display: flex;
+        align-items: flex-start;
+        gap: 18px;
+        cursor: pointer;
+        border-radius: 10px;
+        background: var(--color-tertiary-bg);
+        box-shadow: 0px 0px 2px 0px rgba(204, 204, 204, 0.4);
+        transition: all 0.3s ease-in-out;
+        flex: 31%;
+        align-self: stretch;
+        padding: 40px;
+  
+        &:hover {
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+  
+        @include desktop-small {
+          width: 100%;
+          padding: 24px;
+        }
+
+
+        $icon-size: 45px;
+
+        .icon {
+          padding: 25px;
+          background: var(--color-primary);
+          border-radius: 50%;
+
+          img{
+            // width: $icon-size;
+            // height: $icon-size;
+            width: 100%;
+
+            @include desktop-small{
+              // width: 24px;
+              // height: 24px;
+            }
+          }
+        }
+
+        .about_feature-title {
+          font-family: var(--secondary-font);
+          @include typography(display-md, medium);
+          line-height: 38px;
+          color: var(--color-text-dark);
+          height: 130px;
+
+          @include desktop-small{
+            @include typography(display-xs, medium);
+            height: unset;
+          }
+        }
+
+        .about_feature-description {
+          @include typography(text-xl, regular);
+          color: var(--color-text-light);
+          text-align: left;
+          padding-top: 14px;
+
+          @include desktop-small{
+            @include typography(text-lg, regular);
+          }
+        }
+
+      }
+    }
+  }
+
+  
+}

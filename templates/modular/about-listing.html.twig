@@ -1,0 +1,101 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.contents %}
+{% set image_left = page.media[page.header.contents.image_left] %}
+{% set image_right = page.media[page.header.contents.image_right] %}
+{% set image_large = page.media[page.header.contents.image_large] %}
+
+{% set list_title_icon = page.media[page.header.contents.list_title_icon] %}
+
+{% block render_block %}
+    <div class="about-listing-wrapper about-listing-animation {{ module.parent_classes }}">
+        <div class="container">
+
+            <div class="contents-wrapper {{ module.child_classes }}">
+
+                <div class="listing-contents">
+                    <div class="header-content">
+                        {% if module.subtitle %}
+                            <h4>{{ module.subtitle.translatable|striptags('<span>')|raw }}</h4>
+                        {% endif %}
+                        <h3>{{ module.title.translatable|striptags('<span>')|raw }}</h3>
+                    </div>
+                    <div class="listing_header">
+                        <h5>{{ module.list_title.translatable|striptags('<span>')|raw }}</h5>
+
+                        {% if list_title_icon %}
+                            <img class="icon" src="{{ list_title_icon.url }}"/>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="listing-content-container">
+                     
+                        {% for section in page.header.about_sections %}
+                            {% if section.description != '' and section.title != '' %}
+                                <div class="listing listing-horizontal {{ module.classes|replace({',' : ' '}) }}">
+                                    <div class="listing-icon">
+                                        {% set icon = page.media[section.icon] %}
+                                        {% if icon %}
+                                            <img class="icon" src="{{ icon.url }}"/>
+                                        {% endif %}
+                                    </div>
+
+                                    <div class="listing-content">
+                                        <p>
+                                            <b>{{ section.title.translatable }}</b> {{ section.description.translatable }}
+                                        </p>
+                                        {# <h5 class="listing-title">
+                                            {{ section.title.translatable }}
+                                            <p>{{ section.description.translatable }}</p>
+                                        </h5> #}
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                        {# {% if page.content != '' %}
+                            <div class="contents">
+                                <p>{{ page.content|raw }}</p>
+                            </div>
+                        {% endif %} #}
+                    </div>
+
+                    {% if module.buttons %}
+                        {% for button in module.buttons  %}
+                            <a class="button" href="{{ button.link }}">
+                                {{ button.text.translatable }}
+                            </a>
+                        {% endfor %}
+                    {% endif %}
+                    
+                </div>
+
+                <div class="image-container">
+                    <div class="single_img">
+                        {% if image_large %}
+                            <img src="{{ image_large.url }}" alt="single Image"/>
+                        {% endif %}
+
+                        <div class="single_img_content">
+                            <h4>{{ module.img_title.translatable|striptags('<span>')|raw }}</h4>
+                            <p>{{ module.img_description.translatable}}</p>
+                        </div>
+                    </div>
+
+                    <div class="double_img">
+                        {% if image_left %}
+                            <img class="image_left" src="{{ image_left.url }}" alt="left Image"/>
+                        {% endif %}
+
+                        {% if image_right %}
+                            <img class="image_right" src="{{ image_right.url }}" alt="right Image"/>
+                        {% endif %}
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    </div>{% endblock %}

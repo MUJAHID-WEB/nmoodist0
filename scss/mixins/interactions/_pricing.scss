@@ -1,0 +1,77 @@
+@mixin pricing-slide-in($duration: 0.8s, $delay: 0.3s, $distance: 50px) {
+    opacity: 0;
+    transform: translateY($distance);
+    animation: slideIn $duration ease-out forwards;
+    
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) {
+        animation-delay: calc($delay * (2 * #{$i}));
+      }
+    }
+    
+  }
+
+  @mixin pricing-fade-rotate($duration: 1s, $delay: 0.3s, $rotate: 10deg) {
+    opacity: 0;
+    transform: rotate($rotate);
+    animation: fadeRotate $duration ease-out forwards;
+    
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) {
+        animation-delay: calc($delay * #{$i});
+      }
+    }
+  
+    @keyframes fadeRotate {
+      to {
+        opacity: 1;
+        transform: rotate(0);
+      }
+    }
+  }
+
+  @mixin pricing-flip($duration: 0.8s, $delay: 0.3s) {
+    opacity: 0;
+    transform: rotateY(90deg);
+    animation: flipIn $duration ease-out forwards;
+    
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) {
+        animation-delay: calc($delay * (2 * #{$i}));
+      }
+    }
+  
+    @keyframes flipIn {
+      to {
+        opacity: 1;
+        transform: rotateY(0);
+      }
+    }
+  }
+  
+
+  @mixin pricing-fade-scale-hover($duration: 1s, $delay: 0.3s, $hover-scale: 1.05) {
+    opacity: 0;
+    transform: scale(0.9);
+    animation: fadeScale $duration ease-out forwards;
+    
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) {
+        animation-delay: calc($delay * #{$i});
+      }
+    }
+  
+    &:hover {
+      transform: scale($hover-scale);
+      transition: transform 0.3s ease-out;
+    }
+  
+    @keyframes fadeScale {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
+  
+  

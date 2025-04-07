@@ -1,0 +1,57 @@
+title: About Us
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+
+            content_section:
+              ordering@: 3
+              type: section
+              title: Content Section
+              underline: true
+              
+              fields:
+                header.contents:
+                  style: vertical
+                  type: list
+                  fields:
+                    .img:
+                      type: pagemediaselect
+                      label: Image
+                    .title.translatable:
+                      type: text
+                      label: Title
+                      classes: 'translatable'
+                    .text.translatable:
+                      type: textarea
+                      label: Details
+                      classes: 'translatable'
+                      rows: 8
+
+            no_hero_content_section:
+              ordering@: 3
+              type: section
+              title: No Hero Content Section
+              underline: true
+
+              fields:
+                header.no_hero_content.section_background_image:
+                  type: pagemediaselect
+                  label: Section Background Image
+                  preview_images: true
+
+                header.no_hero_content.title.translatable:
+                  type: text
+                  label: Title
+                  classess: 'translatable'
+
+                header.no_hero_content.description.translatable:
+                  type: textarea
+                  label: Description
+                  classess: 'translatable'
+
+             

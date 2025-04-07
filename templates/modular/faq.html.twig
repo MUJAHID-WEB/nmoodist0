@@ -1,0 +1,63 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.module %}
+{% set image_left = page.media[module.image] %}
+
+{% block render_block %}
+    <div class="faqs">
+        <div class="container">
+            <div class="faqs-container">
+                <div class="faqs-left">
+                    <div class="faqs-header-section">
+                        {% if module.title %}
+                            <h3 class="block-title">{{ module.title.translatable|raw }}</h3>
+                        {% endif %}
+
+                        {% if module.sub_title %}
+                            <p class="sub-title">{{ module.sub_title.translatable }}</p>
+                        {% endif %}
+
+                        {% if page.content %}
+                            <div class="page-content">
+                                {{ page.content | raw }}
+                            </div>
+                        {% endif %}
+                        {% if module.button %}
+                            <div class="faqs-started-btn">
+                                <a class="button" href="{{ module.button_link }}">{{ module.button.translatable }}
+{#                                    <img class="faqs-started-btn-icon"#}
+{#                                         src="{{ url('theme://images/faq_button_icon.svg') }}" alt="button icon">#}
+                                </a>
+                            </div>
+                        {% endif %}
+                        {% if image_left %}
+                        <div class="paragraph-image">
+                            <img class="" src="{{ image_left.url }}" alt="icon"/>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="faqs-items">
+                    {% for key, faq_item in page.header.faq_blocks %}
+                        {% if faq_item.description != '' and faq_item.title != '' %}
+                            <div class="faq-accordion-item" id="item-{{ key }}">
+                                <div class="faq-accordion-header" data-target="#faq-accordion-item-{{ key }}">
+                                    <button type="button" class="faq-accordion-btn">{{ faq_item.title.translatable }}</button>
+                                    <img src="{{ url('theme://images/faq_arrow_up.svg') }}" alt=""
+                                        class="faq-accordion-up-btn d-none">
+                                    <img src="{{ url('theme://images/faq_arrow_down.svg') }}" alt=""
+                                        class="faq-accordion-down-btn">
+                                </div>
+                                <div class="faq-accordion-body d-none" id="faq-accordion-item-{{ key }}">
+                                    <p>{{ faq_item.description.translatable }}</p>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

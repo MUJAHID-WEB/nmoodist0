@@ -1,0 +1,79 @@
+title: Contact
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            header.contact_title_section:
+              ordering@: 4
+              type: section
+              title: Contact Title Section
+              underline: false
+              label: false
+              fields:
+                header.modules.title.translatable:
+                  type: text
+                  label: Section Title
+                  classes: 'translatable'
+                header.modules.sub_title.translatable:
+                  type: text
+                  label: Section Sub Title
+                  classes: 'translatable'
+                header.modules.image:
+                  type: pagemediaselect
+                  label: Left Image
+                  preview_images: true
+
+                header.modules.classes:
+                  label: Background Color
+                  type: selectize
+                  selectize:
+                    options:
+                      - text: "Primary"
+                        value: "bg-primary"
+                      - text: "Primary Light"
+                        value: "bg-primary-light"
+                      - text: "Secondary"
+                        value: "bg-secondary"
+                      - text: "Secondary Light"
+                        value: "bg-secondary-light"
+                      - text: "Background Color"
+                        value: "bg-color"
+                      - text: "Black"
+                        value: "bg-black"
+                      - text: "White"
+                        value: "bg-white"
+            header.contact_blocks_section:
+              ordering@: 5
+              type: section
+              title: Contact blocks
+              underline: false
+              label: false
+              fields:
+
+                header.modules:
+                  .title.translatable:
+                    type: text
+                    label: Section Title
+                    classes: 'translatable'
+
+                header.contents:
+                  type: list
+                  fields:
+                    .title.translatable:
+                      type: text
+                      label: Title
+                      classes: 'translatable'
+                    .description.translatable:
+                      type: textarea
+                      label: Description
+                      classes: 'translatable'
+                    .icon:
+                      type: pagemediaselect
+                      label: Icon
+                      preview_images: true
+            header.media_order:
+              ordering@: 99

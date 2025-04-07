@@ -1,0 +1,185 @@
+// Header
+#header {  
+  @media only screen and (min-width: 1024px) {
+    // @include header-1;
+
+    .container {
+      @include header-2;
+    }
+    .menu a {
+      // color: var(--color-secondary);
+      // @include nav-hover-effect-3(var(--color-secondary), 2px);
+    }
+
+    .button {
+      
+    }
+
+    
+
+    .language-switcher:hover {
+      border: solid 1px var(--color-secondary);
+      animation: border 0.5s ease both;
+    }
+    
+  }
+}
+
+
+// Hero
+.hero {
+  // @include hero-section-1($text-delay: 0.3s);
+  .hero-text {
+    @include hero-section-3($delay: 0.3s);
+
+    .button {
+
+    }
+  }
+  
+  img {
+    // @include subtle-float-tilt;
+    // @include flip-rotate-animation(5s, ease-in-out);
+  }
+}
+
+.animate-feature {
+  // .features-header-section h4 {
+  //   opacity: 0;
+  //   animation: fadeInUp 0.1s ease-in 0.1s forwards;
+  // }
+  .about_features-header-section{
+    opacity: 0;
+      animation: fadeInUp 0.2s ease-in 0.6s forwards;
+    // h3{
+    //   opacity: 0;
+    //   animation: fadeInUp 0.2s ease-in 0.6s forwards;
+    // }
+    // p{
+    //   opacity: 0;
+    //   animation: fadeInUp 0.3 s ease-in 0.6s forwards;
+    // }
+  }
+
+  // h3.block-title, p {
+  //   opacity: 0;
+  //   animation: fadeInUp 0.2s ease-in 0.6s forwards;
+  // }
+  .about_feature {
+    opacity: 0;
+    @include feature-animation-5($delay: 0.5s);
+    // no. of cards -> 2x2 3x2 
+    
+  }
+}
+
+// Text Left
+.animate-text-left {
+  
+  @include text-left-opposite($delay: 0.2s);
+  //  a {
+  //   box-shadow: 0 0 5px 0 #97c680 !important;
+  //  }
+   
+}
+
+// Text Right
+.animate-text-right {
+  @include text-right-opposite($delay: 0.2s);
+}
+
+.animate-about-listing {
+  .contents-wrapper .header-content h4 {
+    opacity: 0;
+    animation: fadeInUp 0.2s ease-in 0.1s forwards;
+  }
+
+  .contents-wrapper .header-content h3 {
+    opacity: 0;
+    animation: fadeInUp 0.3s ease-in 0.3s forwards;
+  }
+  @include about-listing-1($delay: 0.4s);
+}
+//Pricing
+.animate-pricing {
+  .pricing {
+    @include pricing-fade-scale-hover($delay: 0.2s);
+  }
+}
+
+.animate-courses {
+  h4 {
+    opacity: 0;
+    animation: fadeInUp 0.2s ease-in 0.1s forwards;
+  }
+
+  h3 {
+    opacity: 0;
+    animation: fadeInUp 0.3s ease-in 0.3s forwards;
+  }
+
+  .course {
+    opacity: 0;
+    @include course-animation-5($delay: 0.4s);
+  }
+}
+
+input[type="text"], input[type="email"], textarea {
+  // @include input-focus(0.3s, 1.05, #3498db);
+  // @include input-shadow(0.3s, #3498db);
+  // @include smooth-border-focus(0.3s, #3498db);
+  // @include scale-up-hover(0.2s, 1.05);
+}
+
+body {
+  @include ripple-effect;
+}
+
+input, textarea {
+  // @include bottom-border-highlight(0.3s, #3498db, 2px);
+}
+
+.form-field {
+  position: relative;
+
+  input, textarea {
+    @include floating-label();
+  }
+
+  label {
+    @include floating-label();
+  }
+}
+
+.animate-footer {
+  @include footer-3();
+}
+
+.languages {
+  opacity: 1;
+}
+
+
+.language-switcher {
+
+}
+
+.button {
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block article %}
+    {% include 'partials/no-hero-header.html.twig' with {
+        'title': page.header.title,
+        'links': [
+            {
+                'url': '/' ~ grav.language.getActive,
+                'title': "METRICALO.HOME"|t
+            },
+            {
+                'title': page.header.title|t
+
+            }
+        ]
+    } %}
+
+    <!-- Dynamic modular -->
+    {% for module in page.collection() %}
+        {{ module.content|raw }}
+    {% endfor %}
+
+{% endblock %}

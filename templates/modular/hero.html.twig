@@ -1,0 +1,81 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set contents = page.header.hero %}
+{% set bg = page.media[contents.image].url ?? '' %}
+
+{% block render_block %}
+
+	<section class="hero-section" id="hero-section" style="{% if(bg) %}background-image: url('{{ bg }}'){% endif %}">
+
+		<div class="hero-wrapper container" >
+
+			<div class="text-contents">
+				
+
+				{% if contents.title != null %}
+					<h1 class="hero-title">
+
+						<svg class="top_right" xmlns="http://www.w3.org/2000/svg" width="68" height="66" viewBox="0 0 68 66" fill="none">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M12.5617 27.6684C16.1435 21.6916 17.9571 15.4323 20.1677 8.93195C20.5992 7.66241 19.9209 6.28757 18.6557 5.85569C17.3897 5.42358 16.0119 6.10606 15.5797 7.37536C13.4837 13.5393 11.8069 19.5028 8.40592 25.1804C7.71774 26.3286 8.09049 27.8205 9.23863 28.5036C10.3836 29.1941 11.8743 28.8169 12.5617 27.6684Z" fill="black"/>
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M22.2142 44.3619C36.0406 37.8228 50.1132 28.2675 61.1634 17.6462C62.1276 16.7181 62.1589 15.1816 61.2317 14.2202C60.3044 13.2587 58.7703 13.2256 57.806 14.1537C47.1211 24.4229 33.511 33.6645 20.1433 39.9816C18.9342 40.5554 18.4171 42.0014 18.9891 43.2082C19.5611 44.4151 21.0051 44.9358 22.2142 44.3619Z" fill="black"/>
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M21.6299 55.9765C30.9965 60.6437 42.0231 60.9981 52.2056 59.8336C53.5354 59.6771 54.49 58.4757 54.3372 57.153C54.186 55.8223 52.9834 54.8689 51.656 55.0177C42.3815 56.0816 32.3219 55.8899 23.7906 51.6405C22.5939 51.0439 21.1379 51.5333 20.543 52.7271C19.9473 53.9208 20.434 55.3801 21.6299 55.9765Z" fill="black"/>
+							</svg>
+
+					{{ contents.title.translatable|raw }}
+
+							<svg class="btm_left" xmlns="http://www.w3.org/2000/svg" width="60" height="59" viewBox="0 0 60 59" fill="none">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M51.5443 25.2847C50.7432 32.2063 51.6697 38.6569 52.3338 45.4906C52.4637 46.8252 53.6482 47.7985 54.979 47.6707C56.3106 47.5428 57.2848 46.3533 57.1557 45.0186C56.5257 38.5386 55.5965 32.4139 56.3561 25.8394C56.51 24.5096 55.5557 23.3038 54.2281 23.1545C52.9003 22.997 51.6974 23.955 51.5443 25.2847Z" fill="black"/>
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M35.8714 14.0499C25.9675 25.705 17.0819 40.2098 11.3895 54.4406C10.8933 55.6835 11.4979 57.0964 12.7389 57.5904C13.9799 58.0844 15.3914 57.4824 15.8876 56.2395C21.3923 42.4801 29.9857 28.4516 39.5632 17.1879C40.4284 16.1668 40.3038 14.6363 39.2854 13.7723C38.2669 12.9083 36.7367 13.0288 35.8714 14.0499Z" fill="black"/>
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M31.6185 3.2277C21.161 2.83438 10.9678 7.05474 2.16961 12.3112C1.0224 13.0017 0.647561 14.4896 1.33177 15.632C2.0178 16.7822 3.50641 17.1553 4.65464 16.4728C12.667 11.6821 21.912 7.71196 31.4362 8.06879C32.7725 8.11936 33.8975 7.07357 33.9477 5.74062C33.9987 4.40756 32.9539 3.27838 31.6185 3.2277Z" fill="black"/>
+							</svg>
+
+					</h1>
+				{% endif %}
+
+			
+				{% if contents.text != null %}
+					<p>{{ contents.text.translatable|raw }}</p>
+				{% endif %}
+
+				{% if contents.hero_btn_text != null %}
+					<a href="#" class="hero-btn">
+						<span>{{ contents.hero_btn_text.translatable }}</span>
+
+					</a>
+				{% endif %}
+
+			</div>
+
+			<div class="hero_image">
+				<div class="image-contents">
+
+					{% for slider in page.header.slider_img %}
+
+						<div class="slider_images">
+							{% set s_img = page.media[slider.image] %}
+
+							<img src="{{ s_img.url }}"/>
+		
+
+						</div>
+					{% endfor %}
+					
+					
+				</div>
+
+				<div class="hero-slider-pagination"></div>
+
+			</div>
+
+			
+
+			
+
+
+		</div>			
+		
+
+	</section>
+	
+{% endblock %}
+

@@ -1,0 +1,112 @@
+// Mixin for button background color change on hover
+// How to use: @include button-bg-change-effect(#2980b9, 0.3s, ease);
+@mixin button-bg-change-effect($hover-bg-color, $duration: 0.3s, $ease: ease) {
+    transition: background-color $duration $ease;
+  
+    &:hover {
+      background-color: $hover-bg-color;
+    }
+}
+
+
+
+// Mixin for button background color and text color swap on hover
+// How to use: @include button-background-text-color-swap(#e74c3c, #ecf0f1, 0.5s, ease-in-out);
+@mixin button-background-text-color-swap($bg-color, $text-color, $duration: 0.3s, $ease: ease) {
+    // background: $bg-color;
+    // color: $text-color;
+    transition: background $duration $ease, color $duration $ease;
+
+    svg {
+        fill: none;
+        transition: fill $duration $ease;
+    }
+  
+    &:hover {
+      background: $text-color;
+      color: $bg-color;
+      // border: solid 1px $bg-color; Optional
+      svg {
+        fill: $bg-color;
+        // g {
+        //     path {
+        //         stroke: $bg-color;
+        //         fill: $text-color;
+        //     }
+        // }
+      }
+    }
+}
+
+
+// Mixin for button scale up/down with customizable parameters
+// How to use: @include button-scale(1.2, 0.3s, ease);  <-- Scale Up;
+// How to use: @include button-scale(0.9, 0.3s, ease);  <-- Scale Down;
+@mixin button-scale($scale: 1.1, $duration: 0.3s, $ease: ease) {
+    transition: transform $duration $ease;
+  
+    &:hover {
+      transform: scale($scale);
+    }
+}
+
+// Mixin for button border radius change with customizable parameters
+// How to use: @include button-border-radius(20px, 0.3s, ease);
+@mixin button-border-radius($hover-radius, $duration: 0.3s, $ease: ease) {
+    // border-radius: $initial-radius;
+    transition: border-radius $duration $ease;
+  
+    &:hover {
+      border-radius: $hover-radius;
+    }
+}
+
+// Mixin for increasing text weight on hover with customizable parameters
+// How to use: @include text-weight-increase(100, 0.3s, ease);
+@mixin text-weight-increase($weight, $duration: 0.3s, $ease: ease) {
+    transition: font-weight $duration $ease;
+  
+    &:hover {
+        font-weight: $weight;
+    }
+}
+
+// Mixin for increasing border width on hover with customizable parameters
+// How to use: @include border-width-increase(4px, 0.3s, ease);
+@mixin border-width-increase($hover-border, $duration: 0.3s, $ease: ease) {
+
+    transition: border-width $duration $ease;
+  
+    &:hover {
+      border-width: $hover-border;
+    }
+}
+
+// Mixin for changing text color on hover with customizable parameters
+// How to use: @include text-color-change(#f1c40f, 0.3s, ease);
+@mixin text-color-change($hover-color, $duration: 0.3s, $ease: ease) {
+    // color: $initial-color;
+    transition: color $duration $ease;
+
+    svg {
+        g {
+            path {
+                transition: stroke $duration $ease;
+            }
+        }
+    }
+  
+    &:hover {
+      color: $hover-color;
+      svg {
+        // fill: $hover-color;
+        g {
+            path {
+                stroke: $hover-color;
+            }
+        }
+      }
+    }
+}
+
+

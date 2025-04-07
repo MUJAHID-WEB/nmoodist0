@@ -1,0 +1,19 @@
+<div class="feature">
+	<div class="feature-container">
+		{% set image = page.media[feature_block.image] %}
+		
+		<div class="feature-content">
+			<h4 class="feature-title">{{ feature_block.title.translatable }}</h4>
+			<p class="feature-description">{{ feature_block.description.translatable }}</p>
+
+			{% for button in feature_block.buttons  %}
+				<a class="button " href="{{ button.link }}">
+					{{ button.text.translatable }}
+				</a>
+			{% endfor %}
+		</div>
+		<div class="feature-image">
+			<img class="" src="{{ image.url }}"/>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,52 @@
+title: Dynamic Content
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+
+            footer_section:
+              ordering@: 3
+              type: section
+              title: Footer Content Section
+              underline: true
+
+              fields:
+
+                header.footer.top_title.translatable:
+                  type: text
+                  label: Footer Top Title
+                  classess: 'translatable'
+
+                header.footer.top_brief.translatable:
+                  type: text
+                  label: Footer Top Brief
+                  classess: 'translatable'
+
+                header.footer.top_btn_text.translatable:
+                  type: text
+                  label: Footer Top BTN Text
+                  classess: 'translatable'
+
+                header.footer.branding_text.translatable:
+                  type: text
+                  label: Branding Text
+                  classess: 'translatable'
+
+                header.footer.watermark:
+                  type: text
+                  label: Watermark Text
+
+                header.login.top_title.translatable:
+                  type: text
+                  label: Login Top Title
+                  classess: 'translatable'
+
+                header.forgot.top_title.translatable:
+                  type: text
+                  label: Forgot Top Title
+                  classess: 'translatable'
+                  

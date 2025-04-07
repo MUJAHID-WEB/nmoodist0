@@ -1,0 +1,58 @@
+title: FAQs
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+
+            module_section:
+              ordering@: 3
+              type: section
+              title: Module blocks
+              underline: true
+              fields:
+                header.module.title.translatable:
+                  type: text
+                  label: Title
+                  classes: 'translatable'
+                header.module.sub_title.translatable:
+                  type: text
+                  label: Sub Title
+                  classes: 'translatable'
+                header.module.image:
+                  type: pagemediaselect
+                  label: Left Image
+                  preview_images: true
+                header.module.button.translatable:
+                  type: text
+                  label: Button Text
+                  classes: 'translatable'
+                header.module.button_link:
+                  type: text
+                  label: Button Link
+
+            header.faqs_section:
+              ordering@: 4
+              type: section
+              title: FAQs blocks
+              underline: false
+              label: false
+              fields:
+                header.faq_blocks:
+                  type: list
+                  fields:
+                    .title.translatable:
+                      type: text
+                      label: Title
+                      classes: 'translatable'
+                    .description.translatable:
+                      type: textarea
+                      label: Description
+                      classes: 'translatable'
+            header.media_order:
+                ordering@: 99
+
+

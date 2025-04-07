@@ -1,0 +1,86 @@
+title: Dynamic Content
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+
+            # content_section:
+            #   ordering@: 3
+            #   type: section
+            #   title: Content Section
+            #   underline: true
+              
+            #   fields:
+            #     header.contents:
+            #       style: vertical
+            #       type: list
+            #       fields:
+            #         .img:
+            #           type: pagemediaselect
+            #           label: Image
+            #         .title.translatable:
+            #           type: text
+            #           label: Title
+            #           classes: 'translatable'
+            #         .text.translatable:
+            #           type: textarea
+            #           label: Details
+            #           classes: 'translatable'
+            #           rows: 8
+
+            no_hero_content_section:
+              ordering@: 3
+              type: section
+              title: No Hero Content Section
+              underline: true
+
+              fields:
+                header.no_hero_content.section_background_image:
+                  type: pagemediaselect
+                  label: Section Background Image
+                  preview_images: true
+
+                header.no_hero_content.title.translatable:
+                  type: text
+                  label: Title
+                  classess: 'translatable'
+
+                header.no_hero_content.description.translatable:
+                  type: textarea
+                  label: Description
+                  classess: 'translatable'
+
+                header.no_hero_content.button_text.translatable:
+                  type: text
+                  label: Button Text
+                  classess: 'translatable'
+
+                header.no_hero_content.trainers.isEnabled:
+                  type: toggle
+                  label: Is Trainer Enabled?
+                  highlight: 1
+                  default: 1
+                  options:
+                      1: 'Yes'
+                      0: 'No'
+                  validate:
+                      type: bool
+
+                header.no_hero_content.trainers.count.translatable:
+                  type: text
+                  label: Count
+                  classess: 'translatable'
+
+                header.no_hero_content.trainers.title.translatable:
+                  type: text
+                  label: Title
+                  classess: 'translatable'
+
+                header.no_hero_content.trainers.trainer_group_img:
+                  type: pagemediaselect
+                  label: Trainer Group Image
+                  preview_images: true

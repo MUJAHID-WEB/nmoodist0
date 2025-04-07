@@ -1,0 +1,38 @@
+@mixin glow-on-hover($glow-color: #00ff00, $glow-size: 10px, $duration: 0.4s, $ease: ease-in-out) {
+    position: relative;
+    transition: box-shadow $duration $ease, filter $duration $ease;
+    
+    &:hover {
+      box-shadow: 0 0 $glow-size $glow-color;
+      filter: brightness(1.2);
+    }
+}
+
+@mixin color-hover($color: #3498db, $transition-duration: 0.3s) {
+    transition: color $transition-duration ease;
+    color: initial;
+  
+    &:hover {
+      color: $color;
+    }
+  }
+
+  @mixin shadow-hover($shadow-color: rgba(0, 0, 0, 0.3), $lift: 10px, $transition-duration: 0.3s) {
+    transition: box-shadow $transition-duration ease, transform $transition-duration ease;
+    box-shadow: 0 4px 8px $shadow-color;
+    transform: translateY(0);
+  
+    &:hover {
+      box-shadow: 0 12px 24px $shadow-color;
+      transform: translateY(-$lift);
+    }
+  }
+
+  @mixin rotate-hover($rotate-degree: 15deg, $transition-duration: 0.3s) {
+    transition: transform $transition-duration ease;
+    transform: rotate(0);
+  
+    &:hover {
+      transform: rotate($rotate-degree);
+    }
+  }

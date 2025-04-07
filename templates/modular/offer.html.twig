@@ -1,0 +1,38 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.offer %}
+{% block render_block %}
+
+	{% set bg = page.media[page.header.offer.offer_bg].url ?? '' %}
+
+	<div class="offer" style="{% if(bg) %}background-image: url('{{ bg }}'){% endif %}">
+		<div class="container">
+			<div class="offer-text" >
+				<h1 class="offer-title">
+					{{ module.h1.translatable|striptags('<span>')|raw }}
+				</h1>
+
+				<p class="">{{ module.text.translatable }}</p>
+
+				{% for button in module.buttons  %}
+					<a class="button " href="{{ button.link }}">
+
+						<span>{{ button.text.translatable }}</span>
+
+						{# <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+						<path d="M12 16.7239L16 12.7239M16 12.7239L12 8.72388M16 12.7239H8M22 12.7239C22 18.2467 17.5228 22.7239 12 22.7239C6.47715 22.7239 2 18.2467 2 12.7239C2 7.20103 6.47715 2.72388 12 2.72388C17.5228 2.72388 22 7.20103 22 12.7239Z" stroke="url(#paint0_linear_12305_3123)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						<defs>
+						<linearGradient id="paint0_linear_12305_3123" x1="12" y1="22.7239" x2="12" y2="2.72388" gradientUnits="userSpaceOnUse">
+						<stop stop-color="#fff"/>
+						<stop offset="1" stop-color="#fff"/>
+						</linearGradient>
+						</defs>
+						</svg> #}
+                        
+					</a>
+				{% endfor %}
+			</div>
+
+		</div>
+	</div>
+{% endblock %}

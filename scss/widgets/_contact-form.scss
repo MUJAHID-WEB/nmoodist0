@@ -1,0 +1,36 @@
+.form-block {
+  display: flex;
+  padding: 3rem 0rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  align-self: stretch;
+  background: var(--color-bg);
+
+  &.angled {
+    background: none;
+    display: unset;
+  }
+
+  .block-title {
+    color: var(--color-tertiary);
+    text-align: center;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    max-width: 840px;
+    margin: 2.5rem auto 3rem;
+
+    @include desktop-small {
+      flex-direction: column;
+      padding: 0 1rem;
+    }
+  }
+}
+
+

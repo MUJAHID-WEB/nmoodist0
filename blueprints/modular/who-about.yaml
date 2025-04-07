@@ -1,0 +1,38 @@
+title: Who About
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+
+          fields:
+            content:
+              unset@: true
+            header.media_order:
+              ordering@: 99
+            who_about_section:
+              type: section
+              title: Who About
+              underline: true
+              fields:
+                header.who_about.text.translatable:
+                  type: textarea
+                  label: Who About Text
+                  classes: 'translatable'
+                header.who_about_top.image:
+                  type: pagemediaselect
+                  label: Image Top
+                header.who_about.buttons:
+                  type: list
+                  label: Who About Buttons
+                  style: vertical
+                  fields:
+                    .text.translatable:
+                      type: text
+                      label: Button Text
+                      classes: 'translatable'
+                    .link:
+                      type: text
+                      label: Button Link

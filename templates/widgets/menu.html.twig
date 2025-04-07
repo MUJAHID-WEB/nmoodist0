@@ -1,0 +1,32 @@
+<div class="menu {{ menu_order }}">
+	{% for page in pages.children.visible %}
+		{% if (page.home and not grav.user.authenticated) or (not page.home) %}
+			{% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
+			{% set requires_access = page.header.login ? page.header.login.visibility_requires_access : false %}
+
+			{% if (requires_access == true and page.header.access['site.login'] and grav.user.authorized == true) or requires_access == false %}
+				<div class="menu-item {{ current_page|e }}">
+					<a class="menu-item__link {{navbar_text_color}}" href="{{ page.url|e|replace({'%23': '#'}) }}">
+						{{ page.menu|e }}
+					</a>
+				</div>
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+</div>
+{# <div class="menu {{ menu_order }}">
+	{% for page in pages.children.visible %}
+		{% if (page.home and not grav.user.authenticated) or (not page.home) %}
+			{% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
+			{% set requires_access = page.header.login ? page.header.login.visibility_requires_access : false %}
+
+			{% if (requires_access == true and page.header.access['site.login'] and grav.user.authorized == true) or requires_access == false %}
+				<div class="menu-item {{ current_page|e }}">
+					<a class="menu-item__link {{navbar_text_color}}" href="{{ page.url|e }}">
+						{{ page.menu|e }}
+					</a>
+				</div>
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+</div> #}

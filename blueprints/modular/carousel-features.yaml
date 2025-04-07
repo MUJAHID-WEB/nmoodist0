@@ -1,0 +1,52 @@
+title: Carousel Feature
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+
+            module_section:
+              ordering@: 3
+              type: section
+              title: Carousel Block Info
+              underline: true
+              fields:
+                header.carousel.title.translatable:
+                  type: text
+                  label: Title
+                  classes: 'translatable'
+                header.carousel.description.translatable:
+                  type: textarea
+                  label: Description
+                  classes: 'translatable'
+                  rows: 10
+
+
+            header.carousel_feature_items:
+              ordering@: 4
+              type: section
+              title: Carousel Items
+              underline: false
+              label: false
+              fields:
+                header.carousel_feature_items:
+                  type: list
+                  fields:
+                    .title.translatable:
+                      type: text
+                      label: Title
+                      classes: 'translatable'
+                    .description.translatable:
+                      type: textarea
+                      label: Description
+                      classes: 'translatable'
+                    .image:
+                      type: pagemediaselect
+                      label: Image
+            header.media_order:
+                ordering@: 99
+
+

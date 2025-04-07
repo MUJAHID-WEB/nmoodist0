@@ -1,0 +1,120 @@
+.languages {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 40px 60px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 1.5rem;
+  background: #fff;
+  box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.12);
+
+  @include desktop-small {
+    padding: 1rem;
+    width: 90%;
+  }
+
+  .title {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    color: var(--color-primary);
+    white-space: nowrap;
+    @include typography(display-xs, medium);
+    margin-bottom: 0.5rem;
+  }
+
+  .frame {
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+    gap: 15px;
+    flex-wrap: wrap;
+    flex: 1 0 calc(25% - 10px);
+
+    @include desktop-small {
+      flex: 1 0 calc(33% - 10px);
+      justify-content: center;
+    }
+    
+    max-height: 400px;
+    overflow: auto;
+
+      .lang-button {
+        display: flex;
+        width: 140px;
+        align-items: center;
+        gap: 10px;
+        position: relative;
+        flex: 0 0 auto;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        .img {
+          position: relative;
+          width: 26.67px;
+          height: 20px;
+        }
+
+        .text-wrapper-2,
+        .text-wrapper-3,
+        .text-wrapper-4 {
+          white-space: nowrap;
+          letter-spacing: 0;
+          color: #000000;
+          @include typography(base,regular)
+        }
+
+        .text-wrapper-2 {
+          position: absolute;
+          top: -1px;
+          left: 0;
+        }
+
+        .text-wrapper-3 {
+          position: relative;
+          width: fit-content;
+          margin-top: -0.5px;
+        }
+
+        .text-wrapper-4 {
+          position: relative;
+          width: fit-content;
+          margin-top: -0.5px;
+          text-decoration: underline;
+        }
+      }
+    // }
+  }
+
+  .close-button {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    top: 25px;
+    right: 30px;
+    cursor: pointer;
+  }
+
+  .div-wrapper {
+    position: relative;
+    width: 74px;
+    height: 19px;
+  }
+}
+
+.language-switcher {
+  display: flex;
+  padding: 0.25rem 0.375rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}

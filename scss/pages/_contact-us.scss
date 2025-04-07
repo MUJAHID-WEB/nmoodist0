@@ -1,0 +1,248 @@
+.page-contact{
+
+  .contact-block-wrapper {
+    display: flex;
+    gap: 20px
+  }
+
+  .contact-section-wrapper{
+    padding: 150px 0 250px 0;
+    position: relative;
+
+    @include desktop-small{
+      padding: 400px 0 100px 0;
+    }
+    .contact-inner-wrapper{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      //position: absolute;
+      top: calc(15% - 350px);
+      width: 100%;
+      left: 0;
+      padding: 0 16px;
+
+      @include desktop-small{
+        top: calc(0% - 400px);
+      }
+
+      .contact-inner {
+        display: flex;
+        justify-content: space-between;
+        background: var(--color-white);
+        max-width: 576px;
+        border-radius: 20px;
+        border: 1px solid #DADADA;
+        box-shadow: 0px 2px 10px 0px rgba(92, 92, 92, 0.12);
+        padding: 42px 48px;
+
+        @include desktop-small {
+          padding: 23px 28px;
+        }
+
+
+        .email-section {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 36px;
+
+          .text-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+            align-self: stretch;
+
+            h3 {
+              @include typography(display-md, bold);
+              @include desktop-small {
+                @include typography(display-sm, bold);
+              }
+              color: var(--color-text-dark);
+            }
+
+            p {
+              @include typography(text-xl, regular);
+              color: var(--color-text-light);
+
+              @include mobile {
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 17.865px;
+              }
+            }
+          }
+
+          form{
+            .form-field{
+              margin-bottom: 20px;
+              @include desktop-small{
+                margin-bottom: 15px;
+              }
+              .form-label{
+                @include typography(text-md, semibold);
+                margin-bottom: 4px;
+              }
+            }
+            input, textarea{
+              padding: 12px 16px;
+              border: 1px solid var(--color-text-light);
+              background: var(--color-white, #FFF);
+              box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+              margin: 0;
+              border-radius: 8px;
+
+              &:focus{
+                outline: none;
+                border-radius: 0;
+              }
+            }
+
+            textarea {
+              display: flex;
+              height: 100px;
+              flex-direction: column;
+              align-items: flex-start;
+              align-self: stretch;
+              border-radius: 8px;
+              resize: vertical;
+            }
+
+            .form-actions {
+              .button {
+                @include typography(text-md, semibold);
+                background: var(--color-primary);
+                color: var(--color-text-dark);
+                padding: 20px 40px;
+                border-radius: 20px;
+                height: 60px;
+              }
+            }
+          }
+          .basic-captcha{
+            .form-input-wrapper{
+              border-radius: 0;
+            }
+            .form-input{
+              flex: auto;
+              margin: 0;
+              margin-left: 26px;
+            }
+          }
+        }
+      }
+    }
+    .join_our_team{
+      overflow: hidden;
+      h1{
+        font-size: 120px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 150%;
+        color: var(--color-tertiary);
+        width: 500%;
+        margin-left: -195px;
+        overflow: hidden;
+
+        @include mobile{
+          font-size: 40px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 150%
+        }
+      }
+    }
+  }
+}
+.contact-details-section{
+  background: url(../../images/contact_details_bg.png) lightgray 0px -2.36px / 133.333% 100.977% no-repeat;
+  padding: 80px 0;
+
+  @include desktop-small{
+    padding: 60px 0;
+  }
+  .contact-details-parent{
+    display: flex;
+    gap: 70px;
+    align-items: center;
+
+    @include desktop-small{
+      gap: 40px;
+      flex-direction: column;
+      align-items: start;
+    }
+    .contact-section-header{
+      flex-basis: 40%;
+      @include desktop-small{
+        flex-basis: 100%;
+      }
+      h3{
+        font-size: 46px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 130%;
+        text-align: left;
+        font-family: var(--secondary-font);
+
+        @include mobile{
+          font-size: 28px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 120%;
+        }
+      }
+    }
+    .contact-section {
+      flex-basis: 60%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 28px;
+      align-self: stretch;
+
+      @include desktop-small{
+        flex-basis: 100%;
+      }
+
+      @include mobile {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 24px;
+      }
+      .contact-section-item{
+        flex: 1;
+        .contact-section-item-border{
+          background: var(--color-black);
+          width: 27px;
+          height: 3px;
+        }
+        label, p{
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 500;
+          display: block;
+          line-height: 32px;
+        }
+        .email-label, .phone-lable{
+          font-size: 22px;
+          font-weight: 600;
+          margin-bottom: 25px;
+          line-height: normal;
+        }
+        a{
+          text-decoration: none;
+          font-size: 22px;
+          font-weight: 600;
+          color: var(--color-black);
+          margin-top: 24px;
+          margin-bottom: 25px;
+          display: block;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+.mission_vision {
+  padding: 120px 0 150px;
+
+  @include desktop-small {
+    padding: 40px 0 80px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .mission_vision_top {
+    padding: 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    .title {
+      color: var(--color-white);
+      text-transform: uppercase;
+      @include typography(display-md, semibold)
+    }
+
+    .mission_vision_text {
+      @include typography(text-xl, regular);
+      font-family: var(--secondary-font);
+      color: var(--color-white);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      span {
+        text-transform: lowercase;
+      }
+    }
+  }
+
+  .mission_vision_bottom {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+
+    @include desktop-small {
+      flex-direction: column;
+    }
+  }
+}

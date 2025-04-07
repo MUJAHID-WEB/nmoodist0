@@ -1,0 +1,24 @@
+{% extends 'partials/variables.html.twig' %}
+{% set module = page.header.who_about %}
+{% set image = page.media[page.header.who_about_top.image] %}
+
+{% block render_block %}
+    <div class="who_about">
+        <div class="container">
+            {% if image %}
+            <div class="paragraph-image">
+                <img class="" src="{{ image.url }}" alt="icon"/>
+            </div>
+            {% endif %}
+
+            <div class="who_about_content">
+                {% for button in module.buttons  %}
+                    <a class="button " href="{{ button.link }}">
+                        {{ button.text.translatable }}
+                    </a>
+                {% endfor %}
+                <p class="">{{ module.text.translatable|striptags('<strong>')|raw }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

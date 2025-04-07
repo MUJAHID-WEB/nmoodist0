@@ -1,0 +1,61 @@
+{% set links = config.site.footer.links %}
+
+<footer >
+
+	{# <div class="footer-top-main">
+
+		<div class="container">
+			<div class="footer-top-wrapper">
+
+				<div class="footer-top-left">
+					<h2>{{ page.find('/home').header.footer.top_title.translatable }}</h2>
+					<p>{{ page.find('/home').header.footer.top_brief.translatable }}</p>
+				</div>
+
+
+				<div class="footer-top-right">
+
+					<a href="{{ home_url|e }}{{ webdata('signup_url') }}" class="footer-btn">					
+						<span class="btn-text">{{ page.find('/home').header.footer.top_btn_text.translatable }}</span>							
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+							<path d="M17.7071 6.29289C17.3166 5.90237 16.6834 5.90237 16.2929 6.2929C15.9024 6.68342 15.9024 7.31659 16.2929 7.70711L19.5858 11H6C5.44772 11 5 11.4477 5 12C5 12.5523 5.44772 13 6 13H19.5858L16.2929 16.2929C15.9024 16.6834 15.9024 17.3166 16.2929 17.7071C16.6835 18.0976 17.3166 18.0976 17.7072 17.7071L22.7018 12.7124C22.7202 12.6942 22.738 12.6753 22.755 12.6558C22.8225 12.5781 22.8761 12.4926 22.9158 12.4024C22.9696 12.2801 22.9996 12.145 23 12.003V12C23 11.9969 23 11.9938 23 11.9907C22.9988 11.865 22.9745 11.7447 22.931 11.6341C22.8822 11.5098 22.8076 11.3933 22.7071 11.2929L17.7071 6.29289Z" fill="#171618"/>
+						</svg>					
+					</a>
+
+				</div>
+
+			</div>
+		</div>
+	</div> #}
+
+	<div class="footer-main slide-up">
+
+		<div class="container footer-logo-container">
+			<div class="footer-logo-top">
+				<div class="footer-logo-area">
+					{% include 'widgets/logo.html.twig' with { position: 'footer' } %}
+					<p class="branding-text service-description">{{ page.find('/home').header.footer.branding_text.translatable }}</p>
+					
+				</div>
+				
+				{% include 'widgets/footer-link.html.twig' %}
+
+				{% include 'widgets/footer-card.html.twig' %}
+			</div>
+
+			
+		</div>
+
+		<div class="container">
+			<div class="copyright">
+			{% include 'widgets/footer-copyright.html.twig' %}
+			</div>
+		</div>
+
+	</div>
+	
+</footer>
+
+<style>
+	{% include 'partials/custom.css.twig' %}
+</style>

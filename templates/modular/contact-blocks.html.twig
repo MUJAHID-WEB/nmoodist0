@@ -1,0 +1,56 @@
+{% extends 'partials/variables.html.twig' %}
+{% set module = page.header.modules %}
+{% set contents = page.header.contents %}
+{% set image_left = page.media[module.image] %}
+{# {% set image_bottom_left = page.media[module.image_bottom_left] %} #}
+
+
+
+{% set module = page.header.modules %}
+{% set contents = page.header.contents %}
+
+{% block render_block %}
+    <section class="contact-block-section {{ module.classes }}">
+
+        <div class="container">
+
+            <div class="contact-info-wrapper">
+
+                {% for item in contents %}
+                    <div class="contact-info-item">
+                        <div class="contact-info-top">
+                            <img src="{{ page.media[item.icon].url }}" />
+                            <h3>{{ item.title.translatable }}</h3>
+                        </div>
+
+                        <a href="#">{{ item.description.translatable }}</a>
+
+                    </div>
+                    <!-- End item -->
+                {% endfor %}
+            
+            </div>
+        
+        </div>
+
+        <div class="container">
+            <div class="contact-block-wrapper">
+                <div class="contact-left">
+                    {# <h3>{{ module.sub_title.translatable|striptags('<span>')|raw }}</h3>
+                    <h1>{{ module.title.translatable|striptags('<span>')|raw }}</h1> #}
+
+                    <div class="paragraph-image">
+                        <img class="" src="{{ image_left.url }}" alt="icon"/>
+                    </div>
+                </div>
+                <div class="contact-block-content-parent">
+                    <h1>{{ module.title.translatable|striptags('<span>')|raw }}</h1>
+                    <div class="contact-form">
+                        {% include 'forms/form.html.twig' with {form: forms('contact-us'), action: '#'} %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+{% endblock %}

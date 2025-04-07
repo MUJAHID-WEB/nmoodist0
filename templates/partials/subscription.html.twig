@@ -1,0 +1,28 @@
+{% set subscription = website_manager_api.getActiveSubscription(grav.user.data.customer_id) %}
+
+{% set userSubscription = forms('user-subscription') %}
+{% do userSubscription.setAllData({
+  id: subscription.data[0].id,
+  name: subscription.data[0].name,
+  type: subscription.data[0].type,
+  status: subscription.data[0].status,
+  price: subscription.data[0].price,
+  interval: subscription.data[0].interval,
+}) %}
+
+
+{% include 'forms/form.html.twig' with { form: userSubscription, action: url(grav.language.getActive ~ '/profile/cancel-membership') } %}
+<div class="form-actions">
+  {% if canSubmit != true %}
+    <a href="{{ url(grav.language.getActive ~ '/profile/cancel-membership') }}" class="button danger no-underline">
+      {# <svg xmlns="http://www.w3.org/2000/svg" width="10" height="16" viewBox="0 0 10 16" fill="none">
+        <path d="M8.76037 7.19801L8.75936 7.19694L2.84018 1.30631C2.39674 0.865025 1.6795 0.866667 1.2381 1.31016C0.796758 1.7536 0.798458 2.47084 1.2419 2.91219L5.21603 6.86706C6.09265 7.74368 6.09265 8.25602 5.21598 9.13269L1.24195 13.0876C0.798514 13.5289 0.796816 14.2461 1.23816 14.6896C1.67956 15.1331 2.39686 15.1347 2.84024 14.6934L8.75941 8.80281L8.76043 8.80174C9.2041 8.35892 9.20268 7.63936 8.76037 7.19801Z" fill="white"/>
+      </svg> #}
+      {{ 'METRICALO.CANCEL_SUBSCRIPTION'|t }}
+    </a>
+  {% else %}
+    <button form="user-subscription" type="submit" class="button danger no-underline">
+      {{ 'METRICALO.CANCEL_SUBSCRIPTION'|t }}
+    </button>
+  {% endif %}
+</div>

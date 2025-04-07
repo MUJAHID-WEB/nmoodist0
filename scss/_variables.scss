@@ -1,0 +1,105 @@
+$header-gap: 131px;
+
+$content-margin: 80px;
+$content-margin-sm: 64px;
+
+$content-padding: 80px;
+$content-padding-sm: 64px;
+
+:root{
+    --default-font: "Open Sans", serif;
+    --secondary-font: 'Montserrat', serif;
+}
+
+// Define typography variables
+$typography: (
+        base: (
+                font-size: 1rem,
+                line-height: 1.5rem,
+                letter-spacing: normal,
+        ),
+        display-xxl: (
+                font-size: 4.5rem,
+                line-height: 5.625rem,
+                letter-spacing: -0.02em,
+        ),
+        display-xl: (
+                font-size: 3.75rem,
+                line-height: 4.5rem,
+                letter-spacing: -0.02em,
+        ),
+        display-lg: (
+                font-size: 3rem,
+                line-height: 3.75rem,
+                letter-spacing: -0.02em,
+        ),
+        display-md: (
+                font-size: 2.25rem,
+                line-height: 2.75rem,
+                letter-spacing: -0.02em,
+        ),
+        display-sm: (
+                font-size: 1.875rem,
+                line-height: 2.375rem,
+                letter-spacing: normal,
+        ),
+        display-xs: (
+                font-size: 1.5rem,
+                line-height: 2rem,
+                letter-spacing: normal,
+        ),
+        text-xl: (
+                font-size: 1.25rem,
+                line-height: 1.875rem,
+                letter-spacing: normal,
+        ),
+        text-lg: (
+                font-size: 1.125rem,
+                line-height: 1.75rem,
+                letter-spacing: normal,
+        ),
+        text-md: (
+                font-size: 1rem,
+                line-height: 1.5rem,
+                letter-spacing: normal,
+        ),
+        text-sm: (
+                font-size: 0.875rem,
+                line-height: 1.25rem,
+                letter-spacing: normal,
+        ),
+        text-xs: (
+                font-size: 0.75rem,
+                line-height: 1.125rem,
+                letter-spacing: normal,
+        ),
+);
+
+$padding: (
+    padding-lg: (
+        padding-left: 2rem,
+        padding-right: 2rem
+    ),
+    padding-sm: (
+        padding-left: 1rem,
+        padding-right: 1rem
+    ),
+
+);
+
+
+$font-weights: (
+        inherit: inherit, regular: 400, medium: 500, semibold: 600, bold: 700, extra_bold: 800
+);
+
+// Define a mixin for setting typography
+@mixin typography($style: base, $weight: inherit) {
+    font-size: map-get($typography, $style, font-size);
+    line-height: map-get($typography, $style, line-height);
+    letter-spacing: map-get($typography, $style, 'letter-spacing');
+    font-weight: map-get($font-weights, $weight);
+}
+@mixin padding($size: padding-xl) {
+        padding-left: map-get($padding, $size, padding-left);
+        padding-right: map-get($padding, $size, padding-right);
+}

@@ -1,0 +1,125 @@
+// Mixin for hero section with static animations
+// How to use: @include hero-section-1;
+// Use Case: Hero Text Left
+@mixin hero-section-1($text-duration: 0.8s, $text-ease: ease-in-out, $text-delay: 0.6s, $image-duration: 0.8s, $image-ease: ease-out, $image-delay: 0.6s) {
+    overflow: hidden;
+  
+    .hero-text {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp $text-duration $text-ease $text-delay forwards;
+    }
+  
+    .hero-image {
+      opacity: 0;
+      transform: translateY(20px);
+      position: relative;
+      bottom: 20px;
+      animation: fadeInDown $image-duration $image-ease $image-delay forwards;
+    }
+}
+
+@mixin hero-section-2($delay: 0s) {
+  .hero-title {
+    opacity: 0;
+    animation: fadeInUp100 1s ease $delay forwards; // Fade in up with 100px distance
+  }
+
+  p {
+    opacity: 0;
+    animation: fadeInUp100 1s ease calc($delay + 0.1s) forwards; // Fade in up with a 0.1s delay
+  }
+
+  .button {
+    opacity: 0;
+    animation: fadeInUp100 1s ease calc($delay + 0.2s) forwards; //, subtleBounce 2s ease infinite; // Fade in after p with subtle bounce
+  }
+}
+
+@mixin hero-section-3($delay) {
+  .hero-title {
+    opacity: 0;
+    animation: fadeIn 2s ease $delay forwards; // Fade in over 2 seconds
+  }
+
+  p {
+    opacity: 0;
+    animation: fadeInUp30 1s ease calc(0.1s + $delay) forwards; // Fade in up with a 30px distance and 0.1s delay
+  }
+
+  .button {
+    opacity: 0;
+    animation: fadeInUp30 1s ease calc(0.7s + $delay) forwards; // Fade in up with a 30px distance and 0.7s delay
+  }
+}
+
+@mixin hero-section-4($delay) {
+  .hero-title {
+    opacity: 0;
+    animation: fadeInUp100 1.1s ease $delay forwards; // Fade in up with 100px distance over 1.1 seconds
+  }
+
+  p {
+    opacity: 0;
+    animation: fadeInUp100 0.9s ease calc($delay + 0.2s) forwards; // Fade in up with 100px distance over 0.9 seconds with a 0.2s delay
+  }
+
+  .button {
+    opacity: 0;
+    animation: zoomIn 0.9s ease calc($delay + 1.1s) forwards; // Zoom in with a 0.9s duration and 1.1s delay
+  }
+}
+
+// Mixin for hero-5 section animations
+@mixin hero-section-5($delay) {
+  .hero-title {
+    opacity: 0;
+    animation: fadeIn 5s ease $delay forwards; // Fade in over 5 seconds
+  }
+
+  p {
+    opacity: 0;
+    animation: fadeInRight50 1.4s ease calc($delay + 0.5s) forwards; // Fade in right with 50px distance, 1.4s duration, and 0.5s delay
+  }
+
+  .button {
+    opacity: 0;
+    animation: fadeInRight50 1.4s ease calc($delay + 1.9s) forwards; // Fade in right after `p` with a total delay of 1.9s (0.5s + 1.4s)
+  }
+}
+
+// Text Center
+@mixin hero-section-6() {
+  .hero-title {
+    opacity: 0;
+    animation: zoomIn 1s ease forwards; // Zoom in over 1 second
+  }
+
+  p {
+    opacity: 0;
+    animation: fadeInUp50 0.6s ease 0.3s forwards; // Fade in up with 50px distance, 0.6s duration, and 0.3s delay
+  }
+
+  .button {
+    opacity: 0;
+    animation: fadeInUp50 1.2s ease 0.4s forwards; // Fade in up with 50px distance, 1.2s duration, and 0.4s delay
+  }
+}
+
+@mixin hero-section-7($text-duration: 0.8s, $image-duration: 0.8s, $timing: ease-out, $delay: 0.1s) {
+  .hero-text {
+    opacity: 0;
+    transform: translateX(-10%);
+    animation: slideInLeftNeutral $text-duration $timing $delay forwards;
+  }
+
+  .hero-image {
+    opacity: 0;
+    transform: translateX(10%);
+    animation: slideInRightNeutral $image-duration $timing $delay forwards;
+  }
+}
+
+
+
+

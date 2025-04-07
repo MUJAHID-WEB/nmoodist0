@@ -1,0 +1,56 @@
+title: Courses blocks
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+
+            module_section:
+              ordering@: 3
+              type: section
+              title: Module blocks
+              underline: true
+              fields:
+                header.module.title.translatable:
+                  type: text
+                  label: Title
+                  classes: 'translatable'
+                header.module.subtitle.translatable:
+                  type: text
+                  label: SubTitle
+                  classes: 'translatable'
+                header.module.description.translatable:
+                  type: textarea
+                  label: Description
+                  classes: 'translatable'
+                  rows: 10
+
+
+            header.feature_blocks_section:
+              ordering@: 4
+              type: section
+              title: Feature blocks
+              underline: false
+              label: false
+              fields:
+                header.feature_blocks:
+                  type: list
+                  fields:
+                    .title.translatable:
+                      type: text
+                      label: Title
+                      classes: 'translatable'
+                    .description.translatable:
+                      type: textarea
+                      label: Description
+                      classes: 'translatable'
+                    .icon:
+                      type: pagemediaselect
+                      label: Icon
+            header.media_order:
+                ordering@: 99
+
+

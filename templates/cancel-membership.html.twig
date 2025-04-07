@@ -1,0 +1,27 @@
+{% set body_classes = 'bg-gray-50 page-cancel-membership' %}
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+  {% include 'partials/no-hero-header.html.twig' with {
+    'title': page.header.title,
+    'links': [
+      {
+        'url': '/' ~ grav.language.getActive,
+        'title': "METRICALO.HOME"|t
+      },
+      {
+        'url': url(grav.language.getActive ~ '/profile'),
+        'title': "METRICALO.PROFILE"|t
+      },
+      {
+        'title': 'METRICALO.CANCEL_SUBSCRIPTION'|t
+      }
+    ]
+  } %}
+
+  <div class="content-section cancel-membership">
+    <div class="cm_forms">
+      {% include 'partials/subscription.html.twig' with { canSubmit: true } %}
+    </div>
+  </div>
+{% endblock %}

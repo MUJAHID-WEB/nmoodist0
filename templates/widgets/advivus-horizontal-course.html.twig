@@ -1,0 +1,12 @@
+<div class="course course-horizontal {{ module.classes|replace({',' : ' '}) }}">
+    <div class="course-container">
+        {% set image = page.media[course.image] %}
+        <div class="image-container">
+            <img class="image" src="{{ image.url }}"/>
+        </div>
+    </div>
+    <div class="course-content">
+        <h5 class="course-title" title="{{course.title.translatable}}">{{ course.title.translatable }}</h5>
+        <p>{{ course.description.translatable }}</p>
+    </div>
+</div>

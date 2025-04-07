@@ -1,0 +1,28 @@
+form[name="contact-us"] {
+  width: 100%;
+  .form-textarea-wrapper {
+    label.error {
+      bottom: -30px;
+    }
+  }
+  .form-actions {
+    margin-top: 32px;
+    .button {
+      // width: 100%;
+      @include typography(base);
+    }
+  }
+  .form-field:nth-child(2) {
+    float: right;
+  }
+  .form-field:nth-child(1),
+  .form-field:nth-child(2) {
+    width: calc(50% - 1rem);
+    /* Adjust width based on your design */
+    display: inline-block;
+    @include desktop-small {
+      width: 100%;
+      display: block;
+    }
+  }
+}

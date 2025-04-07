@@ -1,0 +1,75 @@
+title: About Us
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          type: tab
+          title: Content
+
+          fields:
+            header.contents.header_title.translatable:
+              type: text
+              label: Header Title
+              classes: 'translatable'
+
+            header.contents.header_description.translatable:
+              type: textarea
+              label: Header Description
+              classes: 'translatable'
+
+            header.contents.content_title.translatable:
+              type: text
+              label: Content Title
+              classes: 'translatable'
+
+            header.contents.content_description.translatable:
+              type: textarea
+              label: Content Description
+              classes: 'translatable'
+
+            header.contents.content_buttons:
+                  type: list
+                  label: Content Buttons
+                  style: vertical
+                  fields:
+                    .text.translatable:
+                      type: text
+                      label: Button Text
+                      classes: 'translatable'
+                    .link:
+                      type: text
+                      label: Button Link
+
+            header.contents.image:
+              type: pagemediaselect
+              label: Image
+              preview_images: true
+ 
+            header.about_us_content_section:
+              type: section
+              title: About us List
+              underline: true
+              label: true
+              fields:
+                header.about_us_content:
+                  type: list
+                  fields:
+                    .icon:
+                      type: pagemediaselect
+                      label: Icon
+                      preview_images: true
+                    .count.translatable:
+                      type: text
+                      label: Count
+                      classes: 'translatable'
+                    .brief.translatable:
+                      type: text
+                      label: Brief
+                      classes: 'translatable'
+   
+
+            header.media_order:
+              ordering@: 99

@@ -1,0 +1,78 @@
+.page-home .who_about{
+  background: var(--color-white);
+}
+.who_about {
+  padding: 64px 0 80px;
+  position: relative;
+  background: var(--color-tertiary-bg);
+
+  background-position: top;
+  background-size: 50%;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0%;
+    left: 0;
+    width: 100%;
+    height: 150%;
+    clip-path: ellipse(100% 50% at 50% 100%);
+    background: var(--color-white);
+    z-index: -1;
+  }
+
+  .who_about_content {
+    display: flex;
+    gap: 5rem;
+    align-items: flex-start;
+
+    @include desktop-small {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    p {
+      @include typography(display-md, regular);
+      color: var(--color-text-dark);
+      width: 85%;
+      @include desktop-small {
+        @include typography(text-xl, regular);
+      }
+    }
+
+    .button {
+      width: 15%;
+      text-align: center;
+
+      position: relative;
+      background-color: rgba(212, 195, 5, 0.10);
+      z-index: 0;
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: var(--color-primary);
+        border-radius: 10px;
+        padding: 1px;
+        -webkit-mask:
+                linear-gradient(white 0 0) content-box,
+                linear-gradient(white 0 0);
+        -webkit-mask-composite: xor;
+        mask:
+                linear-gradient(white 0 0) content-box,
+                linear-gradient(white 0 0);
+        mask-composite: exclude;
+        z-index: -1;
+      }
+
+      @include typography(text-xl, bold);
+
+      @include desktop-small {
+        width: fit-content;
+        @include typography(text-sm, regular);
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+title: Hero
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+
+          fields:
+            content:
+              unset@: true
+            header.media_order:
+                ordering@: 99
+            hero_section:
+              type: section
+              title: Hero Section
+              underline: true
+              fields:
+                header.hero.title.translatable:
+                  type: text
+                  label: Hero Title
+                  classes: 'translatable'
+
+                header.hero.text.translatable:
+                  type: textarea
+                  label: Hero Text
+                  classes: 'translatable'
+
+                header.hero.overlay_text.translatable:
+                  type: textarea
+                  label: Hero Overlay Text
+                  classes: 'translatable'
+
+                header.hero.hero_btn_text.translatable:
+                  type: text
+                  label: Hero BTN Text
+                  classes: 'translatable'
+
+                header.hero.hero_btn_link:
+                  type: text
+                  label: Hero BTN URL
+
+                header.hero.image:
+                    type: pagemediaselect
+                    label: Hero bg image
+                    preview_images: true
+
+                header.hero_slider_section:
+                    # ordering@: 4
+                    type: section
+                    title: Hero Slider Images
+                    underline: false
+                    label: false
+                    fields:
+                      header.slider_img:
+                        type: list
+                        fields:
+                          
+                          .image:
+                            type: pagemediaselect
+                            label: Slider Image
+
+       

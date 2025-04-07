@@ -1,0 +1,77 @@
+{% set body_classes = "page-unsubscribe"%}
+{% extends 'partials/base.html.twig' %}
+
+{% block article %}
+
+    {% include 'partials/no-hero-header.html.twig' with {
+        'title': page.header.title,
+        'links': [
+            {
+                'url': '/' ~ grav.language.getActive,
+                'title': "METRICALO.HOME"|t
+            },
+            {
+                'title': page.header.title|t
+
+            }
+        ]
+    } %}
+    
+  <div class="unsu-section">
+    <div class="container ">
+      {% embed "widgets/whq-card.html.twig" %}
+        {# {% block card_title %}
+          {{ "METRICALO.LOGIN"|t }}
+        {% endblock %} #}
+
+        {% block card_content %}
+          {# <h2 class="login-title">{{ page.find('/home').header.login.top_title.translatable }}</h2> #}
+          <h2 class="unsubscribe-title">{{ "METRICALO.ARE_YOU_SURE_CANCELLATION"|t }}</h2>
+          {% include 'partials/notifications.html.twig' %}
+          {% include 'partials/messages.html.twig' %}
+          {# {% include "forms/form.html.twig" with {form: forms('unsubscribe'), action: '#'} %} #}
+
+          <div class="unsubscribe-form">
+            {% include "forms/form.html.twig" with {form: forms('unsubscribe'), action: '#'} %}
+
+            {# <form name="unsubscribe" action="#" method="POST" id="unsubscribe" class=" ">
+              <div class="form-field   ">
+                  <div class="form-label">
+                      <label class="inline">Email <span class="required">*</span></label>
+                  </div>
+                  <div class="form-data" data-grav-field="email" data-grav-disabled="" data-grav-default="null">
+                      <div class="form-input-wrapper ">
+                          <input name="data[email]" value="" type="email" class="form-input " required="required">
+                      </div>
+                  </div>
+              </div>
+
+              <div class="form-field   ">
+                  <div class="form-label">
+                      <label class="inline">Last 4 digits of your credit card <span class="required">*</span></label>
+                  </div>
+                  <div class="form-data" data-grav-field="text" data-grav-disabled="" data-grav-default="null">
+                      <div class="form-input-wrapper ">
+                          <input name="data[last_four]" value="" type="text" class="form-input " required="required" title="Please enter valid Last 4 Digit of your card" pattern="\d{4}">
+                      </div>
+                  </div>
+              </div>
+
+              <input type="hidden" name="__form-name__" value="unsubscribe">
+              <input type="hidden" name="__unique_form_id__" value="rlxszfykbqigxptjkcvh">
+              <input type="hidden" name="form-nonce" value="ae8a959991e248a584be3cc5353c5a7b">
+
+              <div class="form-actions">
+                  <button type="submit" onclick="return validateForm()" class="button button primary">Cancel subscription</button>
+              </div>
+
+            </form> #}
+          </div>
+
+        {% endblock %}
+      {% endembed %}
+    </div>
+  </div>
+{% endblock %}
+
+{# {% include "forms/form.html.twig" with {form: forms('unsubscribe'), action: '#'} %} #}

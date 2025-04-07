@@ -1,0 +1,10 @@
+streams:
+ schemes:
+   theme:
+     type: ReadOnlyStream
+     prefixes:
+       '':
+         - 'environment://themes/nmoodist0'
+         - 'user://themes/base-theme'
+
+enabled: true

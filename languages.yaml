@@ -1,0 +1,26 @@
+en:
+  BSCOPE:
+    DAYS_ACCESS: 'days access'
+    TRIAL_DAYS: "days trial"
+    SELECT_LANGUAGE: "Select language"
+    LABEL_SUBJECT: "Subject"
+    PLACEHOLDER_FIRST_NAME: "Enter your first name"
+    PLACEHOLDER_LAST_NAME: "Enter your last name"
+    PLACEHOLDER_EMAIL: "Enter your email address"
+    PLACEHOLDER_PHONE: "Enter your phone number"
+    PLACEHOLDER_SUBJECT: "Enter the subject of your message"
+    PLACEHOLDER_MESSAGE: "Type your message here"
+    LOGIN_FORM_FORGOT_PASSWORD: 'I forgot my password'
+    LOGIN_FORM_LOGIN: "Sign in"
+    LOGIN_HEADER_HOME: "Home"
+    LOGIN_HEADER_LOGIN: "Log in"
+    LOGIN_HEADER_FORGOT: "Forgot password"
+    SEND_RESET_INSTRUCTIONS: "Send Reset Password Link"
+    PROFILE_HEADER: "Profile"
+    MY_ORDERS: "My Orders"
+    BREADCRUMB_PROFILE: "Profile"
+    COOKIE_TITLE: We value your privacy
+    COOKIE_TEXT: We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking "Accept", you consent to our use of
+    COOKIE_LINK: cookies
+    COOKIE_BTN_TEXT: Accept
+    CONTACT_DETAILS_TITLE: 'We are always happy to assist you'

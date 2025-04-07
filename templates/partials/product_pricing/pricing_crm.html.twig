@@ -1,0 +1,93 @@
+{# Define serial order and display names in one structure #}
+{% set packages = [
+    {key: 'starter_pack', name: 'Starter Pack'},
+    {key: 'pro_plus', name: 'Pro Plus'},
+    {key: 'lite_access', name: 'Lite Access'},
+    {key: 'ultimate_pass', name: 'Ultimate Pass'},
+    {key: 'base_plan', name: 'Base Plan'},
+    {key: 'elite_pack', name: 'Elite Pack'},
+    {key: 'quick_start', name: 'Quick Start'},
+    {key: 'access_pro', name: 'Access Pro'},
+    {key: 'starter_access', name: 'Starter Access'},
+    {key: 'infinity_pass', name: 'Infinity Pass'},
+    {key: 'basic', name: 'Basic'},
+    {key: 'plus', name: 'Plus'},
+    {key: 'premium', name: 'Premium'},
+    {key: 'starter', name: 'Starter'},
+    {key: 'advanced', name: 'Advanced'},
+    {key: 'elite', name: 'Elite'},
+    {key: 'essential', name: 'Essential'},
+    {key: 'professional', name: 'Professional'},
+    {key: 'ultimate', name: 'Ultimate'},
+    {key: 'bronze', name: 'Bronze'},
+    {key: 'silver', name: 'Silver'},
+    {key: 'gold', name: 'Gold'},
+    {key: 'lite', name: 'Lite'},
+    {key: 'pro', name: 'Pro'},
+    {key: 'master', name: 'Master'},
+    {key: 'standard', name: 'Standard'},
+    {key: 'deluxe', name: 'Deluxe'},
+    {key: 'vip', name: 'VIP'},
+] %}
+
+{# Initialize grouped_products #}
+{% set grouped_products = {} %}
+
+<script>
+    // Embed the benefits data as a JSON object
+    var output = {{ products| json_encode | raw }};
+    console.log('if output:', output);
+</script>
+
+{# Group products by package #}
+{% for product in products %}
+
+    {# {% set matched_package = packages|filter(p => product.name|lower|contains(p.name|lower))|first %} #}
+    {% set matched_package = packages|filter(p => product.external_product_id|lower == p.name|lower or product.package_name|lower == p.name|lower)|first %}
+
+    {% if matched_package is not null %}
+        {# Add product to the matched package group #}
+        {% set grouped_products = grouped_products|merge({ 
+            (matched_package.key): (grouped_products[matched_package.key] ?? [])|merge([product|merge({'package_name': matched_package.name})]) 
+        }) %}
+        {# <script>
+          // Embed the benefits data as a JSON object
+          var output = {{ matched_package| json_encode | raw }};
+          console.log('if output:', output);
+       </script> #}
+    {% else %}
+        {# Add product to 'other' group if no match found #}
+        {% set grouped_products = grouped_products|merge({ 
+            'other': (grouped_products['other'] ?? [])|merge([product|merge({'package_name': product.name})]) 
+        }) %}
+    {% endif %}
+{% endfor %}
+
+{# Render products in the defined serial order #}
+{% set iterationCount = 1 %}
+
+{% for package_key, package in packages %}
+    {% if grouped_products[package.key] is defined %}
+        {% for product in grouped_products[package.key] %}
+            {% include 'partials/product_pricing/plan_crm.html.twig' with {
+                product: product,
+                package: package.name,
+                packageKey: package_key,
+                iterationCount: iterationCount
+            } %}
+
+            {% set iterationCount = iterationCount + 1 %}
+            
+        {% endfor %}
+    {% endif %}
+{% endfor %}
+
+{# Render other products that do not fit into the serial order #}
+{% if grouped_products['other'] is defined %}
+    {% for product in grouped_products['other'] %}
+        {% include 'partials/product_pricing/plan_crm.html.twig' with {
+            product: product,
+            package: product.name
+        } %}
+    {% endfor %}
+{% endif %}

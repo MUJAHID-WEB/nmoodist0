@@ -1,0 +1,76 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.contents %}
+{% set content = page.header.about_us_content %}
+{% set image = page.media[module.image] %}
+
+{% block render_block %}
+	<div class="about_us_wrapper slide-up">
+
+		<div class="container">
+            {# <div class="about_us_head">
+                <h3 class="title">
+                    {{ module.header_title.translatable|striptags('<span>')|raw }}
+                </h3>
+
+                <p class="description">{{ module.header_description.translatable }}</p>
+             </div> #}
+
+            <div class="about_us_content">
+                
+                <div class="count_content">
+                    <div class="count_row">
+                        {% for item in content %}
+                            <div class="count">
+                                {% set icon = page.media[item.icon] %}
+                                {% if icon != '' %}
+                                    <img class="count_img" src="{{ icon.url }}" alt="Icon"/>
+                                {% endif %}
+
+                                <h4 class="count_number">
+                                    {{ item.count.translatable|raw }}
+                                </h4>
+                                <p class="count_details">
+                                    {{ item.brief.translatable|raw }}
+                                </p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    
+
+                    {# <div class="content">
+                        <h4 class="content_title">
+                            {{ module.content_title.translatable|striptags('<span>')|raw }}
+                        </h4>
+
+                        <p class="content_desc">{{ module.content_description.translatable }}</p>
+
+                        {% if module.content_buttons %}
+                            {% for button in module.content_buttons  %}
+                                <a class="button" href="{{ button.link }}">
+                                    {{ button.text.translatable }}
+
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                    <circle cx="20" cy="20" r="20" transform="rotate(-180 20 20)" fill="white"/>
+                                    <path d="M26.2395 14.2843C26.2395 13.8842 25.9151 13.5598 25.515 13.5598L18.9943 13.5598C18.5942 13.5598 18.2698 13.8842 18.2698 14.2843C18.2698 14.6845 18.5942 15.0088 18.9943 15.0088L24.7905 15.0088L24.7905 20.805C24.7905 21.2051 25.1149 21.5295 25.515 21.5295C25.9151 21.5295 26.2395 21.2051 26.2395 20.805L26.2395 14.2843ZM14.9964 25.8275L26.0273 14.7966L25.0027 13.772L13.9718 24.8029L14.9964 25.8275Z" fill="black"/>
+                                </svg>
+                                </a>
+                            {% endfor %}
+                        {% endif %}
+
+                    </div> #}
+
+
+            
+                </div>
+
+                <div class="image">
+                    <img class="main-img" src="{{ image.url }}" alt="Mission Vission Image"/>
+                </div>
+            
+            </div>
+
+		</div>
+
+	</div>
+{% endblock %}

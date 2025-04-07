@@ -1,0 +1,33 @@
+{% set noHeroContent = page.header.no_hero_content %}
+
+<section class="no-hero-section slide-up">
+	<div class="container">
+		<div class="no-hero-wrapper">
+
+			<div class="head-content">
+
+				{% if  noHeroContent.title != null%}
+
+					<h1>{{ noHeroContent.title.translatable|raw }}</h1>
+				{% else %}
+					<h1>{{ page.header.title|raw }}</h1>
+				{% endif %}
+
+				<p> {{ noHeroContent.description.translatable }} </p>
+
+				{% if noHeroContent.button_text != null %}
+					<a href="{{ home_url|e }}{{ webdata('signup_url') }}" class="nohero-btn">
+						<span>{{ noHeroContent.button_text.translatable }}</span>
+
+						{# <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+							<path d="M5.29295 1.63599C5.10548 1.82351 5.00017 2.07782 5.00017 2.34299C5.00017 2.60815 5.10548 2.86246 5.29295 3.04999L10.243 7.99999L5.29295 12.95C5.11079 13.1386 5.01 13.3912 5.01228 13.6534C5.01456 13.9156 5.11973 14.1664 5.30513 14.3518C5.49054 14.5372 5.74135 14.6424 6.00355 14.6447C6.26575 14.6469 6.51835 14.5461 6.70695 14.364L12.364 8.70699C12.5514 8.51946 12.6567 8.26515 12.6567 7.99999C12.6567 7.73482 12.5514 7.48052 12.364 7.29299L6.70695 1.63599C6.51942 1.44852 6.26512 1.3432 5.99995 1.3432C5.73479 1.3432 5.48048 1.44852 5.29295 1.63599Z" fill="white"/>
+						</svg> #}
+					</a>
+				{% endif %}
+			</div>
+			<!-- End head-content-->
+
+		</div>
+		<!-- End no-hero-wrapper -->
+	</div>
+</section>

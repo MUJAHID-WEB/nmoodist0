@@ -1,0 +1,85 @@
+.courses {
+  display: flex;
+  padding: 3.75rem 0rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.625rem;
+  align-self: stretch;
+  background: var(--color-bg, #f0f0f8);
+
+  @include desktop-small {
+    padding: 3rem 1rem;
+  }
+
+  .courses-container {
+    display: flex;
+    padding: 2.5rem 0.625rem;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+
+    @include desktop-small {
+      padding: 2.5rem 0;
+      flex-direction: column;
+    }
+
+    .course {
+      display: flex;
+      padding: 1.5rem;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+      flex-shrink: 0;
+      cursor: pointer;
+      border-radius: 0.625rem;
+      background: #fff;
+      box-shadow: 0px 0px 2px 0px rgba(204, 204, 204, 0.4);
+      transition: box-shadow 0.3s ease-in-out; /* Add a smooth transition effect */
+      flex: 32%;
+      align-self: stretch;
+      text-align: center;
+
+      &:hover {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        /* Adjust the values as needed */
+      }
+
+      @include desktop-small {
+        flex: auto;
+      }
+      p {
+        color: #667085;
+      }
+
+      .course-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        align-self: stretch;
+
+        $icon-size: 73px;
+
+        .icon-container {
+          width: $icon-size;
+          height: $icon-size;
+          border-radius: 50%;
+          overflow: hidden;
+          border: 8px solid #F5FBFF;
+          background: #E0EAFF;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .icon {
+            // width: $icon-size;
+            // height: $icon-size;
+            object-fit: cover; // This property ensures the image covers the entire container without distorting its aspect ratio
+          }
+        }
+      }
+    }
+  }
+}

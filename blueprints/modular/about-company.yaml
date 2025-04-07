@@ -1,0 +1,102 @@
+title: About Company
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          type: tab
+          title: Content
+
+          fields:
+            header.contents.direction:
+              label: Direction
+              type: select
+              options:
+                text_left: "Text Left"
+                text_right: "Text Right"
+              default: "text_left"
+            header.contents.icon_style:
+              label: Icon Style
+              type: select
+              options:
+                same_icon: "Same Icon"
+                random_icon: "Random Icon"
+              default: "check_icon"
+            header.contents.header_title.translatable:
+              type: text
+              label: Header Title
+              classes: 'translatable'
+            header.contents.header_desc.translatable:
+              type: editor
+              markdown: true
+              label: Header Description
+              classes: 'translatable'
+
+            header.contents.content_title.translatable:
+              type: text
+              label: Content Title
+              classes: 'translatable'
+            
+            header.contents.subtitle.translatable:
+              type: text
+              label: Sub-title
+              classes: 'translatable'
+            
+            header.contents.parent_classes:
+              label: Parent Classes
+              help: You can use multiple predefined or custom classes. Separate each class by a space. Example - bg-primary, bg-secondary
+              type: text
+              
+            header.contents.child_classes:
+              label: Child Classes
+              type: text
+              help: You can use multiple predefined or custom classes. Separate each class by a space. Example - bg-primary, bg-secondary
+            header.contents.reviewers_thumbs:
+              type: pagemediaselect
+              label: Reviewers Thumbnails
+              preview_images: true
+            header.contents.reviewers_count.translatable:
+              type: textarea
+              label: Reviewers Count
+              classes: 'translatable'
+            header.contents.image:
+              type: pagemediaselect
+              label: Image
+              preview_images: true
+            
+            header.contents.button_text.translatable:
+              type: text
+              label: Button Text
+              classes: 'translatable'
+            header.contents.button_url:
+              type: text
+              label: Button URL
+              classes: 'translatable'
+
+            header.about_company_content_section:
+              type: section
+              title: Contents List
+              underline: true
+              label: true
+              fields:
+                header.about_company_features:
+                  type: list
+                  fields:
+                    .title.translatable:
+                      type: text
+                      label: Title
+                      classes: 'translatable'
+                    .brief.translatable:
+                      type: textarea
+                      label: Brief
+                      classes: 'translatable'
+                    .icon:
+                      type: pagemediaselect
+                      label: Icon
+                      preview_images: true
+                      
+
+            header.media_order:
+              ordering@: 99

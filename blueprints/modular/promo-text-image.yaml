@@ -1,0 +1,47 @@
+title: Promo text image
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+
+          fields:
+            header.promo_statistic.image:
+              type: pagemediaselect
+              label: Image right
+              ordering@: 3
+            promo_statistic_section:
+              ordering@: 4
+              type: section
+              title: Statistics promotion
+              underline: true
+              fields:
+                header.promo_statistic.enabled:
+                  type: checkbox
+                  label: Enabled
+                promo_statistic_fieldset_1:
+                  type: fieldset
+                  title: First block
+                  fields:
+                    header.promo_statistic.promo_1.label:
+                      type: text
+                      label: Text
+                    header.promo_statistic.promo_1.value:
+                      type: text
+                      label: Value
+                promo_statistic_fieldset_2:
+                  type: fieldset
+                  title: Second block
+                  fields:
+                    header.promo_statistic.promo_2.label:
+                      type: text
+                      label: Text
+                    header.promo_statistic.promo_2.value:
+                      type: text
+                      label: Value
+            header.media_order:
+              ordering@: 99
+
+

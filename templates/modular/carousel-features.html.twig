@@ -1,0 +1,142 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set carousel_info = page.header.carousel %}
+{% set carousel_items = page.header.carousel_feature_items %}
+
+{% block render_block %}
+	<div class="carousel-features-section slide-up {{ carousel_info.parent_classes }}">
+        <div class="carousel-info-section container">
+            <div class="carousel-left-aligned-block">
+                <div class="carousel-info-transform">
+                    {% if carousel_info.title %}
+                        <h3 class="block-title">{{ carousel_info.title.translatable }}</h3>
+                    {% endif %}
+
+                    {% if carousel_info.description %}
+                        <p>{{ carousel_info.description.translatable }}</p>
+                    {% endif %}
+                    <div class="carousel-navigation">
+                        <button class="carousel-btn prev">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.77246 16.5642L3.20829 11L8.77246 5.43588" stroke="#191919" stroke-width="1.6" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M18.7917 11H3.36425" stroke="#191919" stroke-width="1.6" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <button class="carousel-btn next">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.2275 16.5642L18.7917 11L13.2275 5.43588" stroke="#191919" stroke-width="1.6" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M3.20825 11H18.6358" stroke="#191919" stroke-width="1.6" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-container container">
+            <div class="carousel">
+                {% for key, item in carousel_items %}
+                    <div class="carousel-item" style="background-image: url('{{ page.media[item.image].url }}');">
+                        <div class="carousel-bg" style="background-image: url('{{ page.media[item.image].url }}');"></div>
+                        <div class="carousel-title">{{ item.title.translatable }}</div>
+                    </div>
+{#                    <div class="carousel-item {{ key == 0? 'big':'' }}" data-title="Simple Interface" style="background-image: url('https://source.unsplash.com/400x300/?fitness,2');"></div>#}
+                {% endfor %}
+            </div>
+        </div>
+	</div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const prevButton = document.querySelector('.carousel-btn.prev');
+            const nextButton = document.querySelector('.carousel-btn.next');
+            const carousel = document.querySelector('.carousel');
+            const items = document.querySelectorAll('.carousel-item');
+            const totalItems = items.length;
+            let autocarousel;
+            let currentIndex = 0;
+
+            // Clone the necessary items to fill gaps at the beginning and end of the carousel
+            function cloneItems() {
+                const firstItem = carousel.firstElementChild;
+                const second = carousel.children[1];
+
+                // Clone the first item and append it to the end to create the loop
+                carousel.appendChild(firstItem.cloneNode(true));
+
+                // Clone the last item and insert it at the beginning of the carousel
+                carousel.appendChild(second.cloneNode(true));
+
+            }
+
+            // Update the carousel to apply the big item class to the first visible item
+            function updateCarousel() {
+                const itemsArray = Array.from(carousel.children); // Get updated items list after append
+                itemsArray.forEach((item, index) => {
+                    item.classList.remove('big');
+                });
+
+                // The first visible item should be the one at currentIndex
+                const visibleItems = itemsArray.slice(currentIndex, currentIndex + 3); // Get the three visible items
+                visibleItems[0].classList.add('big');
+
+                // Adjust carousel container position
+                carousel.style.transition = 'transform 0.5s ease'; // Re-enable transition
+                // carousel.style.transform = `translateX(-${(100 / 3) * currentIndex}%)`;
+                carousel.style.transform = `translateX(calc(-${(100 / 3) * currentIndex}% - ${currentIndex * 20}px))`;
+                setTimeout(() => {
+                    carousel.style.transition = 'transform 0.5s ease'; // Re-enable transition
+                }, 100);
+            }
+
+            // Move to the previous item
+            prevButton.addEventListener('click', function () {
+                if (currentIndex === 0) {
+                    // Move the last item to the front by changing the index, then update the carousel
+                    currentIndex = totalItems - 1;
+                    carousel.style.transition = 'transform 0.5s ease'; // Re-enable transition
+                    carousel.style.transform = `translateX(-${(100 / 3) * currentIndex}%)`;
+                    setTimeout(() => {
+                        carousel.style.transition = 'transform 0.5s ease'; // Re-enable transition
+                        updateCarousel();
+                    }, 100);
+                } else {
+                    currentIndex--;
+                    updateCarousel();
+                }
+                restartAutoCarousel(); // Restart auto-scroll on manual interaction
+            });
+
+            function restartAutoCarousel() {
+                clearInterval(autocarousel); // Cancel the current interval
+                autocarousel = setInterval(moveNext, 4000); // Restart the interval
+            }
+
+            function moveNext(){
+                if (currentIndex === totalItems - 1) {
+                    // Move the first item to the end, then reset index
+                    currentIndex = 0;
+                    carousel.style.transition = 'transform 0.5s ease'; // Re-enable transition
+                    carousel.style.transform = `translateX(-${(100 / 3) * currentIndex}%)`; // Smooth transition
+                    setTimeout(() => {
+                        updateCarousel();
+                    }, 500); // Wait for the transition to finish before updating carousel
+                } else {
+                    currentIndex++;
+                    updateCarousel();
+                }
+            }
+
+            // Move to the next item
+            nextButton.addEventListener('click', function () {
+                moveNext();
+                restartAutoCarousel(); // Restart auto-scroll on manual interaction
+            });
+
+            // Initialize the carousel by cloning items and updating the carousel
+            cloneItems();
+            updateCarousel();
+            restartAutoCarousel();
+        });
+
+    </script>
+{% endblock %}

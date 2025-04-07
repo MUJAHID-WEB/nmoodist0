@@ -1,0 +1,80 @@
+title: Courses blocks
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+
+            module_section:
+              ordering@: 3
+              type: section
+              title: Module blocks
+              underline: true
+              fields:
+                header.module.pattern:
+                  label: Pattern
+                  type: selectize
+                  selectize:
+                      options:
+                          - text: "Horizontal"
+                            value: "horizontal"
+                          - text: "Vertical"
+                            value: "vertical"
+                header.module.classes:
+                  label: Classes
+                  type: selectize
+                  selectize:
+                      options:
+                          - text: "1 Course per row"
+                            value: "flex-row-1"
+                          - text: "2 Course per row"
+                            value: "flex-row-2"
+                          - text: "3 Course per row"
+                            value: "flex-row-3"
+                          - text: "4 Course per row"
+                            value: "flex-row-4"
+                          - text: "Apply border"
+                            value: "apply-border"
+                header.module.title.translatable:
+                  type: text
+                  label: Title
+                  classes: 'translatable'
+                header.module.subtitle.translatable:
+                  type: text
+                  label: SubTitle
+                  classes: 'translatable'
+                header.module.description.translatable:
+                  type: textarea
+                  label: Description
+                  classes: 'translatable'
+                  rows: 10
+
+
+            header.course_blocks_section:
+              ordering@: 4
+              type: section
+              title: Course blocks
+              underline: false
+              label: false
+              fields:
+                header.courses:
+                  type: list
+                  fields:
+                    .title.translatable:
+                      type: text
+                      label: Title
+                      classes: 'translatable'
+                    .description.translatable:
+                      type: textarea
+                      label: Description
+                      classes: 'translatable'
+                    .image:
+                      type: pagemediaselect
+                      label: Image
+            header.media_order:
+                ordering@: 99
+
+

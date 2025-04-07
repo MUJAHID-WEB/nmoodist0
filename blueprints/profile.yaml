@@ -1,0 +1,38 @@
+title: Dynamic Content
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+
+            profile_section:
+              ordering@: 3
+              type: section
+              title: Profile Content Section
+              underline: true
+
+              fields:
+                header.profile.title.translatable:
+                  type: text
+                  label: Profile Title
+                  classes: 'translatable'
+
+            no_hero_section:
+              ordering@: 4
+              type: section
+              title: No Hero Content Section
+              underline: true
+
+              fields:
+                header.no_hero.title.translatable:
+                  type: text
+                  label: Title
+                  classes: 'translatable'
+
+                header.no_hero.image:
+                  type: pagemediaselect
+                  label: No Hero BG Image
+                  preview_images: true

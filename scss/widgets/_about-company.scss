@@ -1,0 +1,211 @@
+.about-company-wrapper{
+  background-color: #D4C305;
+  position: relative;
+  .img-top-left,
+  .img-top-right,
+  .img-bottom-right {
+    position: absolute;
+    overflow: hidden;
+  }
+  .img-top-left{
+    top: 2%;
+    left: -40px;
+    animation: rotateFull 10s linear 0s infinite forwards;
+  }
+  .img-top-right{
+    top: 0;
+    right: -40px;
+    animation: scale 10s linear 0s infinite forwards;
+  }
+  .img-bottom-right{
+    bottom: 0;
+    right: 0px;
+    animation: scale 10s linear 0s infinite forwards;
+  }
+  .img-bottom-right{
+    bottom: 0;
+    right: 0px;
+  }
+  .contents-wrapper{
+    padding: 5rem 0;
+    @include desktop-small{
+      padding: 40px 0;
+    }
+    .header-content{
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      @include desktop-small{
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      h3 {
+        max-width: 520px;
+        font-family: var(--secondary-font);
+        @include typography(display-lg, bold);
+        @include desktop-small {
+          max-width: unset;
+          @include typography(display-md, medium);
+        }
+      }
+      h4{
+        color: var(--color-about-company-sub-title);
+        display: inline;
+        line-height: 28px; /* 155.556% */
+        @include typography(text-lg, semibold);
+        @include desktop-small {
+          @include typography(text-md, semibold);
+        }
+      }
+      p{
+        color: var(--color-text-light);
+        max-width: 494px;
+        @include desktop-small{
+          max-width: unset;
+        }
+      }
+    }
+    .text_left{
+      flex-direction: row;
+      @include desktop-small {
+        flex-direction: column-reverse;
+      }
+    
+    }
+    .text_right {
+      flex-direction: row-reverse;
+      @include desktop-small {
+        flex-direction: column-reverse;
+      }
+    } 
+    .company-contents{
+      display: flex;
+      align-items: stretch;
+      gap: 3rem;
+      padding-top: 4rem;
+      justify-content: space-between;
+      @include desktop-small {
+        justify-content: center;
+        gap: 22px;
+        padding-top: 1.5rem;
+      }
+      .contents-data{
+        display: flex;
+        flex-direction: column;
+      }
+      .contents{
+        flex-basis: 35%;
+        color: var(--text-text);
+        background-color: var(--color-white);
+        border-radius: 10px;
+        padding: 22px 26px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        @include desktop-small {
+          padding: 20px;
+          gap: 36px;
+        }
+        .content-title {
+          @include typography(display-md,medium);
+          //font-family: var(--secondary-font);
+          margin-bottom: 1.5rem;
+
+          @include desktop-small {
+            @include typography(display-sm,medium);
+          }
+        }
+        .button {
+          align-self: flex-start;
+          display: flex;
+          align-items: center;
+          padding: 12px 20px;
+          @include typography('text-lg', extra_bold);
+          margin-top: 1.125rem;
+          border-radius: 10px;
+
+          background: var(--color-primary);
+          color: var(--color-white);
+          //-webkit-background-clip: text;
+          //-webkit-text-fill-color: transparent;
+        }
+        p {
+          @include typography(text-lg, regular);
+          @include desktop-small {
+            @include typography(text-md, regular);
+          }
+        }
+  
+        li {
+          @include typography(text-lg, regular);
+        }
+        .reviewers{
+          display: flex;
+          align-items: center;
+          justify-content: start;
+          gap: 0.75rem;
+          padding: 10px;
+          background: var(--color-white);
+          border-radius: 20px;
+          @include desktop-small{
+            bottom: 15px;
+            right: 10px;
+          }
+          img{
+            flex: 0;
+          }
+          span{
+            @include typography(text-xl,semibold);
+            color: var(--color-text-light);
+            span{
+              @include typography(display-md,semibold);
+              color: var(--color-black);
+              text-transform: uppercase;
+            }
+          }
+        }
+      }
+      .image{
+        flex-basis: 70%;
+        text-align: center;
+        position: relative;
+        z-index: -1;
+        .main-img{
+          width: 100%;           
+        }
+        .img-on-content {
+          position: absolute;
+          top: 0;
+          right: 0;
+          z-index: 1;
+          animation: rotateFull 5s linear 0s infinite forwards;
+        }
+      }
+    }
+  }
+}
+/* ------------ Unique Design and animation for same module ---------------*/
+.about-company-in-home-page {
+.text_left {
+  @include desktop-small {
+    flex-direction: column !important;
+  }
+}
+.button {
+  @include desktop-small{
+    left: 5%;
+    bottom: 0% !important;
+  }
+  
+}
+.image {
+  .main-img {
+    width: 60% !important;
+    @include desktop-small {
+      position: static;
+      width: 100%!important; 
+    }
+  }
+}
+}
+/* ------------ End Unique Design and animation for same module ---------------*/

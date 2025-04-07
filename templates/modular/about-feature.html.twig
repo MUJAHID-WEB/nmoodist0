@@ -1,0 +1,58 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.module %}
+
+{% block render_block %}
+
+<div class="about_features">
+	<div class="container">
+		<div class="about_features-header-section">
+			{% if module.subtitle %}
+				<h4>
+					<span>{{ module.subtitle.translatable }}</span>
+				</h4>
+			{% endif %}
+
+			{% if module.title %}
+				<h3 class="block-title">{{ module.title.translatable|striptags('<span>')|raw }}</h3>
+			{% endif %}
+
+			<div class="description">
+				{% if module.description %}
+					<p>{{ module.description.translatable }}</p>
+				{% endif %}
+
+				{% for button in module.buttons  %}
+					<a class="button " href="{{ button.link }}">
+						{{ button.text.translatable }}
+						
+						<svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+							<path d="M5.79295 1.63605C5.60548 1.82358 5.50017 2.07788 5.50017 2.34305C5.50017 2.60821 5.60548 2.86252 5.79295 3.05005L10.743 8.00005L5.79295 12.95C5.61079 13.1387 5.51 13.3913 5.51228 13.6535C5.51456 13.9156 5.61973 14.1665 5.80513 14.3519C5.99054 14.5373 6.24135 14.6424 6.50355 14.6447C6.76575 14.647 7.01835 14.5462 7.20695 14.364L12.864 8.70705C13.0514 8.51952 13.1567 8.26521 13.1567 8.00005C13.1567 7.73488 13.0514 7.48058 12.864 7.29305L7.20695 1.63605C7.01942 1.44858 6.76512 1.34326 6.49995 1.34326C6.23479 1.34326 5.98048 1.44858 5.79295 1.63605Z" fill="white"/>
+							</svg>
+					</a>
+				{% endfor %}
+			</div>
+
+			
+		</div>
+
+	
+		<div class="about_features-container">
+			{% for feature_block in page.header.about_feature_blocks %}
+				<div class="about_feature feature-vertical flex-column {{ module.classes|replace({',' : ' '}) }}">
+
+					{% set icon = page.media[feature_block.icon] %}
+					<div class="icon">
+						<img src="{{ icon.url }}"/>
+					</div>
+					<h4 class="about_feature-title">{{ feature_block.title.translatable }}</h4>
+				
+					<p class="about_feature-description">{{ feature_block.description.translatable }} </p>
+					
+				</div>
+			{% endfor %}
+		</div>
+		
+	</div>
+</div>
+{% endblock %}

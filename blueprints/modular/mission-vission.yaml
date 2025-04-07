@@ -1,0 +1,71 @@
+title: Mission Vision
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            module_section:
+              ordering@: 3
+              type: section
+              title: Module blocks
+              underline: true
+              fields:
+                header.module.title.translatable:
+                  type: text
+                  label: Title
+                  classes: 'translatable'
+                header.module.image:
+                  type: pagemediaselect
+                  label: Left Image
+                  preview_images: true
+                header.module.bg_image:
+                  type: pagemediaselect
+                  label: Background Image
+                  preview_images: true
+                header.module.button.translatable:
+                  type: text
+                  label: Button Text
+                  classes: 'translatable'
+                header.module.button_link:
+                  type: text
+                  label: Button Link
+
+            header.mission_vision_section:
+              ordering@: 4
+              type: section
+              title: Mission Vision blocks
+              underline: false
+              label: false
+              fields:
+                header.mission_vision_blocks:
+                  type: list
+                  fields:
+                    .title.translatable:
+                      type: text
+                      label: Title
+                      classes: 'translatable'
+                    .description.translatable:
+                      type: textarea
+                      label: Description
+                      classes: 'translatable'
+            header.mission_vision_image_section:
+              ordering@: 4
+              type: section
+              title: Mission Vision Images
+              underline: false
+              label: false
+              fields:
+                header.mission_vision_images:
+                  type: list
+                  fields:
+                    .image:
+                      type: pagemediaselect
+                      label: Image
+                      preview_images: true
+            header.media_order:
+              ordering@: 99
+
+

@@ -1,0 +1,550 @@
+@mixin color-shift($hover-color: #444) {
+    transition: color 0.3s ease;
+    &:hover {
+      color: $hover-color;
+    }
+  }
+
+  @mixin grow-shrink($scale: 1.1) {
+    transition: transform 0.3s ease;
+    &:hover {
+      transform: scale($scale);
+    }
+  }
+
+  @mixin shadow-glow($shadow: 0 8px 15px rgba(0, 0, 0, 0.2), $glow-color: rgba(255, 255, 255, 0.5)) {
+    transition: box-shadow 0.3s ease;
+    &:hover {
+      box-shadow: $shadow, 0 0 10px $glow-color;
+    }
+  }
+
+  @mixin image-zoom($scale: 1.2) {
+    overflow: hidden;
+    img {
+      transition: transform 0.3s ease;
+    }
+    &:hover img {
+      transform: scale($scale);
+    }
+  }
+
+  @mixin icon-morph {
+    transition: all 0.3s ease;
+    &:hover {
+      // Customize this as per your icon morphing requirements
+      transform: rotate(45deg) scale(1.2);
+    }
+  }
+
+  @mixin border-animation($border-color: #000, $border-width: 2px) {
+    position: relative;
+    transition: border 0.3s ease;
+    &:hover {
+      border: $border-width solid $border-color;
+    }
+  }
+
+  @mixin tilt-effect($tilt-angle: 10deg) {
+    transition: transform 0.3s ease;
+    &:hover {
+      transform: perspective(500px) rotateX(-$tilt-angle) rotateY($tilt-angle);
+    }
+  }
+
+  @mixin gradient-transition($start-color: #ff7e5f, $end-color: #feb47b) {
+    background: linear-gradient(90deg, $start-color, $end-color);
+    transition: background 0.5s ease;
+    &:hover {
+      background: linear-gradient(90deg, $end-color, $start-color);
+    }
+  }
+
+  @mixin content-blur($blur-amount: 5px) {
+    transition: filter 0.3s ease;
+    &:hover {
+      filter: blur($blur-amount);
+    }
+  }
+  
+  @mixin nav-hover-effect($underline-color: greenyellow, $blur-radius: 5px, $transition-time: 300ms) {
+    position: relative;
+    z-index: 1;
+    // display: inline-block;
+    // filter: blur($blur-radius);
+    transition: filter $transition-time ease, color $transition-time ease;
+    z-index: 1;
+  
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $underline-color;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform $transition-time ease;
+      z-index: -1; // Push underline behind text
+    }
+  
+    &:hover {
+      filter: blur(0);
+      &::before {
+        transform: scaleX(1);
+        height: 50%; // Cover half the text height
+      }
+      
+    }
+    
+  }
+  
+  @mixin nav-hover-effect-2($underline-color: greenyellow, $blur-radius: 5px, $transition-time: 300ms) {
+    position: relative;
+    z-index: 1;
+    transition: filter $transition-time ease, color $transition-time ease;
+  
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      z-index: -1; // Push underline behind text
+      background-color: $underline-color;
+      transition: height $transition-time ease;
+      transform-origin: bottom;
+    }
+  
+    &:hover {
+      filter: blur(0);
+      &::before {
+        height: 50%; // Grows from bottom to half the text height
+      }
+    }
+  }
+
+  @mixin button-hover-effect($hover-color: seagreen, $transition-time: 300ms) {
+    position: relative;
+    // display: inline-block;
+    // background-color: transparent;
+    border-radius: 8px;
+    overflow: hidden; // Ensure the fill stays within the button
+    z-index: 1;
+    transition: color $transition-time ease;
+  
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      background-color: $hover-color;
+      z-index: -1; // Ensure the background stays behind the text
+      transition: height $transition-time ease;
+      border-radius: inherit; // Match the button's border-radius
+    }
+  
+    &:hover {
+      color: #fff; // Change text color on hover if needed
+      &::before {
+        height: 100%; // Fill the button's background on hover
+      }
+    }
+
+    
+  }
+
+  @mixin nav-hover-effect-3($underline-color: seagreen, $transition-time: 300ms, $start-distance: 5px) {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+  
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -$start-distance;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $underline-color;
+      opacity: 0;
+      transform: translateY(0);
+      transition: opacity $transition-time ease, transform $transition-time ease;
+    }
+  
+    &:hover::after {
+      opacity: 1; // Show underline
+      transform: translateY($start-distance * 0.2); // Move closer to the text
+    }
+  }
+
+  @mixin gradient-underline-hover($gradient: linear-gradient(to right, #ff7e5f, #feb47b), $underline-height: 4px, $transition-time: 300ms) {
+    position: relative;
+    display: inline-block;
+  
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: $underline-height;
+      background: $gradient;
+      border-radius: $underline-height; // Make the underline rounded
+      transform: scaleX(0); // Initially hidden (shrinked)
+      transform-origin: left; // Start animation from the left
+      transition: transform $transition-time ease;
+    }
+  
+    &:hover::after {
+      transform: scaleX(1); // Expand underline on hover
+    }
+  
+    &:not(:hover)::after {
+      transform-origin: right;
+      transform: scaleX(0); // Shrink underline when mouse leaves
+    }
+  }
+
+  @mixin floating-effect($hover-offset: 10px, $transition-duration: 0.3s) {
+    position: relative;
+    transition: transform $transition-duration ease-in-out;
+  
+    &:hover {
+      transform: translateY(-$hover-offset);
+    }
+  }
+  
+  @mixin radial-hover-effect($color: #3498db, $duration: 0.3s) {
+    position: relative;
+    overflow: hidden;
+    padding: 10px 20px;
+    // border: 2px solid $color;
+    text-align: center;
+    cursor: pointer;
+    transition: color $duration ease;
+    z-index: 1;
+  
+    // Ensure the pseudo-element is positioned correctly
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100px; // Start small
+      height: 100px; // Start small
+      background-color: $color;
+      transition: transform $duration ease;
+      border-radius: 50%; // Circle shape
+      transform: translate(-50%, -50%) scale(0); // Center and hide initially
+      z-index: -1; // Behind the text
+    }
+  
+    &:hover::before {
+      width: 120px; // Expand to cover the button
+      height: 120px; // Expand to cover the button
+      transform: translate(-50%, -50%) scale(1); // Show the circle on hover
+    }
+  
+    &:hover {
+      // color: #fff; // Adjust text color if needed
+      z-index: 1;
+    }
+  
+    // Ensure text is on top of the background
+    position: relative;
+     // Ensure the text is on top of the pseudo-element
+  }
+
+  @mixin floating-effect($duration: 2s, $distance: 10px) {
+    position: relative;
+    animation: floating $duration ease-in-out infinite;
+    
+    @keyframes floating {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-$distance);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  @mixin floating-tilting-effect($float-duration: 2s, $float-distance: 10px, $tilt-duration: 3s, $tilt-degree: 5deg) {
+    position: relative;
+    animation: floating-tilting $float-duration ease-in-out infinite, tilting $tilt-duration ease-in-out infinite;
+  
+    @keyframes floating-tilting {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-$float-distance);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+  
+    @keyframes tilting {
+      0% {
+        transform: rotate(-$tilt-degree);
+      }
+      50% {
+        transform: rotate($tilt-degree);
+      }
+      100% {
+        transform: rotate(-$tilt-degree);
+      }
+    }
+  
+    // Combine both animations
+    @keyframes combined {
+      0% {
+        transform: translateY(0) rotate(-$tilt-degree);
+      }
+      25% {
+        transform: translateY(-$float-distance) rotate($tilt-degree);
+      }
+      50% {
+        transform: translateY(0) rotate($tilt-degree);
+      }
+      75% {
+        transform: translateY(-$float-distance) rotate(-$tilt-degree);
+      }
+      100% {
+        transform: translateY(0) rotate(-$tilt-degree);
+      }
+    }
+  
+    animation: combined $float-duration ease-in-out infinite;
+  }
+
+  @mixin subtle-floating-tilting-effect($float-duration: 4s, $float-distance: 8px, $tilt-duration: 6s, $tilt-degree: 10deg) {
+    position: relative;
+    animation: subtle-floating-tilting $float-duration ease-in-out infinite;
+  
+    @keyframes subtle-floating-tilting {
+      0% {
+        transform: translateY(0) rotate(-$tilt-degree);
+      }
+      25% {
+        transform: translateY(-$float-distance) rotate($tilt-degree);
+      }
+      50% {
+        transform: translateY(0) rotate($tilt-degree);
+      }
+      75% {
+        transform: translateY(-$float-distance) rotate(-$tilt-degree);
+      }
+      100% {
+        transform: translateY(0) rotate(-$tilt-degree);
+      }
+    }
+  }
+
+  @mixin subtle-float-tilt($float-duration: 8s, $float-distance: 4px, $tilt-duration: 10s, $tilt-degree: 2deg) {
+    position: relative;
+    animation: subtle-float-tilt $float-duration ease-in-out infinite;
+  
+    @keyframes subtle-float-tilt {
+      0% {
+        transform: translateY(0) rotate(-$tilt-degree);
+      }
+      50% {
+        transform: translateY(-$float-distance) rotate($tilt-degree);
+      }
+      100% {
+        transform: translateY(0) rotate(-$tilt-degree);
+      }
+    }
+  }
+
+  @mixin circle-hover-effect-2($color: #3498db, $expand-size: 150px, $duration: 0.5s) {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: color $duration ease;
+  
+    // Initial state
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -25px;
+      left: 50%;
+      width: 20px;
+      height: 20px;
+      background-color: $color;
+      border-radius: 50%;
+      transition: width $duration ease, height $duration ease, transform $duration ease;
+      transform: translateX(-50%);
+      z-index: -1; // Behind the text
+    }
+  
+    // On hover
+    &:hover::before {
+      width: $expand-size;
+      height: $expand-size;
+      transform: translateX(-50%) translateY(-50%);      
+    }
+  
+    // On mouse leave
+    &:not(:hover)::before {
+      width: 0;
+      height: 0;
+      bottom: -50%; // Move the circle out of the visible area
+      transform: translateX(-50%) translateY(0); // Reset to initial position
+    }
+  
+    // Ensure text is on top of the background
+    position: relative;
+    z-index: 1; // Ensure the text stays on top of the pseudo-element
+  }
+
+  @mixin flip-scale-animation($duration: 1s, $timing-function: ease-in-out) {
+    animation: flip-with-scale $duration $timing-function infinite alternate;
+}
+
+
+
+@mixin flip-rotate-animation($duration: 5s, $timing-function: ease-in-out) {
+  animation: flip-with-rotate $duration $timing-function infinite alternate;
+}
+
+@mixin ripple-effect($ripple-color: rgba(0, 0, 0, 0.3), $duration: 0.6s, $scale: 2.5) {
+  input[type="checkbox"]+label::before {
+    content: '';
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, .1);
+    position: absolute;
+    box-sizing: border-box;
+    bottom: 7px;
+    // right: -10px;
+    left: 7.5px;
+    transform: translate(-50%, -50%) scale(0);
+    width: 1.8px;
+    height: 1.8px;
+  }
+  
+  input[type="checkbox"]:focus + label::before,
+  input[type="checkbox"]:checked + label::after
+  {
+    animation: ripple $duration ease-out;
+  }
+  
+  
+  @keyframes ripple {
+    0% {
+      transform: scale(0, 0);
+      opacity: 1;
+    }
+    20% {
+      transform: scale(25, 25);
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: scale(40, 40);
+    }
+  }
+}
+
+@mixin border-expansion($border-color: #000, $duration: 0.5s) {
+  position: relative;
+  overflow: hidden;
+  // border: 2px solid transparent;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid $border-color;
+    transform: scaleX(0) scaleY(0);
+    transform-origin: top left;
+    transition: transform $duration ease-in-out;
+    border-radius: 8px;
+  }
+
+  &:hover:before {
+    transform: scaleX(1) scaleY(1);
+  }
+}
+
+@mixin border-color-transition($start-color: #000, $end-color: #f00, $duration: 0.5s) {
+  border: 1px solid $start-color;
+  transition: border-color $duration ease-in-out;
+  
+  
+
+  &:hover {
+    border-color: $end-color;
+    // box-shadow: 2px 2px 2px 2px $end-color;
+  }
+}
+
+@mixin border-drawing($border-color: #000, $duration: 0.5s, $border-width: 2px) {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $border-width;
+    background: $border-color;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform $duration ease-in-out;
+  }
+
+  &:hover::before {
+    transform: scaleX(1);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

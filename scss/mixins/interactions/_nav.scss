@@ -1,0 +1,238 @@
+// How to use: @include header-1
+@mixin header-1 {
+    opacity: 0;
+    animation: fadeInLeft 0.2s ease-in-out 0.1s forwards;
+}
+
+// How to use: @include header-2
+@mixin header-2 {
+    opacity: 0;
+    animation: fadeInRight 0.5s ease-in-out 0.1s forwards;
+}
+
+// How to use: @include header-3
+@mixin header-3 {
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-in-out 0.1s forwards;
+}
+
+// How to use: @include header-4
+@mixin header-4 {
+    .logo {
+        opacity: 0;
+        @include fadeInLeftWithDelay(0.1s);
+      }
+    
+      .menu {
+        display: flex;
+        gap: 20px;
+    
+        &-item {
+          opacity: 0;
+          &:nth-child(1) {
+            @include fadeInLeftWithDelay(0.2s);
+          }
+          &:nth-child(2) {
+            @include fadeInLeftWithDelay(0.3s);
+          }
+          &:nth-child(3) {
+            @include fadeInLeftWithDelay(0.4s);
+          }
+        }
+      }
+    
+      .header-buttons {
+        
+    
+        .button {
+          opacity: 0;
+          &:nth-child(1) {
+            @include fadeInLeftWithDelay(0.5s);
+          }
+          &:nth-child(2) {
+            @include fadeInLeftWithDelay(0.6s);
+          }
+        }
+    
+        .translation {
+          opacity: 0;
+          @include fadeInLeftWithDelay(0.7s);
+        }
+      }
+}
+
+@mixin header-5 {
+  .logo {
+    opacity: 0;
+    animation: fadeInLeft 0.4s ease-in-out 0.05s forwards;
+  }
+  
+  .menu {
+    opacity: 0;
+    animation: fadeInLeft 0.4s ease-in-out 0.3s forwards; // Starts after .logo
+  
+    &-item {
+      opacity: 0;
+      animation: fadeInLeft 0.4s ease-in-out forwards;
+      &:nth-child(1) {
+        animation-delay: 0.35s; // Staggered delay
+      }
+      &:nth-child(2) {
+        animation-delay: 0.4s; // Staggered delay
+      }
+      &:nth-child(3) {
+        animation-delay: 0.45s; // Staggered delay
+      }
+    }
+  }
+  
+  .header-buttons {
+    opacity: 0;
+    animation: fadeInLeft 0.4s ease-in-out 0.5s forwards; // Starts after .menu
+  
+    &-button {
+      opacity: 0;
+      animation: fadeInLeft 0.4s ease-in-out;
+      &:nth-child(1) {
+        animation-delay: 0.55s; // Staggered delay
+      }
+      &:nth-child(2) {
+        animation-delay: 0.6s; // Staggered delay
+      }
+    }
+  
+    .translation {
+      opacity: 0;
+      animation: fadeInLeft 0.4s ease-in-out 0.65s forwards; // Starts after .header-buttons
+    }
+  }
+}
+
+@mixin header-6($duration: 1s, $delay: 0s, $ease: ease-in-out) {
+    width: 0%; // Start width
+    overflow: hidden; // Ensure content does not overflow during animation
+    border-bottom: solid 2px var(--color-black);
+    animation: drawLine $duration $ease $delay forwards;
+    z-index: 100;
+      
+}
+
+// Mixin for the header section with quick fade-in for all elements
+@mixin header-7($duration: 0.6s, $ease: ease, $stagger: 0.2s) {
+  .logo {
+      opacity: 0;
+      animation: fadeIn $duration $ease forwards;
+      animation-delay: 0s;
+  }
+  
+  .menu {
+      
+  
+      &-item {
+        opacity: 0;
+        animation: fadeIn $duration $ease forwards;
+        &:nth-child(1) {
+          animation-delay: calc(0.2s + (0) * $stagger); // Staggered delay
+        }
+        &:nth-child(2) {
+          animation-delay: calc(0.2s + (1) * $stagger); // Staggered delay
+        }
+        &:nth-child(3) {
+          animation-delay: calc(0.2s + (2) * $stagger); // Staggered delay
+        }
+      }
+  }
+  
+  .header-buttons {
+      opacity: 0;
+      animation: fadeInLeft 0.5s ease-in-out 1.1s forwards; // Starts after .menu
+  
+      &-button {
+        opacity: 0;
+        animation: fadeIn $duration $ease forwards;
+        
+        &:nth-child(1) {
+          animation-delay: calc(0.6s + (0) * $stagger); // Staggered delay
+        }
+        &:nth-child(2) {
+          animation-delay: calc(0.6s + (1) * $stagger); // Staggered delay
+        }
+      }
+  
+      .translation {
+        opacity: 0;
+        animation: fadeIn $duration $ease forwards;
+        animation-delay: 1s; // Starts after .header-buttons
+      }
+  }
+}
+
+@mixin header-8 {
+  .logo {
+    opacity: 0;
+    animation: fadeInLeft 0.5s ease-in-out 0.1s forwards;
+  }
+
+  .menu {
+    opacity: 0;
+    animation: fadeInLeft 0.5s ease-in-out 0.6s forwards; // Starts after .logo
+
+    &-item {
+      opacity: 0;
+      animation: fadeInLeft 0.5s ease-in-out forwards;
+      &:nth-child(1) {
+        animation-delay: 0.7s; // Staggered delay
+      }
+      &:nth-child(2) {
+        animation-delay: 0.8s; // Staggered delay
+      }
+      &:nth-child(3) {
+        animation-delay: 0.9s; // Staggered delay
+      }
+    }
+  }
+
+  .header-buttons {
+    opacity: 0; // Start hidden
+    animation: fadeIn 0.5s ease-in-out 1.5s forwards; // Fade in after menu items
+
+    &-button {
+      opacity: 0;
+      transform: scale(0); // Start scaled down
+      animation: scaleUp 0.5s ease-in-out forwards;
+
+      &:nth-child(1) {
+        animation-delay: 2s; // Delayed start after container fadeIn
+      }
+      &:nth-child(2) {
+        animation-delay: 2.6s; // Staggered delay for second button
+      }
+    }
+
+    .translation {
+      opacity: 0;
+      animation: fadeInLeft 0.5s ease-in-out 3.3s forwards; // Appears after buttons scale up
+    }
+  }
+
+  
+}
+
+
+@mixin header-9 {
+  .logo {
+    opacity: 0;
+    animation: fadeInRight 0.3s ease-out 0.1s forwards; // The .logo appears first with a quicker duration and slight delay
+  }
+
+  .menu {
+    opacity: 0;
+    animation: fadeInRight 0.3s ease-out 0.6s forwards; // The .menu section appears quickly after .logo
+  }
+
+  .header-buttons {
+    opacity: 0;
+    animation: fadeInRight 0.3s ease-out 1.1s forwards; // The .header-buttons section appears shortly after .menu
+  }
+}
+

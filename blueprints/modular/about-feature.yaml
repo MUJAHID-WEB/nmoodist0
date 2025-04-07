@@ -1,0 +1,107 @@
+title: About Feature blocks
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+
+            module_section:
+              ordering@: 3
+              type: section
+              title: Module blocks
+              underline: true
+              fields:
+                header.module.pattern:
+                  label: Pattern
+                  type: selectize
+                  selectize:
+                      options:
+                          - text: "Horizontal"
+                            value: "horizontal"
+                          - text: "Vertical"
+                            value: "vertical"
+                header.module.icon_pattern:
+                  label: Icon Style
+                  type: selectize
+                  selectize:
+                      options:
+                          - text: "Normal"
+                            value: "normal"
+                          - text: "Rounded"
+                            value: "rounded"
+                          - text: "Square"
+                            value: "square"
+                header.module.classes:
+                  label: Classes
+                  type: selectize
+                  selectize:
+                      options:
+                          - text: "1 Feature per row"
+                            value: "flex-row-1"
+                          - text: "2 Feature per row"
+                            value: "flex-row-2"
+                          - text: "3 Feature per row"
+                            value: "flex-row-3"
+                          - text: "4 Feature per row"
+                            value: "flex-row-4"
+                          - text: "Smaller Header & text"
+                            value: "small-header"
+                          - text: "Apply border"
+                            value: "apply-border"
+                header.module.title.translatable:
+                  type: text
+                  label: Title
+                  classes: 'translatable'
+                header.module.subtitle.translatable:
+                  type: text
+                  label: SubTitle
+                  classes: 'translatable'
+                header.module.description.translatable:
+                  type: textarea
+                  label: Description
+                  classes: 'translatable'
+                  rows: 10
+
+                header.module.buttons:
+                  type: list
+                  label: About Feature Buttons
+                  style: vertical
+                  fields:
+                    .text.translatable:
+                      type: text
+                      label: Button Text
+                      classes: 'translatable'
+                    .link:
+                      type: text
+                      label: Button Link
+
+
+            header.about_feature_blocks_section:
+              ordering@: 4
+              type: section
+              title: About Feature blocks
+              underline: false
+              label: false
+              fields:
+                header.about_feature_blocks:
+                  type: list
+                  fields:
+                    .title.translatable:
+                      type: text
+                      label: Title
+                      classes: 'translatable'
+                    .description.translatable:
+                      type: textarea
+                      label: Description
+                      classes: 'translatable'
+                    .icon:
+                      type: pagemediaselect
+                      label: Icon
+                  
+            header.media_order:
+                ordering@: 99
+
+

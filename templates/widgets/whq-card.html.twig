@@ -1,0 +1,24 @@
+{% block whq_card %}
+<div class="whq-card">
+    <div class="whq-card-container">
+{#        <p class="whq-card-title">{% block card_title %}{% endblock %}</p>#}
+        <div class="form-image">
+{#            768#}
+            {# <picture>
+                <source srcset="{{ url('theme://images/form-image-small.png') }}" media="(max-width: 768px)">
+                <img src="{{ url('theme://images/form-image.png') }}" alt="Responsive Image">
+            </picture> #}
+{#            <src></src>#}
+
+            {% if grav.route.route == "/unsubscribe" %}
+                <img src="{{ url('theme://images/unsubscribe_image.png') }}"/>
+            {% else %}
+                <img src="{{ url('theme://images/form-image.png') }}"/>
+            {% endif %}
+        </div>
+        <div class="whq-card-content">
+            {% block card_content %}{% endblock %}
+        </div>
+    </div>
+</div>
+{% endblock whq_card %}

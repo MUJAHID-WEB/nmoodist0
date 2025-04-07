@@ -1,0 +1,41 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.text_left %}
+{% set image = page.media[page.header.text_left.image] %}
+
+{% block render_block %}
+<div class="paragraph text-left text-left-animation {{ module.classes }}">
+    <div class="container">
+        <div class="text-left-container">
+            <div class="paragraph-image">
+                <img class="" src="{{ image.url }}" alt="icon"/>
+            </div>
+            <div class="text-left-text">
+                {% if module.subtitle is not empty %}
+                <div class="sub-title">
+                    <h4>{{ module.subtitle.translatable|striptags('<span>')|raw }}</h4>
+                </div>
+                {% endif %}
+                <div class="block-title">
+                    <h3>{{ module.title.translatable|striptags('<span>')|raw }}</h3>
+                </div>
+                <p>{{ page.content|raw }}</p>
+
+                {% if module.buttons %}
+                    {% for button in module.buttons  %}
+                        <a class="button" href="{{ button.link }}">
+                            {{ button.text.translatable }}
+
+                           <svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect y="0.5" width="52" height="52" rx="26" fill="#FBF9F1"/>
+                            <path d="M30.7109 30.2051L32.7476 22.6043L25.1468 20.5677" stroke="#191919" stroke-width="1.6" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M19.252 30.396L32.6126 22.6822" stroke="#191919" stroke-width="1.6" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

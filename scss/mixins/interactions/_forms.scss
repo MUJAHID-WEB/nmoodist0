@@ -1,0 +1,114 @@
+@mixin input-focus($duration: 0.3s, $scale: 1.05, $border-color: #3498db) {
+    border: 1px solid #ccc;
+    transition: border-color $duration, transform $duration;
+  
+    &:focus {
+      border-color: $border-color;
+      transform: scale($scale);
+      outline: none;
+    }
+}
+
+@mixin input-shadow($duration: 0.3s, $color: #3498db) {
+    position: relative;
+    // border: none;
+    outline: none;
+    padding-bottom: 8px; // Adjust to accommodate underline
+  
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: $color;
+      transition: width $duration ease-in-out;
+    }
+  
+    &:focus::after {
+      width: 100%;
+    }
+  }
+
+  @mixin smooth-border-focus($duration: 0.3s, $focus-color: #3498db) {
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border-color $duration ease-in-out;
+  
+    &:focus {
+      border-color: $focus-color;
+    }
+  }
+
+  @mixin scale-up-hover($duration: 0.2s, $scale: 1.05) {
+    outline: none;
+    transition: transform $duration ease-in-out;
+  
+    &:hover {
+      transform: scale($scale);
+    }
+  }
+
+  @mixin bottom-border-highlight($duration: 0.3s, $focus-color: #3498db, $border-width: 2px) {
+    position: relative;
+    padding-bottom: $border-width; // Adjust padding to make space for the bottom border
+    
+    // Set initial border styles
+    // border: none;
+    border-bottom: 1px solid #ccc; // Default bottom border color
+    transition: border-color $duration ease-in-out;
+  
+    // Focus state: highlight the bottom border
+    &:focus {
+      border-bottom: $border-width solid $focus-color;
+    }
+  
+    // Optional: Remove outline for better visual effect
+    &:focus {
+      outline: none;
+    }
+  }
+
+  @mixin floating-label($transition-duration: 0.2s, $float-distance: 10px, $small-font-size: 12px) {
+    position: relative;
+    margin-bottom: 20px; // Add space for label and input
+  
+    input, textarea {
+      padding: 12px 10px;
+      font-size: 16px;
+    }
+  
+    label {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      transition: transform $transition-duration ease, font-size $transition-duration ease;
+      font-size: 16px;
+      color: #999;
+      pointer-events: none;
+    }
+  
+    input:focus + label,
+    input:not(:placeholder-shown) + label,
+    textarea:focus + label,
+    textarea:not(:placeholder-shown) + label {
+      transform: translateY(-$float-distance);
+      font-size: $small-font-size;
+      color: #3498db; // Color change when floating
+    }
+  }
+  
+  
+
+
+  
+  
+  
+
+
+  
+  
+  
+  

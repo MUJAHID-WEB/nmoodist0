@@ -1,0 +1,37 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.module %}
+{% set bg = page.media[module.bg_image].url ?? '' %}
+
+
+
+{% block render_block %}
+    <div class="mission_vision">
+        <div class="container">
+            <div class="mission_vision_top" style="{% if(bg) %}background-image: url('{{ bg }}'){% endif %}">
+
+                {% if module.title %}
+                    <h3 class="title">{{ module.title.translatable|raw }}</h3>
+                {% endif %}
+
+                {% for mission_vision in page.header.mission_vision_blocks %}
+                    {% if mission_vision.title != '' %}
+                        <div class="mission_vision_text">
+                            <p>
+                                <span>{{ mission_vision.title.translatable }}</span>
+                                {% if mission_vision.description != '' %}
+                                    {{ mission_vision.description.translatable }}
+                                {% endif %}
+                            </p>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="mission_vision_bottom">
+                {% for mission_vision_image in page.header.mission_vision_images %}
+                    <img class="" src="{{ page.media[mission_vision_image.image].url }}" alt="icon"/>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

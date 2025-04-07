@@ -1,0 +1,72 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.contents %}
+{% set features = page.header.about_company_features %}
+{% set image = page.media[module.image] %}
+
+{% block render_block %}
+	<div class="about-company-wrapper slide-up {{ module.parent_classes }}">
+		<div class="container">
+
+            <div class="contents-wrapper {{ module.child_classes }}">
+
+                <div class="header-content">
+                    {% if module.header_title != null %}
+                        <h3>{{ module.header_title.translatable|striptags('<span>')|raw }}</h3>
+                    {% endif %}
+
+                    {% if module.header_desc != null %}
+                        <p>{{ module.header_desc.translatable|raw }}</p>
+                    {% endif %}
+                </div>
+
+                <div class="company-contents {{ module.direction }}">
+                    <div class="contents">
+                        <div class="reviewers">
+                            <img src="{{ page.media[module.reviewers_thumbs].url }}" alt="Reviewers Thumbnails"/>
+                            <span>{{ module.reviewers_count.translatable|raw }}</span>
+                        </div>
+                        <div class="contents-data">
+                            {% if module.content_title != null %}
+                                <h3 class="content-title">{{ module.content_title.translatable|striptags('<span>')|raw }}</h3>
+                            {% endif %}
+
+                            <div class="">
+                                {{ page.content|raw }}
+                            </div>
+
+                            <!-- Button -->
+
+                            {% if module.button_text.translatable != null %}
+                                <a href="/{{ grav.language.getActive }}{{ module.button_url }}" class="button button-outline about-company-btn">
+                                    {{ module.button_text.translatable }}
+                                </a>
+                            {% endif %}
+                        </div>
+
+                       
+                    </div>
+
+                    {% if image != null %}
+                        <div class="image">
+                            {% if module.img_on_content != null %}  
+                                <img class="img-on-content" src="{{ page.media[module.img_on_content].url() }}" />
+                            {% endif %}
+
+                            <img class="main-img" src="{{ image.url }}" alt="About Company Image"/>
+
+                            {% if module.overlay_image != null %}  
+                                <img class="overlay-image" src="{{ page.media[module.overlay_image].url() }}" />
+                            {% endif %}
+                        </div>
+                    {% endif %}
+
+                    
+                </div>
+
+            </div>
+		
+		</div>
+
+	</div>
+{% endblock %}

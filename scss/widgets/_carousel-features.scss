@@ -1,0 +1,161 @@
+.carousel-features-section {
+  position: relative;
+  overflow-x: hidden;  /* Hides horizontal overflow */
+  overflow-y: visible; /* Allows vertical overflow */
+  padding: 4rem 2rem;
+  background: var(--color-white);
+  .carousel-info-section {
+    text-align: left;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 6rem;
+    @include desktop-small{
+      padding-top: 2rem;
+      padding-bottom: 2.5rem;
+      margin: 0;
+    }
+    .carousel-left-aligned-block{
+      flex-basis: 50%;
+      width: 100%;
+      position: relative;
+      @include desktop-small{
+        flex-basis: 100%;
+      }
+      .carousel-info-transform{
+        position: absolute;
+        z-index: 99999;
+        transform: translateY(-6rem);
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1.875rem;
+        @include desktop-small{
+          position: relative;
+          transform: translateY(0);
+        }
+        .block-title{
+          @include typography(display-lg,medium);
+        }
+        p{
+          @include typography(text-md, regular);
+          color: var(--color-text-light);
+        }
+      }
+    }
+    .carousel-navigation {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      gap: 0.5rem;
+
+      .carousel-btn {
+        background: none;
+        cursor: pointer;
+        border-radius: 50%;
+        border: 1px solid var(--color-primary);
+        display: flex;
+        justify-content: center;
+        padding: 0.5rem;
+        transition: all 0.5s ease-in-out;
+        &:hover{
+          background-color: var(--color-primary)
+        }
+      }
+
+      .carousel-btn svg {
+        width: 22px;
+        height: 22px;
+      }
+    }
+
+  }
+  .carousel-container {
+    overflow: hidden;
+    position: relative;
+
+    .carousel {
+      display: flex;
+      transition: all 0.5s ease-in-out;
+      height: 660px; /* Set a fixed height */
+      gap: 1.5rem;
+
+      .carousel-item {
+        height: 70%;
+        position: relative;
+        flex: 0 0 33%; /* Show 3 items at once */
+        opacity: 1;
+        transform: scale(1);
+        align-self: baseline;
+        background-repeat: no-repeat;
+        aspect-ratio: 0.81673306772;
+        background-size: cover;
+        background-position: left center;
+        border-radius: 20px;
+        overflow: hidden;
+        transition: transform .5s ease-in-out;
+        @include desktop-small{
+          align-self: start;
+        }
+        .carousel-bg{
+          display: none;
+        }
+
+        &.big {
+          height: 100%;
+          flex: 0 0 33%; /* Make the leftmost item bigger */
+          transform: scale(1);
+          opacity: 1;
+          aspect-ratio: 0.65238095238;
+          background-image: none !important;
+          transition: transform .5s ease-in-out;
+          @include desktop-small{
+            flex: 0 0 65%; /* Make the leftmost item bigger */
+          }
+          @include mobile{
+            flex: 0 0 80%; /* Make the leftmost item bigger */
+          }
+          .carousel-bg{
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 20px;
+            transition: all .5s ease-in-out;
+          }
+          .carousel-title{
+            background: transparent;
+            color: var(--color-text-dark);
+            padding: 0 2rem 20px 0;
+            bottom: 4rem;
+            @include desktop-small{
+              bottom: 6rem;
+              left: 0;
+              padding: 0;
+            }
+            @include mobile{
+              bottom: 4rem;
+            }
+          }
+        }
+        .carousel-title {
+          background: linear-gradient(180deg, rgba(2, 2, 2, 0.00) 0%, #465006 100%);
+          width: 100%;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          color: white;
+          font-size: 1.5rem;
+          padding: 32px 20px;
+          border-radius: 0px 0px 20px 20px;
+          @include typography(display-md,semibold);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,103 @@
+@mixin text-left-opposite($text-duration: 0.8s, $image-duration: 0.8s, $timing: ease-out, $delay: 0s) {
+    .text-left-text {
+      opacity: 0;
+      transform: translateX(-10%);
+      animation: slideInLeftNeutral $text-duration $timing $delay forwards;
+    }
+  
+    .paragraph-image {
+      opacity: 0;
+      transform: translateX(10%);
+      animation: slideInRightNeutral $image-duration $timing $delay forwards;
+    }
+}
+
+@mixin text-right-opposite($text-duration: 0.8s, $image-duration: 0.8s, $timing: ease-out, $delay: 0s) {
+    .paragraph-image {
+      opacity: 0;
+      transform: translateX(-10%);
+      animation: slideInLeftNeutral $text-duration $timing $delay forwards;
+    }
+  
+    .text-right-text {
+      opacity: 0;
+      transform: translateX(10%);
+      animation: slideInRightNeutral $image-duration $timing $delay forwards;
+    }
+}
+
+@mixin fade-scale-left($text-duration: 0.8s, $image-duration: 0.8s, $timing: ease-in-out, $delay: 0s) {
+    .text-left-text {
+      opacity: 0;
+      transform: scale(0.9);
+      animation: fadeScaleIn $text-duration $timing $delay forwards;
+    }
+  
+    .paragraph-image {
+      opacity: 0;
+      transform: scale(1.1);
+      animation: fadeZoomIn $image-duration $timing $delay forwards;
+    }
+}
+
+@mixin fade-scale-right($text-duration: 0.8s, $image-duration: 0.8s, $timing: ease-in-out, $delay: 0s) {
+    .paragraph-image {
+      opacity: 0;
+      transform: scale(0.9);
+      animation: fadeScaleIn $text-duration $timing $delay forwards;
+    }
+  
+    .text-right-text {
+      opacity: 0;
+      transform: scale(1.1);
+      animation: fadeZoomIn $image-duration $timing $delay forwards;
+    }
+}
+
+@mixin staggered-fade-in($text-duration: 0.6s, $image-duration: 0.8s, $timing: ease-in-out, $text-delay: 0s, $image-delay: 0.3s) {
+    .block-title {
+      opacity: 0;
+      animation: fadeIn $text-duration $timing $text-delay forwards;
+    }
+  
+    p {
+      opacity: 0;
+      animation: fadeIn $text-duration $timing calc($text-delay + 0.2s) forwards;
+    }
+  
+    .paragraph-image {
+      opacity: 0;
+      animation: fadeIn $image-duration $timing $image-delay forwards;
+    }
+}
+
+@mixin slide-rotate-left($text-duration: 0.7s, $image-duration: 0.7s, $timing: ease-out, $text-rotate: -5deg, $image-rotate: 5deg, $delay: 0s) {
+    .text-left-text {
+      opacity: 0;
+      transform: translateX(-50%) rotate($text-rotate);
+      animation: slideRotateIn $text-duration $timing $delay forwards;
+    }
+  
+    .paragraph-image {
+      opacity: 0;
+      transform: translateX(50%) rotate($image-rotate);
+      animation: slideRotateIn $image-duration $timing $delay forwards;
+    }
+  }
+
+  @mixin slide-rotate-right($text-duration: 0.7s, $image-duration: 0.7s, $timing: ease-out, $text-rotate: -5deg, $image-rotate: 5deg, $delay: 0s) {
+    .paragraph-image {
+      opacity: 0;
+      transform: translateX(-50%) rotate($text-rotate);
+      animation: slideRotateIn $text-duration $timing $delay forwards;
+    }
+  
+    .text-right-text {
+      opacity: 0;
+      transform: translateX(50%) rotate($image-rotate);
+      animation: slideRotateIn $image-duration $timing $delay forwards;
+    }
+  }
+
+
+  

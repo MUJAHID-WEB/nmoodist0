@@ -1,0 +1,119 @@
+.offer {
+  display: flex;
+  padding: 6.25rem 0;
+  align-items: center;
+  align-self: stretch;
+  // background-color: var(--color-white);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  
+
+  @include desktop-small {
+    padding: 94px 0;
+  }
+
+
+  .container {
+    display: flex;
+    @include padding(padding-lg);
+    justify-content: center;
+     
+
+    @include mobile {
+      width: 100%;
+    }
+
+    @include desktop-small {
+      flex-direction: column;
+      align-items: flex-start;
+      @include padding(padding-sm);
+    }
+
+    .offer-text {
+      display: flex;
+      text-align: center;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-white);
+      gap: 1.25rem;
+      padding: 32px;
+      max-width: 100%;
+     
+      @include desktop-small {
+        padding: 0;
+        max-width: 100%;
+        gap: 1.5rem;
+      }
+
+      .offer-title {
+        @include typography(display-lg, semibold);
+        font-family: var(--secondary-font);
+        max-width: 70%;
+
+        @include desktop-small{
+          @include typography(display-sm, semibold);
+          max-width: 100%;
+        }
+      }
+
+      p {
+        @include typography(text-lg, regular);
+        max-width: 50%;
+        @include desktop-small {
+          max-width: 100%;
+          @include typography(text-md, regular);
+        }
+
+      }
+
+      .button{
+        margin-top: 40px;
+        align-self: center;
+        display: flex;
+        align-items: center;
+        @include typography(text-xl, extra_bold);
+        background: var(--color-white);
+        border: 1px solid var(--color-primary);
+        //color: var(--color-hero-button);
+
+        span {
+          background: var(--color-primary);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: rgba(0, 0, 0, 0);
+        }
+        // svg {
+        //   path {
+        //     stroke: var(--color-white);
+        //   }
+        // }
+
+        &:hover {
+          border: 1px solid var(--color-white);
+        }
+
+        @include desktop-small{
+          margin-top: 16px;
+        }
+      }
+      
+    }
+
+  }
+}
+
+
+@keyframes offerslideIn {
+  0% {
+    top: -100%;
+    left: -100%;
+  }
+  100% {
+    top: 0%;
+    left: 300%;
+  }
+}

@@ -1,0 +1,129 @@
+:root {
+
+  --shadow: 0px 0px 2px 0px rgba(204, 204, 204, 0.4);
+
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+
+  --color-primary: #FE6E2C;
+  --color-secondary: #EFF2F3;
+  --color-tertiary: #FFF7E8;
+
+  --bg-body: #FFFCED;
+
+  --color-text-light: #424242;
+  --color-text-dark: #181818;
+
+  --color-accent: #114042;
+  --color-gray: #A3A3A3;
+
+
+
+  --panel-header-bg: var(--color-white);
+  --panel-header-text: var(--color-black);
+  --panel-header-text-active: var(--color-primary);
+  --panel-footer-bg: transparent;
+  --panel-footer-text: var(--color-black);
+  --header-login-btn-bg: transparent;
+  --header-login-btn-color: var(--color-black);
+
+  --header-signup-btn-bg: var(--color-primary);
+  --header-signup-btn-color: var(--color-white);
+
+  --mobile-menu-btn-bg: var(--color-primary);
+  --mobile-menu-btn-color: var(--color-white);
+
+  --color-lang-switcher: var(--color-black);
+  --border-lang-switcher: var(--color-primary);
+
+  --mobile-menu-bg-container: var(--color-transparent);
+  --mobile-menu-text: var(--color-white);
+  --mobile-menu-bg-button: var(--color-primary);
+  --mobile-menu-color-button: var(--color-white);
+  --mobile-menu-bg-signup-button: var(--color-primary);
+  --mobile-menu-color-signup-button: var(--color-white);
+  
+  --hero-bg-container: var(--color-white);
+  --hero-bg: transparent;
+  --hero-title: var(--color-text-dark);
+  --hero-text: var(--color-text-dark);
+  --hero-highlight: var(--color-text-dark);
+
+  --color-section-title: var(--color-dark);
+  --color-section-subtitle: var(--color-primary);
+
+  --feature-bg-container: var(--bg-body);
+  --feature-bg: var(--color-white);
+  --feature-text: var(--color-white);
+
+  --course-bg-container: var(--bg-body);
+  --course-bg: var(--color-text-light);
+  --course-title: var(--color-primary);
+  --course-text: var(--color-primary);
+
+  --about-listing-bg-container: var(--color-text-light);
+  --about-listing-title: var(--color-primary);
+  --about-listing-text: var(--color-primary);
+
+  --text-bg-container: var(--bg-body);
+  --text-bg: var(--bg-body);
+  --text-text: var(--color-text-dark);
+
+  --about-company-wrapper-bg: var(--color-white);
+  
+  --pricing-bg-container: var(--bg-body);
+  --pricing-bg: transparent;
+  --pricing-text: var(--color-text-light);
+  --pricing-benefits-text: var(--color-text-dark);
+  --pricing-btn-bg: var(--color-primary);
+  --pricing-btn-color: var(--color-white);
+  --pricing-item-bg: var(--color-white);
+
+
+  // Contact us page
+  --contact-bg-container: var(--color-white);
+  --contact-form-bg: var(--color-primary);
+  --contact-form-text: var(--color-text-dark);
+  --contact-info-bg: var(--color-primary);
+  --contact-info-text: var(--color-text-light);
+  --contact-btn-bg: var(--color-primary);
+  --contact-btn-color: var(--color-white);
+
+  --no-hero-bg-container: var(--bg-body);
+  --no-hero-bg: var(--color-primary);
+  --no-hero-text: var(--color-text-light);
+
+  --login-bg-container: var(--color-white);
+  --login-bg: var(--bg-body);
+  --login-text: var(--color-text-dark);
+
+  --profile-bg-container: var(--bg-body);
+  --profile-bg: var(--color-white);
+  --profile-text: var(--color-text-dark);
+
+  --order-bg-container: var(--bg-body);
+  --order-bg: var(--color-white);
+  --order-text: var(--color-text-dark);
+
+  --unsubscribe-bg-container: var(--bg-body);
+  --unsubscribe-bg: var(--color-secondary);
+  --unsubscribe-text: var(--color-primary);
+  
+  --unsubscribe-btn-bg: var(--color-primary);
+  --unsubscribe-btn-color: var(--color-white);
+
+  --policy-bg-container: var(--bg-body);
+  
+  --bg-button: var(--color-tertiary);
+  --color-button: var(--color-text-light);
+  --bg-alternate-button: var(--color-primary);
+  --color-alternate-button: var(--color-tertiary);  
+
+  --change-password-btn-bg: var(--color-primary);
+  --change-password-btn-color: var(--color-text-dark);
+
+  --border-radius: 0;
+}
+
+$label_error: #d55353;
+$field_background_disabled: #f1f1f1;

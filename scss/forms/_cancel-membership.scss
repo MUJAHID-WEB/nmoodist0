@@ -1,0 +1,112 @@
+.page-cancel-membership {
+  .content-section {
+    max-width: 100%;
+  }
+}
+
+.content-section.cancel-membership {
+  padding: 0 0 6rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  z-index: 1; 
+  background: var(--color-tertiary-bg); 
+
+
+  &::before {
+    content: ""; 
+    position: absolute;
+    bottom: 0%;
+    left: 0;
+    width: 100%;
+    height: 150%; 
+    clip-path: ellipse(100% 50% at 50% 100%);
+    background: var(--color-white); 
+    z-index: -1; 
+  }
+
+  @include desktop-small {
+    &::before {
+      height: 100%; 
+    }
+  }
+
+  .cm_forms{
+    //position: absolute;
+    top: calc(50% - 600px);
+    max-width: 600px;
+    width: 100%;
+    padding: 44px;
+  // padding-bottom: 75px;
+  // padding-top: 75px;
+  background: var(--color-white);
+  border-radius: 8px;
+  margin: 5rem auto;
+  margin-top: 0;
+  box-shadow: 0px 4px 16px 0px #33333314, 0px 4px 4px 0px #3333330A;
+
+
+  label {
+    color: var(--color-text-light);
+  }
+
+  input, textarea{
+    background: transparent;
+    color: var(--login-text);
+    //border: 1px solid var(--color-text-light);
+    border: none;
+    border-bottom: 1px solid var(--color-text-light);
+
+    border-radius: 0;
+  }
+
+  input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
+    transition: background-color 500000s ease-in-out 0s, color 5000s ease-in-out 0s !important;
+  }
+  input:focus {
+    outline: none;
+    border-color: #98A2B3;
+    box-shadow: none;
+  }
+
+  @include desktop-small{
+    padding: 44px 1rem;
+  }
+
+  @media (max-width: 630px) {
+    margin: 0 1rem;
+  };
+
+  .form-actions {
+    text-align: center;
+    width: 100%;
+
+    button {
+      display: block;
+      width: fit-content;
+      background: #D80000;
+      color: var(--color-white);
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 800;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-direction: row-reverse;
+    }
+    // .button::before {
+    //   content: ""; 
+    //   display: inline-block;
+    //   width: 16px;
+    //   height: 16px;
+    //   background: url('./../../images/button-icon.svg') no-repeat center center;
+    //   background-size: contain;
+    
+    // }
+  }
+
+  }
+
+}

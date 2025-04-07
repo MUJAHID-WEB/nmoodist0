@@ -1,0 +1,115 @@
+article.flex-1.max-w-4xl.w-full.mx-auto.prose.prose-h1\:text-brand.pt-40.pb-24.main-container {
+  padding: 0 0 15rem;
+}
+
+
+.page-terms {
+    position: relative;
+
+    .no-hero-section {
+      padding-bottom: 56px;
+    }
+    .no-hero-section .no-hero-wrapper .head-content p {
+      margin-bottom: 0px;
+    }
+
+    .main-container {
+      background-size: 50%;
+      position: relative;
+      background: var(--color-tertiary-bg);
+    
+      background-position: top;
+      background-size: 50%;
+      z-index: 1;
+    
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0%;
+        left: 0;
+        width: 100%;
+        height: 185%;
+        clip-path: ellipse(100% 50% at 50% 100%);
+        background: var(--color-white);
+        z-index: -1;
+      }
+    }
+  .content-section{
+
+      background: white;
+      border-radius: 20px;
+      width: 100%;
+      height: 50rem;
+      overflow-y: auto;
+      box-shadow: 0px 4px 4px 0px rgba(51, 51, 51, 0.04), 0px 4px 16px 0px rgba(51, 51, 51, 0.08);
+      display: flex;
+      flex-direction: column;
+
+    @include desktop-small{
+      padding: 2.5rem 1rem !important;
+      top: calc(50% - 500px);
+    }
+  }
+}
+
+
+
+.terms {
+  color: var(--color-text-dark);
+  .terms-section .belong-overview {
+    font-size: 1.25rem !important;
+  }
+  h1 {
+    font-size: 1.25rem !important;
+    font-weight: 500;
+  }
+  h2, h4, h3, h5, li, strong, th,b {
+    font-weight: 500;
+  }
+}
+.content-section .terms{
+  // background: var(--policy-bg-container);
+
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .terms-area {
+    display: none !important;
+
+    &.active {
+      display: block !important;
+    }
+  }
+
+  .language-switcher {
+    display: none;
+  }
+}
+
+
+
+.page-terms .content-section::before {
+  content: "";
+  flex-shrink: 0;
+  height: 2.5rem; 
+}
+
+.page-terms .content-section::after {
+  content: "";
+  flex-shrink: 0;
+  height: 2.5rem; 
+}
+
+.page-terms .content-section::-webkit-scrollbar {
+  width: 6px; 
+}
+
+.page-terms .content-section::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2); 
+  border-radius: 6px;
+}
+
+.page-terms .content-section::-webkit-scrollbar-track {
+  background: transparent;
+}

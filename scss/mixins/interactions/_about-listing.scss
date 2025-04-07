@@ -1,0 +1,70 @@
+@mixin about-listing-1($text-duration: 0.8s, $image-duration: 0.8s, $timing: ease-out, $delay: 0s) {
+    .listing-content-container {
+      opacity: 0;
+      transform: translateX(-10%);
+      animation: slideInLeftNeutral $text-duration $timing $delay forwards;
+    }
+  
+    .image-container {
+      opacity: 0;
+      transform: translateX(10%);
+      animation: slideInRightNeutral $image-duration $timing $delay forwards;
+    }
+}
+
+@mixin about-listing-2($text-duration: 0.8s, $image-duration: 0.8s, $timing: ease-out, $delay: 0s) {
+  .listing {
+    opacity: 0;
+    transform: rotateY(90deg);
+    animation: fadeInUp $text-duration $timing $delay forwards;
+    animation-delay: calc($delay + (0.2s * var(--card-index))); // Staggered delay
+    
+      @for $i from 1 through 6 {
+        &:nth-child(#{$i}) { --card-index: #{$i}; }
+      }
+  }
+
+  .image-container {
+    opacity: 0;
+    transform: translateX(10%);
+    animation: fadeInUp $image-duration $timing calc($delay * 3) forwards;
+  }
+}
+
+@mixin about-listing-3($text-duration: 0.8s, $image-duration: 0.8s, $timing: ease-out, $delay: 0s) {
+  .listing {
+    opacity: 0;
+    transform: rotateY(90deg);
+    animation: slideBounceIn $text-duration $timing $delay forwards;
+    animation-delay: calc($delay + (0.2s * var(--card-index))); // Staggered delay
+    
+      @for $i from 1 through 6 {
+        &:nth-child(#{$i}) { --card-index: #{$i}; }
+      }
+  }
+
+  .image-container {
+    opacity: 0;
+    transform: translateX(10%);
+    animation: slideBounceIn $image-duration $timing calc($delay * 3) forwards;
+  }
+}
+
+@mixin about-listing-4($text-duration: 0.8s, $image-duration: 0.8s, $timing: ease-out, $delay: 0s) {
+  .listing {
+    opacity: 0;
+    transform: rotateY(90deg);
+    animation: zoomInNeutral $text-duration $timing $delay forwards;
+    animation-delay: calc($delay + (0.2s * var(--card-index))); // Staggered delay
+    
+      @for $i from 1 through 6 {
+        &:nth-child(#{$i}) { --card-index: #{$i}; }
+      }
+  }
+
+  .image-container {
+    opacity: 0;
+    transform: translateX(10%);
+    animation: zoomInNeutral $image-duration $timing calc($delay * 3) forwards;
+  }
+}

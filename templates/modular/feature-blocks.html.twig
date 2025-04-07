@@ -1,0 +1,45 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.module %}
+
+{% block render_block %}
+
+  {% set bg = page.media[page.header.module.feature_bg].url ?? '' %}
+    <div class="features feature-animation" style="{% if(bg) %}background-image: url('{{ bg }}'){% endif %}" >
+        <div class="container">
+			<div class="features-header-section">
+				{% if module.title %}
+					<h3 class="block-title">{{ module.title.translatable|striptags('<span>')|raw }}</h3>
+				{% endif %}
+
+                <div class="description">
+                    {% if page.content %}
+                        <div class="features-section-description">
+                            {{ page.content|raw }}
+                        </div>
+                    {% endif %}
+
+                 
+                </div>
+
+				
+			</div>
+       
+
+            <div class="features-container">
+
+                <div class="feature-slider-wrapper">
+                    <div class="feature-track">
+                        {% for feature_block in page.header.feature_blocks %}
+                            {% if feature_block.description != '' and feature_block.title != '' %}
+                                {% include 'widgets/vertical-feature.html.twig' with {feature_block: feature_block, module:module } %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

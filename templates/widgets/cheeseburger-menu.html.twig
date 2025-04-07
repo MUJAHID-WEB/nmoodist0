@@ -1,0 +1,44 @@
+<div
+	class="cheeseburger-menu" id="cheeseburger-menu">
+	{# <div class="cheeseburger-menu__close" id="cheeseburger-menu-close">
+		        <span></span>
+		    </div> #}
+	<div class="cheeseburger-menu__menu">
+	{% for page in pages.children.visible %}
+		{% if (page.home and not grav.user.authenticated) or (not page.home) %}
+			{% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
+			{% set requires_access = page.header.login ? page.header.login.visibility_requires_access : false %}
+
+			{% if (requires_access == true and page.header.access['site.login'] and grav.user.authorized == true) or requires_access == false %}
+				<div class="menu-item {{ current_page|e }}">
+					<a class="menu-item__link" href="{{ page.url|e|replace({'%23': '#'}) }}">
+						{{ page.menu|e }}
+					</a>
+				</div>
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+	</div>
+	<div class="cheeseburger-menu__menu">
+		{% if grav.user.authenticated %}
+			<div class="menu-item">
+				<a class="menu-item__link  button" href="{{ url('/task:login.logout') }}">{{ "METRICALO.LOGOUT"|t }}</a>
+			</div>
+		{% else %}
+			<div class="menu-item">
+				<a class="menu-item__link  btn button login" href="{{ url('/login') }}">{{ "METRICALO.LOGIN"|t }}</a>
+			</div>
+			<div class="menu-item">
+				<a class="menu-item__link  button btn signup" href="{{ webdata('signup_url') }}">
+				
+					<span>{{ "METRICALO.SIGNUP"|t }}</span>
+
+					<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+					<path d="M15.8269 6.85783C15.4364 6.46731 14.8032 6.46731 14.4127 6.85784C14.0222 7.24836 14.0222 7.88153 14.4127 8.27205L17.7056 11.5649H4.11975C3.56747 11.5649 3.11975 12.0126 3.11975 12.5649C3.11975 13.1172 3.56747 13.5649 4.11975 13.5649H17.7056L14.4127 16.8578C14.0222 17.2483 14.0222 17.8815 14.4127 18.272C14.8033 18.6625 15.4364 18.6625 15.827 18.272L20.8216 13.2773C20.84 13.2591 20.8577 13.2402 20.8748 13.2207C20.9422 13.143 20.9959 13.0575 21.0356 12.9673C21.0894 12.845 21.1194 12.7099 21.1198 12.5679V12.5649C21.1198 12.5618 21.1198 12.5587 21.1198 12.5556C21.1186 12.4299 21.0943 12.3096 21.0508 12.199C21.002 12.0747 20.9274 11.9582 20.8269 11.8578L15.8269 6.85783Z" fill="white"/>
+					</svg>
+				
+				</a>
+			</div>
+		{% endif %}
+	</div>
+</div>

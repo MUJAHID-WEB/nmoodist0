@@ -1,0 +1,158 @@
+// How to use: @include feature-animation-1(0.6s, ease-in-out, 1s, 10deg, 1.1);
+@mixin course-animation-1($animation-duration:0.6s, $animation-timing, $animation-delay, $hover-rotate, $hover-scale) {
+    // add opacity: 0; in widgets/_features.scss
+
+    animation: fadeInUp $animation-duration $animation-timing $animation-delay forwards;
+    animation-delay: calc(0.2s * var(--card-index)); // Staggered delay
+  
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) { --card-index: #{$i}; }
+    } 
+}
+
+@mixin course-animation-2($animation-duration, $animation-timing, $animation-delay, $hover-rotate, $hover-scale) {
+  // Initial fade-in animation for each feature
+  animation: fadeInUp $animation-duration $animation-timing $animation-delay forwards;
+  
+  // First 3 elements will animate in sequence
+  &:nth-child(1) {
+    --card-index: 4;
+    animation-delay: calc(0.2s * 1);
+  }
+
+  &:nth-child(2) {
+    --card-index: 4;
+    animation-delay: calc(0.2s * 2);
+  }
+
+  &:nth-child(3) {
+    --card-index: 4;
+    animation-delay: calc(0.2s * 3);
+  }
+
+  // The 6th element will animate after the first 3
+  &:nth-child(6) {
+    --card-index: 4;
+    animation-delay: calc(0.2s * 4);
+  }
+
+  // The 5th element will animate after the 6th
+  &:nth-child(5) {
+    --card-index: 5;
+    animation-delay: calc(0.2s * 5);
+  }
+
+  // The 4th element will animate after the 5th
+  &:nth-child(4) {
+    --card-index: 6;
+    animation-delay: calc(0.2s * 6);
+  }
+
+  // Feature icon hover effect
+  .feature-icon {
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: rotate($hover-rotate) scale($hover-scale); // Subtle rotation and scale effect
+    }
+  }
+}
+
+@mixin course-animation-3($duration: 0.6s, $timing-function: ease-in-out, $delay: 0s, $hover-rotate: 180deg) {
+  opacity: 0;
+  transform: rotateY(90deg);
+  animation: flipIn $duration $timing-function $delay forwards;
+  animation-delay: calc($delay + (0.2s * var(--card-index))); // Staggered delay
+  
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) { --card-index: #{$i}; }
+    }
+  
+  .feature-icon {
+    transition: transform 0.3s $timing-function;
+    
+    &:hover {
+      transform: rotateY($hover-rotate);
+    }
+  }
+}
+
+@mixin course-animation-4($direction: left, $duration: 0.8s, $timing: ease-out, $delay: 0s) {
+  opacity: 0;
+  transform: translateX(if($direction == left, -100%, 100%));
+  animation: slideBounceIn $duration $timing $delay forwards;
+
+  animation-delay: calc($delay + (0.2s * var(--card-index))); // Staggered delay
+  
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) { --card-index: #{$i}; }
+    }
+
+  .feature-icon {
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+}
+
+@mixin course-animation-5($duration: 0.7s, $timing: ease-in-out, $delay: 0s, $hover-scale: 1.05) {
+  opacity: 0;
+  transform: scale(0.8);
+  animation: fadeScaleIn $duration $timing $delay forwards;
+
+  animation-delay: calc($delay + (0.2s * var(--card-index))); // Staggered delay
+  
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) { --card-index: #{$i}; }
+    }
+
+
+  .feature-icon {
+    transition: transform 0.3s $timing;
+
+    &:hover {
+      transform: scale($hover-scale);
+    }
+  }
+}
+
+@mixin course-animation-6($duration: 0.8s, $timing: ease, $delay: 0s) {
+  opacity: 0;
+  transform: translateY(50px) rotateZ(-5deg);
+  animation: waveIn $duration $timing $delay forwards;
+
+  animation-delay: calc($delay + (0.2s * var(--card-index))); // Staggered delay
+  
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) { --card-index: #{$i}; }
+    }
+
+  .feature-icon {
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: rotate(10deg) scale(1.1);
+    }
+  }
+}
+
+@mixin course-animation-7($duration: 0.8s, $timing: ease-out, $delay: 0.1s) {
+  opacity: 0;
+  transform: scale(0.8);
+  animation: zoomInNeutral $duration $timing $delay forwards;
+  animation-delay: calc(0.2s * var(--card-index));
+
+  @for $i from 1 through 6 {
+    &:nth-child(#{$i}) { --card-index: #{$i}; }
+  }
+
+  .feature-icon {
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

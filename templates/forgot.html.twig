@@ -1,0 +1,58 @@
+{% set body_classes = "page-forgot"%}
+{% extends 'partials/base.html.twig' %}
+
+{% block article %}
+
+    {% include 'partials/no-hero-header.html.twig' with {
+        'title': page.header.title,
+        'links': [
+            {
+                'url': '/' ~ grav.language.getActive,
+                'title': "METRICALO.HOME"|t
+            },
+            {
+                'title': page.header.title|t
+
+            }
+        ]
+    } %}
+
+  <div class="forgot-section">
+    <div class="container ">
+      {% embed "widgets/whq-card.html.twig" %}
+        {% block card_title %}
+          {{ "METRICALO.PAGE_FORGOT_PASSWORD"|t }}
+        {% endblock %}
+
+        {% block card_content %}
+          <h2 class="login-title">{{ page.find('/home').header.forgot.top_title.translatable }}</h2>
+          {% include 'partials/notifications.html.twig' %}
+          {% include 'partials/messages.html.twig' %}
+          {% include 'partials/forgot-form.html.twig' with {form: forms('forgot-password'), action: url('recover-password')} %}
+        {% endblock %}
+      {% endembed %}
+    </div>
+  </div>
+
+
+{#    {% include 'partials/no-hero-header.html.twig' with {#}
+{#        'title': "METRICALO.PAGE_FORGOT_PASSWORD"|t,#}
+{#        'links': [#}
+{#            {#}
+{#                'url': '/' ~ grav.language.getActive,#}
+{#                'title': "METRICALO.HOME"|t#}
+{#            },#}
+{#            {#}
+{#                'title': "METRICALO.PAGE_FORGOT_PASSWORD"|t#}
+{#            }#}
+{#        ]#}
+{#    } %}#}
+
+{#    <article class="{{ max_width }} {{ section_padding }} flex-1 w-full py-24 login-page-content wrapper bg-light angled upper-end slide-up main-container">#}
+{#        <div class="form-login-wrapper">#}
+{#            {% include 'partials/notifications.html.twig' %}#}
+{#            {% include 'partials/messages.html.twig' %}#}
+{#            {% include 'partials/forgot-form.html.twig' with {form: forms('forgot-password'), action: url('recover-password')} %}#}
+{#        </div>#}
+{#    </article>#}
+{% endblock %}

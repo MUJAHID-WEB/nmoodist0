@@ -1,0 +1,13 @@
+<div class="footer-menu">
+    
+    <div class="frame-24">
+        {% for link in privacyLinks %}
+            {% set link_page = pages.find(link) %}
+            {% if link_page %}
+                <div class="menu-item">
+                    <a rel="noopener noreferrer" class="{{footer_text_color}}" href="{{ link_page.url|replace({'%23': '#'}) }}">{{ link_page.menu }}</a>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

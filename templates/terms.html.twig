@@ -1,0 +1,30 @@
+{% set body_classes = "page-terms"%}
+{% extends 'partials/base.html.twig' %}
+
+{% block article %}
+
+	{% include 'partials/no-hero-header.html.twig' with {
+        'title': page.header.title,
+        'links': [
+            {
+                'url': '/' ~ grav.language.getActive,
+                'title': "METRICALO.HOME"|t
+            },
+            {
+                'title': page.header.title|t
+            }
+        ]
+    } %}
+
+	<article class="flex-1 max-w-4xl w-full mx-auto prose prose-h1:text-brand pt-40 pb-24 main-container">
+		<div class="content-section terms">
+            <div class="container"> 
+                {% block content %}
+				{{ page.content|raw }}
+				{{ website_manager_api.getTerms.html|raw }}
+			    {% endblock %}
+            </div>
+			
+		</div>
+	</article>
+{% endblock %}
