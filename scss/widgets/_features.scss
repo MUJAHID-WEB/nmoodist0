@@ -41,9 +41,20 @@
         max-width: 688px;
         width: 100%;
         font-family: var(--secondary-font);
+        font-size: 36px;
+        font-weight: 500;
+        line-height: 44px;
+        letter-spacing: -0.72px;
 
         @include desktop-small {
           text-transform: uppercase;
+          font-size: 30px;
+          line-height: 38px;
+        }
+
+        @include mobile {
+          font-size: 24px;
+          line-height: 32px;
         }
 
         span {
@@ -79,8 +90,15 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 20px;
 
+      @include tablet {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @include mobile {
+        grid-template-columns: 305px;
+      }
+
       .feature {
-        max-height: 380px;
+        // max-height: 380px;
         border-radius: 22px;
         overflow: hidden;
         position: relative;
@@ -101,7 +119,7 @@
           position: absolute;
           bottom: 0;
           width: 100%;
-          padding: 16px;
+          padding: 42px 15px;
           background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
           color: white;
           transition: all 0.4s ease;
