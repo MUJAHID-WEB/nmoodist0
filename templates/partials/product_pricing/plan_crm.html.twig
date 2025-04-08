@@ -11,7 +11,7 @@
         <div class="package-top-section">
             <div class="price">
                 <div class="package-title">
-                    {% if iterationCount == 1 %}
+                    {# {% if iterationCount == 1 %}
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
                             <g clip-path="url(#clip0_369_7029)">
                             <path d="M22.5962 1.05078H5.40543L0 8.42178L14.0581 26.9502L28.0001 8.41965L22.5962 1.05078ZM7.6853 9.23157L11.646 21.0643L2.66814 9.23157H7.6853ZM9.41074 9.23157H18.5957L14.0347 23.046L9.41074 9.23157ZM20.3188 9.23157H25.3417L16.3911 21.1279L20.3188 9.23157ZM21.7669 2.68694L25.3665 7.59541H20.3199L18.7093 2.68694H21.7669ZM16.9873 2.68694L18.5979 7.59541H9.40365L11.0142 2.68694H16.9873ZM6.23452 2.68694H9.29217L7.6816 7.59541H2.63498L6.23452 2.68694Z" fill="url(#paint0_linear_369_7029)"/>
@@ -41,16 +41,17 @@
                             </clipPath>
                             </defs>
                             </svg>
-                    {% endif %}
+                    {% endif %} #}
                     {% include 'partials/product_pricing/widget/_package_title.html.twig' %}
                 </div>
                 {% include 'partials/product_pricing/widget/_pricing_section.html.twig' %}
-            </div>
+            </div>     
         </div>
+        {% include 'partials/product_pricing/widget/_signup_btn.html.twig' %}
         
         {% include 'partials/product_pricing/widget/_benefits.html.twig' with { iterationCount: iterationCount } %}
     </div>
-    {% include 'partials/product_pricing/widget/_signup_btn.html.twig' %}
+    {# {% include 'partials/product_pricing/widget/_signup_btn.html.twig' %} #}
     
 </div>
 {# <script>
