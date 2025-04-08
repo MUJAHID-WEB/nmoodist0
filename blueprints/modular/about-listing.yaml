@@ -13,8 +13,8 @@ form:
               type: text
               label: About Listing Title
               classess: 'translatable'
-            header.contents.subtitle.translatable:
-              type: text
+            header.contents.description.translatable:
+              type: textarea
               label: About Listing Subtitle
               classess: 'translatable'
 

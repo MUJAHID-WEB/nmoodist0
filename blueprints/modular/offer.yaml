@@ -20,15 +20,15 @@ form:
   
                 header.offer.h1.translatable:
                   type: text
-                  label: H1 Hero Header
+                  label: H1 Offer Header
                   classes: 'translatable'
                 header.offer.text.translatable:
                   type: textarea
-                  label: Hero Text
+                  label: Offer Text
                   classes: 'translatable'
                 header.offer.offer_bg:
                   type: pagemediaselect
-                  label: Hero background image
+                  label: Offer background image
                 header.offer.buttons:
                   type: list
                   label: offer Buttons
