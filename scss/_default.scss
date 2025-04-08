@@ -40,7 +40,7 @@ h1 {
   }
 }
 
-h3{
+h3 {
   font-style: normal;
   @include typography(display-lg, bold);
   font-family: var(--default-font);
@@ -60,29 +60,20 @@ h6 span {
 }
 
 .button {
-  display: block;
-  appearance: none;
-  background: var(--bg-button);
-  color: var(--color-button);
-  text-decoration: none;
-  cursor: pointer;
-  line-height: 1.625rem;
-  transition: all 0.3s ease-in-out;
-  /* Add a smooth transition effect */
+  padding: 12px 40px;
+  border-radius: 22px;
+  background-color: var(--color-primary);
   border: none;
-  padding: 12px 18px;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--color-text-dark);
 }
-
 
 .button:hover {
-  box-shadow: 0px 4px 16px 0px rgba(51, 51, 51, 0.08), 0px 4px 4px 0px rgba(51, 51, 51, 0.04);
-  transform: translateY(-.15rem);
+  box-shadow: 0px 4px 16px 0px rgba(51, 51, 51, 0.08),
+    0px 4px 4px 0px rgba(51, 51, 51, 0.04);
+  transform: translateY(-0.15rem);
 }
-
 
 .button-outline {
   display: block;
@@ -101,14 +92,13 @@ h6 span {
   border-radius: var(--border-radius);
 }
 
-
 .button-outline:hover {
-  box-shadow: 0px 4px 16px 0px rgba(51, 51, 51, 0.08), 0px 4px 4px 0px rgba(51, 51, 51, 0.04);
-  transform: translateY(-.15rem);
+  box-shadow: 0px 4px 16px 0px rgba(51, 51, 51, 0.08),
+    0px 4px 4px 0px rgba(51, 51, 51, 0.04);
+  transform: translateY(-0.15rem);
   background: var(--color-primary);
   color: var(--color-white);
 }
-
 
 .button-transparent {
   display: block;
@@ -126,10 +116,10 @@ h6 span {
   border-radius: var(--border-radius);
 }
 
-
 .button-transparent:hover {
-  box-shadow: 0px 4px 16px 0px rgba(51, 51, 51, 0.08), 0px 4px 4px 0px rgba(51, 51, 51, 0.04);
-  transform: translateY(-.15rem);
+  box-shadow: 0px 4px 16px 0px rgba(51, 51, 51, 0.08),
+    0px 4px 4px 0px rgba(51, 51, 51, 0.04);
+  transform: translateY(-0.15rem);
   background: var(--color-primary);
   color: var(--color-white);
 }
@@ -140,7 +130,11 @@ h6 span {
   border: none;
   padding: 0.875rem 1.5625rem;
   border-radius: var(--border-radius);
-  background: linear-gradient(98deg, var(--color-primary) 2.35%, var(--color-primary-light) 96.42%);
+  background: linear-gradient(
+    98deg,
+    var(--color-primary) 2.35%,
+    var(--color-primary-light) 96.42%
+  );
   transition: all 0.3s ease-in-out;
   /* Add a smooth transition effect */
   color: var(--color-white);
@@ -150,11 +144,15 @@ h6 span {
 }
 
 .button-gradient-primary:hover {
-  background: linear-gradient(98deg, var(--color-primary-light) 2.35%, var(--color-primary) 96.42%);
-  box-shadow: 0px 4px 16px 0px rgba(51, 51, 51, 0.08), 0px 4px 4px 0px rgba(51, 51, 51, 0.04);
-  transform: translateY(-.15rem);
+  background: linear-gradient(
+    98deg,
+    var(--color-primary-light) 2.35%,
+    var(--color-primary) 96.42%
+  );
+  box-shadow: 0px 4px 16px 0px rgba(51, 51, 51, 0.08),
+    0px 4px 4px 0px rgba(51, 51, 51, 0.04);
+  transform: translateY(-0.15rem);
 }
-
 
 .button-gradient-secondary {
   display: block;
@@ -162,7 +160,11 @@ h6 span {
   border: none;
   padding: 0.875rem 1.5625rem;
   border-radius: var(--border-radius);
-  background: linear-gradient(98deg, var(--color-primary-light) 2.35%, var(--color-primary) 96.42%);
+  background: linear-gradient(
+    98deg,
+    var(--color-primary-light) 2.35%,
+    var(--color-primary) 96.42%
+  );
   transition: all 0.3s ease-in-out;
   /* Add a smooth transition effect */
 
@@ -173,9 +175,14 @@ h6 span {
 }
 
 .button-gradient-secondary:hover {
-  background: linear-gradient(98deg, var(--color-primary) 2.35%, var(--color-primary-light) 96.42%);
-  box-shadow: 0px 4px 16px 0px rgba(51, 51, 51, 0.08), 0px 4px 4px 0px rgba(51, 51, 51, 0.04);
-  transform: translateY(-.15rem);
+  background: linear-gradient(
+    98deg,
+    var(--color-primary) 2.35%,
+    var(--color-primary-light) 96.42%
+  );
+  box-shadow: 0px 4px 16px 0px rgba(51, 51, 51, 0.08),
+    0px 4px 4px 0px rgba(51, 51, 51, 0.04);
+  transform: translateY(-0.15rem);
 }
 
 .form-input {
@@ -200,8 +207,9 @@ h6 span {
 
 .button-secondary:hover {
   background: var(--color-primary);
-  box-shadow: 0px 4px 16px 0px rgba(51, 51, 51, 0.08), 0px 4px 4px 0px rgba(51, 51, 51, 0.04);
-  transform: translateY(-.15rem);
+  box-shadow: 0px 4px 16px 0px rgba(51, 51, 51, 0.08),
+    0px 4px 4px 0px rgba(51, 51, 51, 0.04);
+  transform: translateY(-0.15rem);
 }
 
 input,
@@ -210,7 +218,7 @@ textarea {
   border: none;
   width: 100%;
   display: flex;
-  padding: .625rem 1rem .625rem 0;
+  padding: 0.625rem 1rem 0.625rem 0;
   flex-direction: column;
   align-items: flex-start;
   align-self: stretch;
@@ -224,7 +232,8 @@ textarea {
   line-height: 1.4rem;
 
   &:hover {
-    box-shadow: 0px 4px 16px 0px rgba(51, 51, 51, 0.08), 0px 4px 4px 0px rgba(51, 51, 51, 0.04);
+    box-shadow: 0px 4px 16px 0px rgba(51, 51, 51, 0.08),
+      0px 4px 4px 0px rgba(51, 51, 51, 0.04);
   }
 }
 
@@ -371,19 +380,19 @@ label.error {
     padding: 2.5rem 1rem;
   }
 }
-.flex{
+.flex {
   display: flex;
 }
-.flex-col{
+.flex-col {
   flex-direction: column;
 }
-.gap-2{
-  gap:2rem;
+.gap-2 {
+  gap: 2rem;
 }
-.inline-flex{
+.inline-flex {
   display: inline-flex;
 }
-.ml-2{
+.ml-2 {
   margin-left: 2px;
 }
 
@@ -397,10 +406,10 @@ label.error {
     text-decoration: none;
     position: relative;
 
-    @include typography('text-md', semibold);
+    @include typography("text-md", semibold);
 
     @include desktop-small {
-      @include typography('text-sm', semibold);
+      @include typography("text-sm", semibold);
     }
 
     .icon {
@@ -417,6 +426,5 @@ label.error {
       justify-content: center;
       align-items: center;
     }
-
   }
 }

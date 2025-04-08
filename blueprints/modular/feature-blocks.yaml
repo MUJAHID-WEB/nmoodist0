@@ -7,7 +7,6 @@ form:
       fields:
         content:
           fields:
-
             module_section:
               ordering@: 3
               type: section
@@ -17,12 +16,20 @@ form:
                 header.module.title.translatable:
                   type: text
                   label: Title
-                  classes: 'translatable'
+                  classes: "translatable"
 
-                header.module.feature_bg:
-                    type: pagemediaselect
-                    label: Feature Bg image
-                    preview_images: true
+                header.module.button:
+                  type: list
+                  label: Feature Buttons
+                  style: vertical
+                  fields:
+                    .text.translatable:
+                      type: text
+                      label: Button Text
+                      classes: "translatable"
+                    .link:
+                      type: text
+                      label: Button Link
 
             header.feature_blocks_section:
               ordering@: 4
@@ -37,27 +44,13 @@ form:
                     .title.translatable:
                       type: text
                       label: Title
-                      classes: 'translatable'
+                      classes: "translatable"
                     .description.translatable:
                       type: textarea
                       label: Description
-                      classes: 'translatable'
-                    .buttons:
-                      type: list
-                      label: Feature Buttons
-                      style: vertical
-                      fields:
-                        .text.translatable:
-                          type: text
-                          label: Button Text
-                          classes: 'translatable'
-                        .link:
-                          type: text
-                          label: Button Link
+                      classes: "translatable"
                     .image:
                       type: pagemediaselect
                       label: Image
             header.media_order:
-                ordering@: 99
-
-
+              ordering@: 99
