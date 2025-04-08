@@ -15,10 +15,12 @@
 
                 <div class="listing-contents">
                     <div class="header-content">
-                        {% if module.subtitle %}
-                            <h4>{{ module.subtitle.translatable|striptags('<span>')|raw }}</h4>
-                        {% endif %}
+                        
                         <h3>{{ module.title.translatable|striptags('<span>')|raw }}</h3>
+
+                        {% if module.description %}
+                            <h4>{{ module.description.translatable|striptags('<span>')|raw }}</h4>
+                        {% endif %}
                     </div>
                     <div class="listing_header">
                         <h5>{{ module.list_title.translatable|striptags('<span>')|raw }}</h5>
@@ -41,13 +43,14 @@
                                     </div>
 
                                     <div class="listing-content">
-                                        <p>
+                                        {# <p>
                                             <b>{{ section.title.translatable }}</b> {{ section.description.translatable }}
-                                        </p>
-                                        {# <h5 class="listing-title">
+                                        </p> #}
+                                        <h5 class="listing-title">
                                             {{ section.title.translatable }}
-                                            <p>{{ section.description.translatable }}</p>
-                                        </h5> #}
+                                           
+                                        </h5>
+                                         <p>{{ section.description.translatable }}</p>
                                     </div>
                                 </div>
                             {% endif %}
