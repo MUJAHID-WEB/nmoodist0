@@ -1,6 +1,6 @@
 .offer {
   display: flex;
-  padding: 6.25rem 0;
+  padding: 85px 0;
   align-items: center;
   align-self: stretch;
   // background-color: var(--color-white);
@@ -12,7 +12,7 @@
   
 
   @include desktop-small {
-    padding: 94px 0;
+    padding: 80px 0 156px;
   }
 
 
@@ -40,64 +40,57 @@
       justify-content: center;
       color: var(--color-white);
       gap: 1.25rem;
-      padding: 32px;
       max-width: 100%;
      
       @include desktop-small {
-        padding: 0;
+        align-items: flex-start;
+        text-align: left;
         max-width: 100%;
-        gap: 1.5rem;
+        gap: 34px;
       }
 
       .offer-title {
         @include typography(display-lg, semibold);
         font-family: var(--secondary-font);
-        max-width: 70%;
+        max-width: 67%;
 
         @include desktop-small{
-          @include typography(display-sm, semibold);
+          @include typography(display-md, semibold);
           max-width: 100%;
         }
       }
 
       p {
-        @include typography(text-lg, regular);
+        @include typography(text-xl, regular);
         max-width: 50%;
+        margin-bottom: 14px;
+
         @include desktop-small {
           max-width: 100%;
           @include typography(text-md, regular);
+          margin-bottom: 0;
         }
 
       }
 
       .button{
-        margin-top: 40px;
-        align-self: center;
+        text-decoration: none;
         display: flex;
         align-items: center;
-        @include typography(text-xl, extra_bold);
-        background: var(--color-white);
-        border: 1px solid var(--color-primary);
-        //color: var(--color-hero-button);
+        gap: 6px;
+        background: transparent;
+        padding: 0;
 
-        span {
+        span{
+          @include typography('text-md', 'extra_bold');
+          color: var(--color-text-dark);
           background: var(--color-primary);
-          background-clip: text;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: rgba(0, 0, 0, 0);
-        }
-        // svg {
-        //   path {
-        //     stroke: var(--color-white);
-        //   }
-        // }
+          padding: 12px 22px;
+          border-radius: 22px;
 
-        &:hover {
-          border: 1px solid var(--color-white);
-        }
-
-        @include desktop-small{
-          margin-top: 16px;
+          @include desktop-small{
+            @include typography('text-sm', 'extra_bold');
+          }
         }
       }
       
@@ -107,13 +100,3 @@
 }
 
 
-@keyframes offerslideIn {
-  0% {
-    top: -100%;
-    left: -100%;
-  }
-  100% {
-    top: 0%;
-    left: 300%;
-  }
-}

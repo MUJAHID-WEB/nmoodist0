@@ -1,12 +1,13 @@
 {% extends 'partials/variables.html.twig' %}
 
 {% set contents = page.header.hero %}
+{% set bg = page.media[contents.image].url ?? '' %}
 
 {% block render_block %}
 
-	<section class="hero-section" id="hero-section">
+	<section class="hero-section" id="hero-section" style="{% if(bg) %}background-image: url('{{ bg }}'){% endif %}">
 
-		<div class="hero-wrapper">
+		<div class="hero-wrapper container">
 
 			<div class="text-contents">
 
@@ -20,11 +21,12 @@
 
 				{% if contents.hero_btn_text != null %}
 					<a href="#" class="hero-btn">
-						<span>{{ contents.hero_btn_text.translatable }}</span>
+					<span>{{ contents.hero_btn_text.translatable }}</span>
 
-						<svg xmlns="http://www.w3.org/2000/svg" width="49" height="50" viewBox="0 0 49 50" fill="none">
-							<circle cx="24.35" cy="25" r="24.15" transform="rotate(-180 24.35 25)" fill="white"/>
-							<path d="M31.7341 18.0983C31.7341 17.6981 31.4097 17.3737 31.0096 17.3737L24.4889 17.3737C24.0888 17.3737 23.7644 17.6981 23.7644 18.0983C23.7644 18.4984 24.0888 18.8228 24.4889 18.8228L30.2851 18.8228L30.2851 24.6189C30.2851 25.0191 30.6094 25.3435 31.0096 25.3434C31.4097 25.3435 31.7341 25.0191 31.7341 24.6189L31.7341 18.0983ZM18.2021 31.9303L31.5219 18.6106L30.4973 17.586L17.1775 30.9057L18.2021 31.9303Z" fill="black"/>
+						<svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40" fill="none">
+							<rect x="0.311279" width="40" height="40" rx="20" fill="black"/>
+							<rect x="11.3113" y="11" width="18" height="18" rx="9" fill="#FFD621"/>
+							<path d="M19.4779 23.75C19.0196 23.75 18.6273 23.5868 18.3009 23.2604C17.9745 22.934 17.8113 22.5417 17.8113 22.0833C17.8113 21.625 17.9745 21.2326 18.3009 20.9062C18.6273 20.5799 19.0196 20.4167 19.4779 20.4167C19.6377 20.4167 19.7853 20.4358 19.9209 20.4742C20.0564 20.5125 20.1866 20.5697 20.3113 20.6458V16.25H22.8113V17.9167H21.1446V22.0833C21.1446 22.5417 20.9814 22.934 20.655 23.2604C20.3286 23.5868 19.9363 23.75 19.4779 23.75Z" fill="black"/>
 						</svg>
 					</a>
 				{% endif %}
@@ -32,7 +34,7 @@
 			</div>
 
 			<div class="image-contents">
-				<img class="hero-img-for-desktop" src="{{ page.media[contents.image].url }}" alt="Hero Image" />
+				<img class="hero-img-for-desktop" src="{{ page.media[contents.image_for_desktop].url }}" alt="Hero Image" />
 				<img class="hero-img-for-mobile" src="{{ page.media[contents.image_for_mobile].url }}" alt="Hero Image" />
 			</div>
 

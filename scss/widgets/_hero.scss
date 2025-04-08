@@ -1,43 +1,17 @@
 .hero-section {
   background: var(--color-black);
-  margin-top: -8.1rem;
-  padding-top: 10rem;
-  padding-bottom: 35rem;
+  padding: 80px 0 58px;
   color: var(--color-white);
 
-  background-image: url(../../images/hero-shape.svg);
+  // background-image: url(../../images/hero-shape.svg);
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
   position: relative;
 
-  @include desktop-lg {
-    margin-top: 0rem;
-    padding-top: 10rem;
-    padding-bottom: 46rem;
-  }
 
   @include desktop-small {
-    margin-top: 0rem;
-    padding-top: 10rem;
-    padding-bottom: 48rem;
-  }
-
-  @include tablet {
-    margin-top: 0rem;
-    padding-top: 10rem;
-    padding-bottom: 44rem;
-  }
-
-  @include md-mobile {
-    margin-top: 0rem;
-    padding-top: 10rem;
-    padding-bottom: 33rem;
-  }
-
-  @include mobile {
-    margin-top: 0rem;
-    padding-top: 10rem;
-    padding-bottom: 38rem;
+    padding: 3.75rem 0;
   }
 
 
@@ -46,26 +20,32 @@
       text-align: center;
       display: flex;
       flex-direction: column;
-      gap: 3rem;
+      gap: 58px;
+
+      @include tablet{
+        gap: 34px;
+      }
 
       .text-contents {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        gap: 1.5rem;
 
-        @include desktop-small {
-          padding: 0 1rem;
+        @include tablet{
+          gap: 18px;
         }
 
         .hero-title {
           color: var(--color-white);
           font-family: var(--secondary-font);
-          @include typography('display-xxl', 'semibold');
-          margin-bottom: 20px;
+          @include typography('display-xl', 'bold');
+          max-width: 80%;
 
           @include desktop-small {
-            @include typography('display-md', 'bold');
+            @include typography('display-sm', 'bold');
+            max-width: 100%;
           }
 
           span {
@@ -80,81 +60,62 @@
 
         p {
           @include typography('text-lg', 'regular');
-          margin-bottom: 40px;
-          max-width: 45%;
+          margin-bottom: 10px;
+          max-width: 37%;
+
           @include desktop-small {
-            max-width: 60%;
+            max-width: 50%;
           }
-          @include mobile {
+
+          @include tablet {
+            @include typography('text-md', 'regular');
             max-width: 100%;
+            margin-bottom: 2px;
           }
         }
 
         .hero-btn {
-          color: var(--color-white);
+          
           text-decoration: none;
           display: flex;
           align-items: center;
-          justify-content: space-between;
-          background: var(--color-primary);
-          padding: 0px 4px 0px 20px;
-          border-radius: 30px;
-          width: 235px;
-          height: 54px;
+          gap: 6px;
+
+          span{
+            @include typography('text-md', 'extra_bold');
+            color: var(--color-text-dark);
+            background: var(--color-primary);
+            padding: 12px 22px;
+            border-radius: 22px;
+
+            @include desktop-small{
+              @include typography('text-sm', 'extra_bold');
+            }
+          }
         }
       }
 
       .image-contents {
         width: 100%;
-        position: absolute;
-        left: 0;
-        bottom: -148px;
-
-        @include tablet {
-          bottom: 22px;
-        }
 
 
         .hero-img-for-desktop {
           width: 100%;
 
-          @include desktop-small {
-            display: none;
-          }
-
           @include tablet {
             display: none;
           }
 
-          @include md-mobile {
-            display: none;
-          }
-
-          @include mobile {
-            display: none;
-          }
         }
 
         .hero-img-for-mobile {
           display: none;
-          width: 100%;
-
-          @include desktop-small {
-            display: block;
-          }
+          
 
           @include tablet {
             display: block;
+            width: 100%;
           }
-
-          @include md-mobile {
-            display: block;
-          }
-
-          @include mobile {
-            display: block;
-          }
-
 
         }
       }

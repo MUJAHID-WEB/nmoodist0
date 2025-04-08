@@ -38,7 +38,12 @@ form:
 
                 header.hero.image:
                     type: pagemediaselect
-                    label: Hero image
+                    label: Hero bg image
+                    preview_images: true
+
+                header.hero.image_for_desktop:
+                    type: pagemediaselect
+                    label: Hero image for Desktop
                     preview_images: true
 
                 header.hero.image_for_mobile:
