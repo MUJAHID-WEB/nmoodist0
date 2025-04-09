@@ -18,14 +18,14 @@
     display: flex;
     height: auto;
     width: 100%;
-    padding: 1rem 1rem 3.5rem;
+    padding: 2rem 1rem;
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
     // border-radius: 0;
     background: var(--color-white);
-    top: 83px;
-    // border: 1px solid var(--mobile-menu-bg-container);
+    top: 73px;
+    border-top: 1px solid var(--color-gray);
 
     transform: translateX(-100%);
     transition: ease-in 0.2s;
@@ -61,19 +61,21 @@
       // padding-bottom: 1.5rem;
       flex-direction: column;
       align-items: center;
-      gap: 1rem;
+      gap: 8px;
       align-self: stretch;
 
       .menu-item {
         text-align: center;
+        padding: 12px 0;
+        width: 100%;
       }
 
       .menu-item__link {
         color: var(--color-text-dark);
         font-size: 1rem;
-        font-weight: 400;
+        font-weight: 800;
         text-decoration: none;
-        border-bottom: 4px solid transparent;
+        // border-bottom: 4px solid transparent;
 
         &:active {
           border-color: var(--color-primary);
@@ -99,6 +101,13 @@
           border: 1px solid var(--color-primary);
           display: flex;
           align-items: center;
+
+          span{
+            font-size: 1rem;
+            font-weight: 800;
+            text-align: center;
+            width: -webkit-fill-available;
+          }
         }
       }
     }
@@ -116,6 +125,6 @@
 #cheeseburger-menu .cheeseburger-menu__menu:last-child .button:not(.login,.signup) {
   background: var(--color-white);
   color: var(--color-primary);
-  font-weight: 600;
-  border-radius: var(--border-radius);
+  font-weight: 800;
+  border-radius: 20px;
 }
