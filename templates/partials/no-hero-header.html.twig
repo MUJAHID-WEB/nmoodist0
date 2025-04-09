@@ -7,20 +7,46 @@
 
 			<div class="head-content">
 
-				{% if  noHeroContent.subtitle != null%}
+				{% if  noHeroContent.subtitle != null %}
 
 					<h4>{{ noHeroContent.subtitle.translatable|raw }}</h4>
 	
 				{% endif %}
 
-				{% if  noHeroContent.title != null%}
+				{% if  noHeroContent.title != null %}
 
 					<h1>{{ noHeroContent.title.translatable|raw }}</h1>
 				{% else %}
 					<h1>{{ page.header.title|raw }}</h1>
+
+
+					<nav class="d-inline-block no-hero-breadcrumb" aria-label="breadcrumb">
+						<ol class="breadcrumb">
+							{% for index, link in links %}
+								{% set last = index + 1 == links|length %}
+								<li class="breadcrumb-item {{breadcrumb_text_color}} {{ last ? 'active' : '' }}">
+									{% if link.url %}
+										<a href="{{ link.url }}" class="{{breadcrumb_text_color}}">{{ link.title }}</a>
+									{% else %}
+										{{ link.title }}
+									{% endif %}
+								</li>
+
+								{% if index + 1 != links|length %}
+									<li class="breadcrumb-item arry {{breadcrumb_text_color}}">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewbox="0 0 16 16">
+											<path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+										</svg>
+									</li>
+								{% endif %}
+							{% endfor %}
+						</ol>
+					</nav>
 				{% endif %}
 
-				<p> {{ noHeroContent.description.translatable }} </p>
+				{% if  noHeroContent.description != null %}
+					<p> {{ noHeroContent.description.translatable }} </p>
+				{% endif %}
 
 				{% if noHeroContent.button_text != null %}
 					<a href="{{ home_url|e }}{{ webdata('signup_url') }}" class="nohero-btn">
@@ -37,10 +63,17 @@
 			<!-- End head-content-->
 
 			<div class="image-contents">
-				<img class="no-hero-img-for-desktop" src="{{ page.media[noHeroContent.image_for_desktop].url }}" alt="no Hero Image" />
+				{% if image_for_desktop %}
+					<img class="no-hero-img-for-desktop" src="{{ page.media[noHeroContent.image_for_desktop].url }}" alt="no Hero Image" />
+				{% endif %}
+				
+				{% if image_top_left %}
+					<img class="no-hero-img-top-left" src="{{ page.media[noHeroContent.image_top_left].url }}" alt="no Hero top left" />
+				{% endif %}
 
-				<img class="no-hero-img-top-left" src="{{ page.media[noHeroContent.image_top_left].url }}" alt="no Hero top left" />
-				<img class="no-hero-img-bottom-right" src="{{ page.media[noHeroContent.image_bottom_right].url }}" alt="no Hero bottom right" />
+				{% if image_bottom_right %}
+					<img class="no-hero-img-bottom-right" src="{{ page.media[noHeroContent.image_bottom_right].url }}" alt="no Hero bottom right" />
+				{% endif %}
 			</div>
 
 		</div>
