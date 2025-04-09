@@ -3,10 +3,15 @@
 
 <header class="header " id="header">
 	<div class="container">
-		<div class="header-wrapper">			
-			{% include 'widgets/menu.html.twig' %}
+		<div class="header-wrapper">
 			{% include 'widgets/logo.html.twig' with { position: 'header' } %}
-			{% include 'widgets/header-button.html.twig' %}
+
+				<div class="menu_btn">
+					{% include 'widgets/menu.html.twig' %}
+								
+					{% include 'widgets/header-button.html.twig' %}
+				</div>			
+			
 		</div>
 		<!-- End header-wrapper -->
 	</div>	

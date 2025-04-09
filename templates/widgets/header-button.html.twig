@@ -7,15 +7,18 @@
 		<a class="{{navbar_button_style}} btn signup" href="{{ home_url|e }}{{ webdata('signup_url') }}">
 			<span>{{ "METRICALO.SIGNUP"|t }}</span>
 
-			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-			<path d="M15.8269 6.85783C15.4364 6.46731 14.8032 6.46731 14.4127 6.85784C14.0222 7.24836 14.0222 7.88153 14.4127 8.27205L17.7056 11.5649H4.11975C3.56747 11.5649 3.11975 12.0126 3.11975 12.5649C3.11975 13.1172 3.56747 13.5649 4.11975 13.5649H17.7056L14.4127 16.8578C14.0222 17.2483 14.0222 17.8815 14.4127 18.272C14.8033 18.6625 15.4364 18.6625 15.827 18.272L20.8216 13.2773C20.84 13.2591 20.8577 13.2402 20.8748 13.2207C20.9422 13.143 20.9959 13.0575 21.0356 12.9673C21.0894 12.845 21.1194 12.7099 21.1198 12.5679V12.5649C21.1198 12.5618 21.1198 12.5587 21.1198 12.5556C21.1186 12.4299 21.0943 12.3096 21.0508 12.199C21.002 12.0747 20.9274 11.9582 20.8269 11.8578L15.8269 6.85783Z" fill="white"/>
+			<svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40" fill="none">
+				<rect x="0.311279" width="40" height="40" rx="20" fill="black"/>
+				<rect x="11.3113" y="11" width="18" height="18" rx="9" fill="#FFD621"/>
+				<path d="M19.4779 23.75C19.0196 23.75 18.6273 23.5868 18.3009 23.2604C17.9745 22.934 17.8113 22.5417 17.8113 22.0833C17.8113 21.625 17.9745 21.2326 18.3009 20.9062C18.6273 20.5799 19.0196 20.4167 19.4779 20.4167C19.6377 20.4167 19.7853 20.4358 19.9209 20.4742C20.0564 20.5125 20.1866 20.5697 20.3113 20.6458V16.25H22.8113V17.9167H21.1446V22.0833C21.1446 22.5417 20.9814 22.934 20.655 23.2604C20.3286 23.5868 19.9363 23.75 19.4779 23.75Z" fill="black"/>
 			</svg>
+		
 		</a>
 	{% endif %}
 	{% if grav.language.enabled and grav.language.languages|count > 1 %}
-		<span class="language-switcher" data-current-lang="{{ grav.language.active }}" id="open-modal"><img class="frame-29 lang-flag" src="{{ url('theme://images/lang/'~grav.language.active~'.svg') }}">
+		<span class="language-switcher" data-current-lang="{{ grav.language.active }}" id="open-modal"><img class="frame-29 lang-flag" src="{{ url('theme://images/lang/'~grav.language.active~'.svg') }}"> {{ grav.language.active|capitalize }}
 			<svg xmlns="http://www.w3.org/2000/svg" width="9" height="6" viewBox="0 0 9 6" fill="none">
-				<path fill-rule="evenodd" clip-rule="evenodd" d="M4.45913 5.01749L0.947365 0.982514L8.01843 0.982513C8.00095 1 4.45913 5.01749 4.45913 5.01749Z" fill="#000"/>
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M8.03551 1.76273L4.85353 4.94471C4.65826 5.13998 4.34168 5.13998 4.14642 4.94471L0.96444 1.76273C0.769178 1.56747 0.769178 1.25089 0.96444 1.05563C1.1597 0.860364 1.47628 0.860364 1.67155 1.05563L4.49997 3.88405L7.3284 1.05563C7.52366 0.860364 7.84025 0.860364 8.03551 1.05563C8.23077 1.25089 8.23077 1.56747 8.03551 1.76273Z" fill="#181818"/>
 			</svg>
 		</span>
 	{% endif %}

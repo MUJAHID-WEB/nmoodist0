@@ -1,0 +1,135 @@
+.about-listing-wrapper {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: transparent;
+
+  @include desktop-small {
+    padding: 60px 0;
+  }
+
+  .contents-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+
+    @include desktop-small {
+      flex-direction: column;
+      gap: 34px;
+    }
+
+    .image-wrapper {
+      max-width: 460px;
+      width: 100%;
+    }
+
+    .listing-contents {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 60px;
+      flex: 1;
+
+      @include desktop-small {
+        gap: 34px;
+      }
+
+      .header-content {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @include desktop-small {
+          text-align: center;
+        }
+
+        h3 {
+          font-family: var(--secondary-font);
+          color: var(--color-text-dark);
+          @include typography(display-md, semibold);
+
+          @include desktop-small {
+            // @include typography(display-sm, semibold);
+          }
+        }
+      }
+
+      .companion-content-wrapper {
+        display: flex;
+        align-items: stretch;
+        gap: 20px;
+
+        .active-line {
+          width: 8px;
+          border-radius: 20px;
+          background: var(--color-secondary);
+        }
+
+        .listing-content-container {
+          display: flex;
+          flex-direction: column;
+          gap: 14px;
+          max-width: 530px;
+          width: 100%;
+
+          .listing-content {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            padding: 24px 20px;
+            border-radius: 20px;
+            border: 1px solid var(--color-gray);
+
+            &:hover {
+              background-color: var(--color-secondary);
+              border: none;
+            }
+
+            @include desktop-small {
+              align-items: center;
+            }
+
+            .listing-title {
+              color: var(--color-text-dark);
+              @include typography(text-xl, extra_bold);
+            }
+
+            p {
+              color: var(--color-text-light);
+              @include typography(text-md, regular);
+              max-width: 410px;
+              width: 100%;
+
+              @include desktop-small {
+                text-align: center;
+                padding: 0 25px;
+              }
+            }
+          }
+
+          .listing-content.active {
+            background-color: var(--color-secondary);
+            border: none;
+          }
+
+          .image-wrapper {
+            position: relative;
+
+            .companion-image {
+              display: none !important;
+              width: 100%;
+              object-fit: cover;
+              border-radius: 12px;
+
+              .companion-image.active {
+                display: block !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
