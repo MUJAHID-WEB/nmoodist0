@@ -1,19 +1,20 @@
 .pricings {
   display: flex;
-  padding: 75px 0;
+  padding: 100px 0;
   flex-direction: column;
   align-items: center;
-  gap: 50px;
+  gap: 42px;
   align-self: stretch;  
   margin: auto;
-  // background-color: #FDFFF4;
+  background-color: var(--color-accent);
 
   @include desktop-small {
-    padding: 50px 0;
+    padding: 60px 0;
+    gap: 40px;
   }
 
   position: relative;
-  background-image: url(../../images/pricing_bg.svg);
+  // background-image: url(../../images/pricing_bg.svg);
   background-position: top;
   background-size: contain;
   background-repeat: no-repeat;
@@ -34,7 +35,7 @@
   h3 {
     text-align: center;
     margin-bottom: 20px;
-    color: var(--color-text-dark);
+    color: var(--color-white);
     font-family: var(--secondary-font);
     @include typography(display-lg, semibold);
 
@@ -57,11 +58,11 @@
 
   }
   p{
-    color: var(--color-text-light);
+    color: var(--color-white);
     @include typography(text-lg, regular);
     text-align: center;
     margin: 0 auto;
-    max-width: 40%;
+    max-width: 50%;
 
     @include desktop-small{
       @include typography(text-md, regular);
@@ -91,7 +92,7 @@
       flex: 1 0 31%;
       max-width: 552px;
       align-self: stretch;
-      border-radius: 8px;
+      border-radius: 20px 20px 0 0;
       border: 1px solid var(--border-color);
       background: var(--color-white);
       opacity: 0;
@@ -294,6 +295,36 @@
           }
         }
 
+        & > div:not(.pricing-content) {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          align-self: stretch;
+          padding: 0 2rem;
+  
+          .pricing-btn {
+            width: 100%;
+            text-align: center;
+            background: var(--color-primary);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: rgba(0, 0, 0, 0);
+  
+            // color: var(--color-primary);
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            border-radius: 10px;
+            @include typography(display-xs, extra_bold);
+  
+            @include desktop-small{
+              font-size: 14px;
+              font-weight: 500;
+              padding: 6px 8px;
+              height: auto;
+            }
+          }
+        }
+
 
         .benefits {
           display: flex;
@@ -319,80 +350,34 @@
       }
 
       
-      & > div:not(.pricing-content) {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        align-self: stretch;
-        padding: 0 2rem;
+      // & > div:not(.pricing-content) {
+      //   display: flex;
+      //   flex-direction: column;
+      //   align-items: flex-start;
+      //   align-self: stretch;
+      //   padding: 0 2rem;
 
-        .pricing-btn {
-          width: 100%;
-          text-align: center;
-          background: var(--color-primary);
-          background-clip: text;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: rgba(0, 0, 0, 0);
-
-          // color: var(--color-primary);
-          border: 1px solid var(--border-color);
-          padding: 12px;
-          border-radius: 10px;
-          @include typography(display-xs, extra_bold);
-
-          @include desktop-small{
-            font-size: 14px;
-            font-weight: 500;
-            padding: 6px 8px;
-            height: auto;
-          }
-        }
-      }
-
-      // &:nth-child(3){
-      //   border: 2px solid var(--color-primary);
-      //   background: var(--color-tertiary-bg);
-      //   margin-bottom: 0;
-
-      //   .pricing-content .recommended-tag-parent{
-      //     display: none;
-      //    }
-
-      //   .pricing-content .package-top-section > .price {
-      //     .pricing-group {
-
-      //       .text-sm{
-      //         color: var(--color-text-dark);
-      //       }
-      //       .billed-section {
-      //         color: var(--color-text-dark);
-      //       }
-      //       .billed-section .trial-days,
-      //       .billed-section .trial{
-      //         color: var(--color-text-dark);
-      //       }
-            
-      //       .pricing-wrap .price{
-      //         color: var(--color-text-dark);
-      //       }
-      //     }
-      //     .type{
-      //       color: var(--color-primary);
-      //     }
-
-      //   }
-
-      //   &> div:not(.pricing-content) .pricing-btn{
+      //   .pricing-btn {
+      //     width: 100%;
+      //     text-align: center;
       //     background: var(--color-primary);
-      //     color: var(--color-white);
-      //   }
+      //     background-clip: text;
+      //     -webkit-background-clip: text;
+      //     -webkit-text-fill-color: rgba(0, 0, 0, 0);
 
-      //   .pricing-content .benefits .benefit .streamline{
-      //     color: var(--color-tertiary);
-      //   }
-        
-        
+      //     // color: var(--color-primary);
+      //     border: 1px solid var(--border-color);
+      //     padding: 12px;
+      //     border-radius: 10px;
+      //     @include typography(display-xs, extra_bold);
 
+      //     @include desktop-small{
+      //       font-size: 14px;
+      //       font-weight: 500;
+      //       padding: 6px 8px;
+      //       height: auto;
+      //     }
+      //   }
       // }
 
       

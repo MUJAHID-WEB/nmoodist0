@@ -1,197 +1,187 @@
-.footer-top-main {
-  overflow: hidden;
-  background: var(--color-primary);
-  background-size: 74%;
-  position: relative;
+// .footer-top-main {
+//   overflow: hidden;
+//   background: var(--color-primary);
+//   background-size: 74%;
+//   position: relative;
 
-  @include desktop-small {
-    background-image: none;
-  }
+//   @include desktop-small {
+//     background-image: none;
+//   }
 
-  @include desktop-lg {
-    background-image: none;
-  }
-   
-  .footer-top-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 64px 0;
-    color: var(--color-white);
-    gap: 0px;
+//   @include desktop-lg {
+//     background-image: none;
+//   }
 
-  
-    @include desktop-small {
-      flex-direction: column;    
-      align-items: start;  
-      gap: 80px;
-      background-image: none;
-    }
+//   .footer-top-wrapper {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     padding: 64px 0;
+//     color: var(--color-white);
+//     gap: 0px;
 
-    @include desktop-lg {
-      flex-direction: column;    
-      align-items: start;  
-      gap: 80px; 
-      background-image: none;
+//     @include desktop-small {
+//       flex-direction: column;
+//       align-items: start;
+//       gap: 80px;
+//       background-image: none;
+//     }
 
-    }
+//     @include desktop-lg {
+//       flex-direction: column;
+//       align-items: start;
+//       gap: 80px;
+//       background-image: none;
 
-    @include desktop-xl {
-      flex-direction: column;    
-      align-items: start;  
-      gap: 80px; 
-      background-image: none;
+//     }
 
-    }
+//     @include desktop-xl {
+//       flex-direction: column;
+//       align-items: start;
+//       gap: 80px;
+//       background-image: none;
 
-    .footer-top-left {
-      display: flex;
-      gap: 0px;
-      width: 80%;
+//     }
 
-      @include desktop-small {
-        flex-direction: column;
-        gap: 24px;
-        width: 100%;
-      }
+//     .footer-top-left {
+//       display: flex;
+//       gap: 0px;
+//       width: 80%;
 
-      @include desktop-lg {
-        flex-direction: column;
-        gap: 24px;
-        width: 100%;
-      }
+//       @include desktop-small {
+//         flex-direction: column;
+//         gap: 24px;
+//         width: 100%;
+//       }
 
-      @include desktop-xl {
-        flex-direction: column;
-        gap: 24px;
-        width: 100%;
-      }
+//       @include desktop-lg {
+//         flex-direction: column;
+//         gap: 24px;
+//         width: 100%;
+//       }
 
-      h2 {
-        width: 40%;
-        font-family: var(--secondary-font);
-        font-size: 48px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 60px; /* 125% */
-        letter-spacing: -0.96px;
+//       @include desktop-xl {
+//         flex-direction: column;
+//         gap: 24px;
+//         width: 100%;
+//       }
 
-        @include desktop-small {
-          width: 100%;
-          font-size: 36px;
-          font-style: normal;
-          font-weight: 500;
-          line-height: 44px; /* 122.222% */
-          letter-spacing: -0.72px;
-        }
+//       h2 {
+//         width: 40%;
+//         font-family: var(--secondary-font);
+//         font-size: 48px;
+//         font-style: normal;
+//         font-weight: 600;
+//         line-height: 60px; /* 125% */
+//         letter-spacing: -0.96px;
 
-        @include desktop-lg {
-          width: 100%;
-          font-size: 36px;
-          font-style: normal;
-          font-weight: 500;
-          line-height: 44px; /* 122.222% */
-          letter-spacing: -0.72px;
-        }
+//         @include desktop-small {
+//           width: 100%;
+//           font-size: 36px;
+//           font-style: normal;
+//           font-weight: 500;
+//           line-height: 44px; /* 122.222% */
+//           letter-spacing: -0.72px;
+//         }
 
-        @include desktop-xl {
-          width: 100%;
-          font-size: 36px;
-          font-style: normal;
-          font-weight: 500;
-          line-height: 44px; /* 122.222% */
-          letter-spacing: -0.72px;
-        }
-      }
+//         @include desktop-lg {
+//           width: 100%;
+//           font-size: 36px;
+//           font-style: normal;
+//           font-weight: 500;
+//           line-height: 44px; /* 122.222% */
+//           letter-spacing: -0.72px;
+//         }
 
-      p {
-        width: 60%;
-        font-family: var(--secondary-font);
-        font-size: 24px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 32px; /* 133.333% */
+//         @include desktop-xl {
+//           width: 100%;
+//           font-size: 36px;
+//           font-style: normal;
+//           font-weight: 500;
+//           line-height: 44px; /* 122.222% */
+//           letter-spacing: -0.72px;
+//         }
+//       }
 
-        @include desktop-small {
-          width: 100%;
-          font-size: 20px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: 30px; /* 150% */
-        }
+//       p {
+//         width: 60%;
+//         font-family: var(--secondary-font);
+//         font-size: 24px;
+//         font-style: normal;
+//         font-weight: 400;
+//         line-height: 32px; /* 133.333% */
 
-        @include desktop-lg {
-          width: 100%;
-          font-size: 20px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: 30px; /* 150% */
-        }
+//         @include desktop-small {
+//           width: 100%;
+//           font-size: 20px;
+//           font-style: normal;
+//           font-weight: 400;
+//           line-height: 30px; /* 150% */
+//         }
 
-        @include desktop-xl {
-          width: 100%;
-          font-size: 20px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: 30px; /* 150% */
-        }
-      }
-    }
+//         @include desktop-lg {
+//           width: 100%;
+//           font-size: 20px;
+//           font-style: normal;
+//           font-weight: 400;
+//           line-height: 30px; /* 150% */
+//         }
 
-    .footer-top-right{
-      width: 15%;
+//         @include desktop-xl {
+//           width: 100%;
+//           font-size: 20px;
+//           font-style: normal;
+//           font-weight: 400;
+//           line-height: 30px; /* 150% */
+//         }
+//       }
+//     }
 
-      @include desktop-small {
-        width: 50%;
-      }
+//     .footer-top-right{
+//       width: 15%;
 
-      .footer-btn {
-        width: 227px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        background: var(--color-white);
-        color: var(--color-black);
-        border-radius: 8px;
-        padding: 12px 20px;
-        font-size: 18px;
+//       @include desktop-small {
+//         width: 50%;
+//       }
 
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
+//       .footer-btn {
+//         width: 227px;
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         text-decoration: none;
+//         background: var(--color-white);
+//         color: var(--color-black);
+//         border-radius: 8px;
+//         padding: 12px 20px;
+//         font-size: 18px;
 
-        @include desktop-small {
-          font-size: 16px;
-          font-style: normal;
-          font-weight: 700;
-          line-height: 24px; /* 150% */
-        }
-      }
-    }
-  }
-}
+//         font-style: normal;
+//         font-weight: 500;
+//         line-height: normal;
+
+//         @include desktop-small {
+//           font-size: 16px;
+//           font-style: normal;
+//           font-weight: 700;
+//           line-height: 24px; /* 150% */
+//         }
+//       }
+//     }
+//   }
+// }
 
 .footer-main {
   overflow: hidden;
-  background: var(--color-white);
   display: flex;
-  padding: 4rem 0 0 0;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 3rem;
   align-self: stretch;
-
-
-  @include desktop-small{
-    padding: 3rem 0 0 0;
-  }
 
   .footer-logo-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 3rem;
     @include padding(padding-lg);
 
@@ -201,7 +191,6 @@
       flex-direction: column;
     }
 
-
     .logo-container {
       padding: 0;
       justify-content: start;
@@ -210,70 +199,62 @@
     }
 
     .title {
-      // font-family: var(--default-font-2);
-      @include typography(display-xs, bold);
-      color: var(--panel-footer-text) !important;
-    
-      @include desktop-small {
-        @include typography(text-xl, medium);
-      }
+      @include typography(text-sm, regular);
+      text-transform: capitalize !important;
     }
     .flexcontainer {
       margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
     }
 
     p {
-      @include typography(text-xl, regular);
-      @include desktop-small {
-        @include typography(text-md, semibold);
-      }
-      padding: 6px 0;
+      @include typography(text-md, 500);
       color: var(--panel-footer-text);
+      line-height: 24px;
     }
 
     a {
       color: var(--panel-footer-text) !important;
       text-decoration: none;
-      @include typography(text-xl, regular);
-      @include desktop-small {
-        @include typography(text-md, regular);
-      }
+      @include typography(text-md, regular);
 
       &:hover {
         text-decoration: underline;
       }
     }
 
-    
     .footer-logo-top {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      justify-content: space-between;
+      align-items: flex-start;
       gap: 32px;
+      padding: 64px 0;
 
       @include desktop-small {
+        padding: 48px 0;
+      }
+
+      @include tablet {
         flex-direction: column;
       }
 
       .footer-contact {
-        width: 30%;
+        max-width: 270px;
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 0.625rem;
+        gap: 16px;
 
         @include desktop-small {
           width: 100%;
         }
 
-        p, a {
-          @include typography(text-xl, regular);
-
-          @include desktop-small {
-            @include typography(text-md, regular);
-          }
-          color: var(--panel-footer-text) !important;
+        p,
+        a {
+          @include typography(text-md, regular);
         }
 
         p {
@@ -285,141 +266,124 @@
 
       .logo {
         max-width: 283px;
-        height: auto; 
+        height: auto;
       }
 
-      .footer-logo-area{
-        width: 70%;
+      .footer-logo-area {
+        max-width: 182px;
+        width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 32px;
-        text-align: center;
+        justify-content: flex-start;
+        gap: 20px;
+        margin-right: 95px;
 
         @include desktop-small {
           gap: 32px;
           width: 100%;
+          margin-right: 0;
+        }
+
+        @include tablet {
+          max-width: 100%;
+          align-items: center;
         }
 
         .branding-text {
           @include desktop-small {
             @include typography(text-lg, regular);
           }
+
+          @include tablet {
+            text-align: center;
+          }
         }
       }
 
       .footer-menu {
+        max-width: 333px;
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: 0.4375rem;
 
-        @include desktop-small {
-          width: 100%;
-        }
-
         .footer-main-menu {
           display: flex;
-          gap: 32px;
-
-          @include desktop-small {
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-          }
+          flex-direction: column;
+          gap: 18px;
 
           .menu-item {
             display: flex;
-            padding: 6px 0;
             justify-content: flex-start;
             align-items: center;
             gap: 0.625rem;
-            @include typography(text-lg, regular);
-            @include desktop-small {
-              @include typography(text-md, regular);
-            }
-            color: var(--panel-footer-text) !important;
+            @include typography(text-md, regular);
           }
         }
       }
     }
 
     .footer-cards {
+      max-width: 174px;
+      width: 100%;
       display: flex;
-      flex-direction: row;
+      flex-direction: row-reverse;
       align-items: flex-start;
       justify-content: left;
-      gap: 1rem;
-
-      @include desktop-small {
-        width: 100%;
-        margin-top: 32px;
-        justify-content: center;
+      gap: 2rem;
+      img {
+        width: 70px;
+        height: 50px;
       }
 
-      img {
-        width: 60px;
+      @include tablet {
+        max-width: 100%;
+        justify-content: center;
       }
     }
   }
 
   .copyright {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    width: 100%;
+
+    .footer-bottom {
+      padding: 1rem;
       width: 100%;
+      background-color: var(--color-black);
 
-      .footer-bottom {
+      @include desktop-small {
+        margin-top: 0;
+        flex-direction: column;
+      }
+
+      p {
+        text-align: center;
+        color: var(--color-white);
+        @include typography(text-sm, regular);
+      }
+
+      .policy-pages-link-area {
         display: flex;
-        padding: 1rem 2rem;
-        justify-content: space-between;
-        align-items: center;
-        gap: 0.625rem;
-        align-self: center;
-        border-top: 0.5px solid #505050;
-        width: 100%;  
-
-        @include desktop-small{
-          margin-top: 0;
-          flex-direction: column;
-        }
-
-        p {
+        .link {
           color: var(--color-black);
-          @include typography(text-sm, regular);
-
+          text-decoration: none;
           @include desktop-small {
-            @include typography(text-xs, regular);
+            @include typography(text-sm, regular);
           }
-          text-align: center;
-
-        }
-
-        .policy-pages-link-area {
-          display: flex;
-          .link {
-            color: var(--color-black);
-            text-decoration: none;
-            @include desktop-small {
-              @include typography(text-sm, regular);
-            }
-            &:first-child {
-              border-right: none;
-              &::after {
-                content: "|";
-                color: var(--color-black);
-                margin-left: 1rem;
-              }
-            }
-            &:last-child {
+          &:first-child {
+            border-right: none;
+            &::after {
+              content: "|";
+              color: var(--color-black);
               margin-left: 1rem;
             }
           }
-        }  
-        
-        
+          &:last-child {
+            margin-left: 1rem;
+          }
+        }
       }
     }
+  }
 }
