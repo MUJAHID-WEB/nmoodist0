@@ -1,9 +1,20 @@
+.page-about .no-hero-section .no-hero-wrapper .head-content h1{
+  @include typography('display-xl', bold);
+  font-family: var(--secondary-font);
+  color: var(--color-white);
+
+  @include desktop-small {
+    @include typography('display-sm', bold);
+  }
+}
+
+
 .no-hero-section{
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 60px 0;
-  // background: var(--color-tertiary-bg);
+  padding: 42px 0;
+  background: var(--color-accent);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -38,12 +49,12 @@
       }
 
       h1 {
-        @include typography('display-xl', bold);
+        @include typography('display-lg', bold);
         font-family: var(--secondary-font);
         color: var(--color-white);
 
         @include desktop-small {
-          @include typography('display-sm', bold);
+          @include typography('display-xs', semibold);
         }
 
         span {
@@ -57,6 +68,61 @@
           }
         }
       }
+
+      .no-hero-breadcrumb {
+        // display: flex;
+        margin-top: 1rem;
+        width: 100%;
+        text-align: center;
+        // display: none;
+  
+        ol {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          padding: 0 0;
+          //margin-bottom: 1rem;
+          list-style: none;
+          border-radius: 0;
+          color: var(--color-white);
+  
+          .breadcrumb-item {
+            display: flex;
+            align-items: center;
+            @include typography(text-lg, regular);
+            @include desktop-small {
+              @include typography(text-md, regular);
+            }
+            color: var(--color-white) ;
+  
+            a {
+              text-decoration: none;
+              color: var(--color-white) ;
+              @include typography(text-lg, regular);
+              @include desktop-small {
+                @include typography(text-md, regular);
+              }
+            }
+  
+            &+.breadcrumb-item::before {
+              float: none;
+              padding-right: 0.25rem;
+              content: "";
+            }
+  
+            &.arry svg {
+              display: inline-block;
+              @include typography(text-lg);
+
+              @include desktop-small {
+                @include typography(text-md, regular);
+              }
+            }
+          }
+        }
+      }
+
       p {
         @include typography('text-lg', regular);
         margin-bottom: 10px;
