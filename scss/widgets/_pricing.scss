@@ -34,13 +34,14 @@
 
   h3 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
     color: var(--color-white);
     font-family: var(--secondary-font);
     @include typography(display-lg, semibold);
 
     @include desktop-small{
-      @include typography(display-sm, semibold);
+      @include typography(display-md, semibold);
+      text-transform: uppercase;
     }
 
     span{
@@ -66,6 +67,7 @@
 
     @include desktop-small{
       @include typography(text-md, regular);
+      max-width: 70%;
     }
   }
 
@@ -90,18 +92,18 @@
       transition: all 0.3s ease-in-out; 
       align-items: center;
       flex: 1 0 31%;
-      max-width: 552px;
+      max-width: 426px;
       align-self: stretch;
       border-radius: 20px 20px 0 0;
       border: 1px solid var(--border-color);
       background: var(--color-white);
       opacity: 0;
-      padding-bottom: 30px;
+      // padding-bottom: 30px;
 
       @include desktop-small {
         max-width: 600px;
         width: 100%;
-        padding-bottom: 24px;
+        // padding-bottom: 24px;
       }
 
       @include tablet {
@@ -116,18 +118,18 @@
         flex-direction: column;
         align-self: stretch;
         position: relative;
-        padding:  30px 20px 0 20px;
+        // padding:  32px;
 
         @include desktop-small{
-          padding:  22px 22px 0 22px;
+          // padding:  22px 22px 0 22px;
         }
 
 
         .recommended-tag-parent {
-          // position: absolute;
-          top: -53px;
+          position: absolute;
+          top: 22px;
           left: 0;
-          background: var(--color-white);
+          background: transparent;
           // padding: 8px;
           width: 100%;
           border-radius: 4px;
@@ -139,15 +141,22 @@
           }
 
           .recommended-tag {
-            background: var(--color-tertiary);
+            background: var(--bg-body);
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
             width: fit-content;
-            left: -1px;
-            border-radius: 4px;
-            padding: 8px 24px;
+            left: -16px;
+            border-radius: 2px;
+            padding: 10px 15px 35px 15px;
+            color: var(--color-white);
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 85%, 50% 85%, 0 100%);
+
+            @include desktop-small{
+              padding: 10px 6px 22px 6px;
+            }
 
             svg {
               width: 20px;
@@ -155,13 +164,11 @@
             }
 
             span {
-              color: var(--color-text-dark);
+              color: var(--color-primary);
               text-align: center;
-              @include typography(text-lg, medium);
+              @include typography(text-sm, extra_bold);
+              text-transform: uppercase;
 
-              @include mobile {
-                @include typography(text-md, medium);
-              }
             }
           }
         }
@@ -170,7 +177,14 @@
           display: flex;
           gap: 0;
           align-items: end;
+          margin-bottom: -32px;
+          padding-bottom: 48px !important;
+          background-image: url(../../images/pricing_bg.svg);
+          background-repeat: no-repeat;
+          background-position: bottom;
+          background-size: contain;
           // border-bottom: 2px solid var(--color-tertiary);
+
 
           .package-top-section-img{
             display: none;
@@ -187,7 +201,7 @@
             display: flex;
             flex-direction: column;
             align-items: start;
-            gap: 20px;
+            gap: 24px;
             // padding-bottom: 30px;
             align-self: stretch;
             flex-basis: 80%;
@@ -212,15 +226,15 @@
               }
             }
 
-            .type {
+            .type .type-wrap {
               background: transparent;
               color: var(--color-text-dark);
               text-align: left;
-              @include typography(display-md, medium);
+              @include typography(display-xs, semibold);
               font-family: var(--secondary-font);
 
               @include desktop-small {
-                @include typography(display-sm, medium);
+                @include typography(display-xs, semibold);
               }
             }
 
@@ -236,18 +250,15 @@
 
               .pricing-wrap {
                 .price {
-                  color: var(--color-tertiary);
+                  color: var(--color-text-dark);
                   text-align: left;
                   font-style: normal;
-                  @include typography(display-md, semibold);
-                  font-weight: 600;
-                  line-height: 60px;
-                  letter-spacing: -0.96px;
+                  @include typography(display-lg, semibold);
                   margin-bottom: 16px;
                   font-family: var(--secondary-font);
 
                   @include desktop-small {
-                    @include typography(display-sm, semibold);
+                    @include typography(display-lg, semibold);
                   }
                 }
               }
@@ -261,26 +272,26 @@
               .text-sm {
                 color: var(--color-text-dark);
                 font-style: normal;
-                @include typography(text-lg, regular);
+                @include typography(text-xl, extra_bold);
 
                 @include desktop-small{
-                  @include typography(text-sm, regular);
+                  @include typography(text-xl, extra_bold);
                 }
 
                 @include mobile{
-                  margin-bottom: 10px !important;
+                  margin-bottom: 10px;
                 }
               }
               .billed-section{
-                margin-top: 0 !important;
-                justify-content: start !important;
+                margin-top: 0 ;
+                justify-content: start ;
                 color: var(--color-text-dark);
 
                 .trial-days, .trial{
-                  @include typography(text-lg, regular);
+                  @include typography(text-sm, regular);
 
                   @include desktop-small{
-                    @include typography(text-md, regular);
+                    @include typography(text-sm, regular);
                   }
                 }
               }
@@ -300,28 +311,23 @@
           flex-direction: column;
           align-items: flex-start;
           align-self: stretch;
-          padding: 0 2rem;
+          padding: 2rem;
+          
   
           .pricing-btn {
             width: 100%;
             text-align: center;
             background: var(--color-primary);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: rgba(0, 0, 0, 0);
+            // background-clip: text;
+            // -webkit-background-clip: text;
+            // -webkit-text-fill-color: rgba(0, 0, 0, 0);
+            text-transform: uppercase;
+            color: var(--color-text-dark);
+            border: 1px solid var(--color-text-dark);
+            padding: 20px 40px;
+            border-radius: 20px;
+            @include typography(text-xl, medium);
   
-            // color: var(--color-primary);
-            border: 1px solid var(--border-color);
-            padding: 12px;
-            border-radius: 10px;
-            @include typography(display-xs, extra_bold);
-  
-            @include desktop-small{
-              font-size: 14px;
-              font-weight: 500;
-              padding: 6px 8px;
-              height: auto;
-            }
           }
         }
 
@@ -333,6 +339,7 @@
           gap: 1rem;
           padding: 34px 0;
           align-self: stretch;
+          background: var(--bg-body);
 
           .benefit {
             display: flex;
