@@ -1,0 +1,19 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.text_left %}
+{# {% set image = page.media[page.header.text_left.image] %} #}
+
+{% block render_block %}
+	<div class="future-sound text-left-animation {{ module.classes }}">
+		<div class="container">
+			<div class="block-title">
+				<h3>{{ module.title.translatable|striptags('<span>')|raw }}</h3>
+				<p>{{ page.content|raw }}</p>
+			</div>
+		</div>
+		<div class="future-sound-container">
+			<img class="desktop-img" src="{{ page.media[page.header.desktop.image].url }}" alt="icon"/>
+			<img class="mobile-img" src="{{ page.media[page.header.mobile.image].url }}" alt="icon"/>
+		</div>
+	</div>
+{% endblock %}
