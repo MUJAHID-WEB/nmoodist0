@@ -49,6 +49,11 @@ form:
                   label: Title
                   classess: 'translatable'
 
+                header.no_hero_content.subtitle.translatable:
+                  type: text
+                  label: Title
+                  classess: 'translatable'
+
                 header.no_hero_content.description.translatable:
                   type: textarea
                   label: Description
@@ -58,6 +63,21 @@ form:
                   type: text
                   label: Button Text
                   classess: 'translatable'
+
+                header.no_hero_content.image_for_desktop:
+                    type: pagemediaselect
+                    label: No Hero image for Desktop
+                    preview_images: true
+
+                header.no_hero_content.image_top_left:
+                    type: pagemediaselect
+                    label: No Hero image top left
+                    preview_images: true
+
+                header.no_hero_content.image_bottom_right:
+                    type: pagemediaselect
+                    label: No Hero image bottom right
+                    preview_images: true
 
                 header.no_hero_content.trainers.isEnabled:
                   type: toggle
