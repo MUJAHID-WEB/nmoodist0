@@ -69,6 +69,25 @@
         }
       }
 
+      .button{
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        background: transparent;
+        padding: 0;
+        span{
+          @include typography('text-md', 'extra_bold');
+          color: var(--color-text-dark);
+          background: var(--color-primary);
+          padding: 12px 22px;
+          border-radius: 22px;
+          @include desktop-small{
+            @include typography('text-sm', 'extra_bold');
+          }
+        }
+      }
+
       .description {
         display: flex;
         flex-direction: column;

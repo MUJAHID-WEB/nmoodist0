@@ -14,9 +14,15 @@
 
 				<div class="feature-buttons">
 					{% for button in module.button %}
-						<a href="{{ button.link }}" class="button">
-							{{ button.text.translatable }}
-						</a>
+						<a class="button " href="{{ button.link }}">
+                        <span>{{ button.text.translatable }}</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40" fill="none">
+                            <rect x="0.311279" width="40" height="40" rx="20" fill="black"/>
+                            <rect x="11.3113" y="11" width="18" height="18" rx="9" fill="#FFD621"/>
+                            <path d="M19.4779 23.75C19.0196 23.75 18.6273 23.5868 18.3009 23.2604C17.9745 22.934 17.8113 22.5417 17.8113 22.0833C17.8113 21.625 17.9745 21.2326 18.3009 20.9062C18.6273 20.5799 19.0196 20.4167 19.4779 20.4167C19.6377 20.4167 19.7853 20.4358 19.9209 20.4742C20.0564 20.5125 20.1866 20.5697 20.3113 20.6458V16.25H22.8113V17.9167H21.1446V22.0833C21.1446 22.5417 20.9814 22.934 20.655 23.2604C20.3286 23.5868 19.9363 23.75 19.4779 23.75Z" fill="black"/>
+                        </svg>
+                        
+                    </a>
 					{% endfor %}
 				</div>
 
