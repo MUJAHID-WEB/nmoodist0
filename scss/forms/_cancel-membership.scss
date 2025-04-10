@@ -1,19 +1,28 @@
 .content-section.cancel-membership {
   max-width: 600px;
-  padding-bottom: 100px;
-  padding-top: 100px;
-  background: var(--color-primary);
+  padding: 44px;
+  background: var(--color-white);
   margin: 5rem auto;
+  border-radius: 18px;
   box-shadow: 0px 4px 16px 0px #33333314, 0px 4px 4px 0px #3333330A;
 
+  @include desktop-small{
+    padding: 44px 1rem;
+  }
+  
+  @media (max-width: 630px) {
+    margin: 4rem 1rem;
+  }
+
   label {
-    color: var(--color-white);
+    color: var(--color-text-dark);
+    margin-bottom: 6px;
   }
 
   input, textarea{
     background: transparent;
-    color: var(--login-text);
-    border: 1px solid var(--login-text);
+    // color: var(--login-text);
+    // border: 1px solid var(--login-text);
   }
 
   input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
@@ -25,24 +34,15 @@
     box-shadow: none;
   }
   
-  @include desktop-small{
-    padding: 44px 1rem;
-  }
-  
-  @media (max-width: 630px) {
-    margin: 4rem 1rem;
-  };
+
   .form-actions {
     text-align: center;
     width: 100%;
 
     button {
-      display: block;
-      width: 100%;
-      background: var(--bg-global-btn);
-      color: var(--color-global-btn);
-      font-size: 1rem;
-      // border-radius: 8px;
+      width: fit-content;
+      color: var(--color-white);
+      @include typography(text-md, extra_bold);
     }
   }
 }
