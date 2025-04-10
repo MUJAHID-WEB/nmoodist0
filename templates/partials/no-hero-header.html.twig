@@ -63,15 +63,15 @@
 			<!-- End head-content-->
 
 			<div class="image-contents">
-				{% if image_for_desktop %}
+				{% if noHeroContent.image_for_desktop %}
 					<img class="no-hero-img-for-desktop" src="{{ page.media[noHeroContent.image_for_desktop].url }}" alt="no Hero Image" />
 				{% endif %}
 				
-				{% if image_top_left %}
+				{% if noHeroContent.image_top_left %}
 					<img class="no-hero-img-top-left" src="{{ page.media[noHeroContent.image_top_left].url }}" alt="no Hero top left" />
 				{% endif %}
 
-				{% if image_bottom_right %}
+				{% if noHeroContent.image_bottom_right %}
 					<img class="no-hero-img-bottom-right" src="{{ page.media[noHeroContent.image_bottom_right].url }}" alt="no Hero bottom right" />
 				{% endif %}
 			</div>
