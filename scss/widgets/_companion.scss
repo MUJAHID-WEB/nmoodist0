@@ -11,8 +11,8 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    gap: 40px;
+    justify-content: center;
+    gap: 85px;
 
     @include desktop-small {
       flex-direction: column;
@@ -25,10 +25,13 @@
     }
 
     .listing-contents {
+      max-width: 570px;
+      width: 100%;
+
       display: flex;
       align-items: flex-start;
       flex-direction: column;
-      gap: 60px;
+      gap: 22px;
       flex: 1;
 
       @include desktop-small {
@@ -51,7 +54,14 @@
           @include typography(display-md, semibold);
 
           @include desktop-small {
-            // @include typography(display-sm, semibold);
+            font-size: 30px;
+            line-height: 40px;
+          }
+
+          @include mobile {
+            text-align: left;
+            font-size: 24px;
+            line-height: 32px;
           }
         }
       }
@@ -60,18 +70,22 @@
         display: flex;
         align-items: stretch;
         gap: 20px;
+        width: 100%;
 
         .active-line {
           width: 8px;
           border-radius: 20px;
           background: var(--color-secondary);
+
+          @include desktop-small {
+            display: none;
+          }
         }
 
         .listing-content-container {
           display: flex;
           flex-direction: column;
           gap: 14px;
-          max-width: 530px;
           width: 100%;
 
           .listing-content {
@@ -91,6 +105,10 @@
               align-items: center;
             }
 
+            @include mobile {
+              align-items: flex-start;
+            }
+
             .listing-title {
               color: var(--color-text-dark);
               @include typography(text-xl, extra_bold);
@@ -106,6 +124,11 @@
                 text-align: center;
                 padding: 0 25px;
               }
+
+              @include mobile {
+                text-align: start;
+                padding: 0;
+              }
             }
           }
 
@@ -113,21 +136,19 @@
             background-color: var(--color-secondary);
             border: none;
           }
+        }
+      }
+    }
 
-          .image-wrapper {
-            position: relative;
+    .image-wrapper {
+      .companion-image {
+        display: none;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 12px;
 
-            .companion-image {
-              display: none !important;
-              width: 100%;
-              object-fit: cover;
-              border-radius: 12px;
-
-              .companion-image.active {
-                display: block !important;
-              }
-            }
-          }
+        &.active {
+          display: block;
         }
       }
     }
