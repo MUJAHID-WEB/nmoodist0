@@ -44,24 +44,24 @@
 	</div>
 
 	 <script>
-		  document.addEventListener("DOMContentLoaded", function () {
-		    const listItems = document.querySelectorAll(".listing-content");
-		    const images = document.querySelectorAll(".companion-image");
-		
-		    listItems.forEach((item, index) => {
-		      item.addEventListener("click", () => {
-	             console.log("clicked", index);
-		        // Reset all
-		        listItems.forEach(i => i.classList.remove("active"));
-		        images.forEach(img => img.classList.remove("active"));
-		
-		        // Activate current
-		        item.classList.add("active");
-		        images[index].classList.add("active");
-		      });
-		    });
-		  });
-		</script>
+				  document.addEventListener("DOMContentLoaded", function () {
+				    const listItems = document.querySelectorAll(".listing-content");
+				    const images = document.querySelectorAll(".companion-image");
+	
+				    listItems.forEach((item, index) => {
+				      item.addEventListener("click", () => {
+			             console.log("clicked", index);
+				        // Reset all
+				        listItems.forEach(i => i.classList.remove("active"));
+				        images.forEach(img => img.classList.remove("active"));
+				
+				        // Activate current
+				        item.classList.add("active");
+				        images[index].classList.add("active");
+				      });
+				    });
+				  });
+				</script>
 
 
 {% endblock %}
