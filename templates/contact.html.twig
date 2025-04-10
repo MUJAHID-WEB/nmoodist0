@@ -15,9 +15,27 @@
         ]
     } %}
 
-    <!-- Dynamic modular -->
-    {% for module in page.collection() %}
-        {{ module.content|raw }}
-    {% endfor %}
+     <div class="contact-section-wrapper">
+        <div class="container">
+            <div class="contact-inner">
+                <div class="email-section">
+                    <div class="text-content">
+
+                        <h3 class="text-brand">{{ 'METRICALO.SEND_AN_EMAIL'|t }}</h3>
+                        <p>{{ 'METRICALO.CONTACT_INFO_DESC'|t }}</p>
+                    </div>
+                    {% include 'forms/form.html.twig' with {form: forms('contact-us'), action: '#'} %}
+                </div>
+                <div class="contact-section">
+                    <p>{{ 'METRICALO.EMAIL'|t }}: <a href="mailto:{{ webdata('support_email') }}" target="_blank" rel="noopener noreferrer"><span class="span">{{ webdata('support_email') }}<br /></span></a></p>
+                    <p>{{ 'METRICALO.PHONE'|t }}: <a href="tel:{{ webdata('support_phone') }}" target="_blank" rel="noopener noreferrer"><span class="span">{{ webdata('support_phone') }}<br /></span></a></p>
+                    <p>{{ 'METRICALO.HOURS'|t }}: <span class="span">{{ webdata('support_hours') }}<br /></span></p>
+                    <p>{{ 'METRICALO.ADDRESS'|t }}: <span class="span"> {{ webdata('company.address') }}, {{ webdata('company.city') }}, {{ webdata('company.postcode') }}, {{ webdata('company.country') }}</span></p>
+                    <p>{{ 'METRICALO.BUSINESS_NUMBER'|t }}: <span class="span"> {{ webdata('company.business_number') }}</span></p>
+                    <p> {{ 'METRICALO.VAT'|t }}: <span class="span"> {{ webdata('company.vat_numbers.0.number') }}</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}
