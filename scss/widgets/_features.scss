@@ -1,22 +1,23 @@
 .features {
-  padding: 60px 0;
+  padding: 100px 0;
+  background-color: var(--color-secondary);
 
   @include desktop-small {
-    padding: 40px 0;
+    padding: 60px 0;
   }
 
   .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 60px;
+    row-gap: 80px;
     align-self: stretch;
     position: relative;
     @include padding(padding-lg);
 
     @include desktop-small {
       @include padding(padding-sm);
-      row-gap: 33px;
+      row-gap: 40px;
     }
 
     .features-header-section {
@@ -69,21 +70,21 @@
         }
       }
 
-      .button{
+      .button {
         text-decoration: none;
         display: flex;
         align-items: center;
         gap: 6px;
         background: transparent;
         padding: 0;
-        span{
-          @include typography('text-md', 'extra_bold');
+        span {
+          @include typography("text-md", "extra_bold");
           color: var(--color-text-dark);
           background: var(--color-primary);
           padding: 12px 22px;
           border-radius: 22px;
-          @include desktop-small{
-            @include typography('text-sm', 'extra_bold');
+          @include desktop-small {
+            @include typography("text-sm", "extra_bold");
           }
         }
       }
@@ -105,15 +106,16 @@
     }
 
     .features-container {
+      width: 100%;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 20px;
 
-      @include tablet {
+      @include desktop-small {
         grid-template-columns: repeat(2, 1fr);
       }
       @include mobile {
-        grid-template-columns: 305px;
+        grid-template-columns: 1fr;
       }
 
       .feature {
@@ -170,9 +172,9 @@
           }
 
           .feature-content {
-            position: static;
             background: transparent;
             text-align: left;
+            position: static;
 
             .feature-title {
               color: var(--color-text-dark);
