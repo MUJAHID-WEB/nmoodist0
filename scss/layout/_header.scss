@@ -144,7 +144,7 @@
             // font-family: var(--secondary-font);
             padding: 10px 18px;
     
-            @include typography(text-lg, bold);
+            @include typography(text-lg, extra_bold);
     
             @include desktop-small {
               display: none;
