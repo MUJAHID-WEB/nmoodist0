@@ -60,7 +60,7 @@ h6 span {
 }
 
 .button {
-  padding: 12px 40px;
+  padding: 20px 40px;
   border-radius: 22px;
   background-color: var(--color-primary);
   border: none;
@@ -218,17 +218,16 @@ textarea {
   border: none;
   width: 100%;
   display: flex;
-  padding: 0.625rem 1rem 0.625rem 0;
+  padding: 10px 14px;
   flex-direction: column;
   align-items: flex-start;
   align-self: stretch;
-  border-radius: var(--border-radius);
+  border-radius: 8px;
   @include typography(base);
-  border: 1px solid rgba(164, 174, 198, 0.33);
+  border: 1px solid var(--color-gray);
   transition: box-shadow 0.3s ease-in-out;
-  /* Add a smooth transition effect */
-  background: var(--white, #fff);
-  color: rgba(14, 14, 14, 0.708);
+  background: var(--color-white, #fff);
+  color: var(--color-text-dark);
   line-height: 1.4rem;
 
   &:hover {
@@ -239,7 +238,7 @@ textarea {
 
 input::placeholder,
 textarea::placeholder {
-  color: rgba(var(--color-black), 0.5);
+  color: rgba(var(--color-gray), 0.5);
 }
 
 /* Define the slide-up animation */

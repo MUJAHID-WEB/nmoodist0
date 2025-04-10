@@ -52,11 +52,9 @@
         width: 100%;
 
         button {
-          @include typography(text-md, semibold);
+          @include typography(text-md, medium);
           box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
           width: fit-content;
-          padding: 14px 20px !important;
-          border-radius: 20px;
           background: var(--color-primary);
           color: var(--color-white);
         }
