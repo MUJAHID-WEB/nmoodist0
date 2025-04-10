@@ -8,7 +8,7 @@
 {% set list_title_icon = page.media[page.header.contents.list_title_icon] %}
 
 {% block render_block %}
-	<div class="about-listing-wrapper about-listing-animation {{ module.parent_classes }}">
+	<div class="companion-wrapper about-listing-animation {{ module.parent_classes }}">
 		<div class="container">
 			<div class="contents-wrapper {{ module.child_classes }}">
 				<div class="image-wrapper">
@@ -44,24 +44,24 @@
 	</div>
 
 	 <script>
-				  document.addEventListener("DOMContentLoaded", function () {
-				    const listItems = document.querySelectorAll(".listing-content");
-				    const images = document.querySelectorAll(".companion-image");
-	
-				    listItems.forEach((item, index) => {
-				      item.addEventListener("click", () => {
-			             console.log("clicked", index);
-				        // Reset all
-				        listItems.forEach(i => i.classList.remove("active"));
-				        images.forEach(img => img.classList.remove("active"));
-				
-				        // Activate current
-				        item.classList.add("active");
-				        images[index].classList.add("active");
-				      });
-				    });
-				  });
-				</script>
+					  document.addEventListener("DOMContentLoaded", function () {
+					    const listItems = document.querySelectorAll(".listing-content");
+					    const images = document.querySelectorAll(".companion-image");
+		
+					    listItems.forEach((item, index) => {
+					      item.addEventListener("click", () => {
+				             console.log("clicked", index);
+					        // Reset all
+					        listItems.forEach(i => i.classList.remove("active"));
+					        images.forEach(img => img.classList.remove("active"));
+					
+					        // Activate current
+					        item.classList.add("active");
+					        images[index].classList.add("active");
+					      });
+					    });
+					  });
+					</script>
 
 
 {% endblock %}
