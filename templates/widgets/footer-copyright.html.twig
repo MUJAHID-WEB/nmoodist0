@@ -1,5 +1,6 @@
 <div class="footer-bottom">
-    <p>{{ "METRICALO.COPYRIGHT"|t|raw }} &copy; {{ data.name }} {{ "now"|date('Y') }}</p>
+    {# <p>{{ "METRICALO.COPYRIGHT"|t|raw }} &copy; {{ data.name }} {{ "now"|date('Y') }}</p> #}
+     <p>{{ "METRICALO.COPYRIGHT"|t|raw }} &copy; {{ data.name }} {{ "now"|date('Y') }},  {{ data.company.name }} | {{ "METRICALO.RIGHTS_RESERVED"|t }}.</p>
     
     {# <div class="policy-pages-link-area">
         {% set policy_links = config.site.footer.links %}

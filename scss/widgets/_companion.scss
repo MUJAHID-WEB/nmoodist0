@@ -71,11 +71,54 @@
         align-items: stretch;
         gap: 20px;
         width: 100%;
+        position: relative;
+
+        &:has(.listing-content:nth-child(1).active) .active-line {
+          background: linear-gradient(
+            to bottom,
+            #FFD621 0%,
+            #FFD621 33.33%,
+            var(--color-secondary) 33.34%,
+            var(--color-secondary) 100%
+          );
+        }
+
+        &:has(.listing-content:nth-child(2).active) .active-line {
+          background: linear-gradient(
+            to bottom,
+            var(--color-secondary) 0%,
+            var(--color-secondary) 33.33%,
+            #FFD621 33.34%,
+            #FFD621 66.66%,
+            var(--color-secondary) 66.67%,
+            var(--color-secondary) 100%
+          );
+        }
+        
+        &:has(.listing-content:nth-child(3).active) .active-line {
+          background: linear-gradient(
+            to bottom,
+            var(--color-secondary) 0%,
+            var(--color-secondary) 66.66%,
+            #FFD621 66.67%,
+            #FFD621 100%
+          );
+        }
+        
+        
 
         .active-line {
+          // width: 8px;
+          // border-radius: 20px;
+          // background: var(--color-secondary);
+          height: 100%;
           width: 8px;
           border-radius: 20px;
           background: var(--color-secondary);
+          position: absolute;
+          top: 0;
+          left: 0;
+        
 
           @include desktop-small {
             display: none;
@@ -87,6 +130,7 @@
           flex-direction: column;
           gap: 14px;
           width: 100%;
+          padding-left: 30px;
 
           .listing-content {
             display: flex;

@@ -1,7 +1,10 @@
-article.flex-1.max-w-4xl.w-full.mx-auto.prose.prose-h1\:text-brand.pt-40.pb-24.main-container {
-  padding: 0 0 15rem;
-}
+// article.flex-1.max-w-4xl.w-full.mx-auto.prose.prose-h1\:text-brand.pt-40.pb-24.main-container {
+//   padding: 0 0 15rem;
+// }
 
+article.flex-1.max-w-4xl.w-full.mx-auto.prose.prose-h1\:text-brand.pt-40.pb-24.main-container {
+  padding: 35px 0;
+}
 
 .page-terms {
     position: relative;
@@ -40,12 +43,20 @@ article.flex-1.max-w-4xl.w-full.mx-auto.prose.prose-h1\:text-brand.pt-40.pb-24.m
       border-radius: 20px;
       width: 100%;
       overflow-y: auto;
-      box-shadow: 0px 4px 4px 0px rgba(51, 51, 51, 0.04), 0px 4px 16px 0px rgba(51, 51, 51, 0.08);
+      // box-shadow: 0px 4px 4px 0px rgba(51, 51, 51, 0.04), 0px 4px 16px 0px rgba(51, 51, 51, 0.08);
       display: flex;
       flex-direction: column;
 
     @include desktop-small{
       padding: 2.5rem 1rem !important;
+    }
+
+    .container{
+      @include desktop-small{
+        padding-left: 0;
+        padding-right: 0;
+
+      }
     }
   }
 }

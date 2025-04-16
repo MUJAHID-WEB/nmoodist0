@@ -32,9 +32,11 @@
     z-index: 3;
     display: flex;
 
-    // @include desktop-small {
-    //   border-radius: 53px;
-    // }
+    @include desktop-small {
+      top: 70px;
+      z-index: 99;
+
+    }
 
     &.open {
       transform: translateX(0);

@@ -167,14 +167,15 @@
           background-color: var(--color-primary);
 
           img {
-            height: 190px;
+            height: 56%;
+            object-fit: fill;        
             border-radius: 22px;
           }
 
           .feature-content {
             background: transparent;
             text-align: left;
-            position: static;
+  
 
             .feature-title {
               color: var(--color-text-dark);

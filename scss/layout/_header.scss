@@ -128,7 +128,7 @@
         .header-buttons {
           display: flex;
           align-items: center;
-          // gap: 1.5rem;
+          gap: 9px;
           background: var(--color-white);
           // padding: 10px;
           border-radius: 10px;
@@ -136,6 +136,13 @@
           @include desktop-small {
             gap: 0px;
           }
+
+          .button:hover {
+            color: var(--color-primary);
+            background: unset;
+            box-shadow: unset;
+          }
+        
     
           .btn {
             border-radius: 8px;
@@ -147,20 +154,23 @@
             @include typography(text-lg, extra_bold);
     
             @include desktop-small {
-              display: none;
-              padding: 10px 30px;
+              padding: 0;
+              background-color: transparent;
+          
             }
             
           }
     
           .active-btn {
             color: var(--header-login-btn-color);
-            order: 2;
+            order: 1;
             background: var(--header-login-btn-bg);
     
             &:hover {
-              background: var(--color-primary);
-              color: var(--color-white);
+              color: var(--color-primary);
+              background: unset;
+              box-shadow: unset;
+
             }
           }
     
@@ -204,6 +214,7 @@
             // padding: 10px 15px;
             color: var(--color-text-dark);
             order: 1;
+            border: solid 1px transparent;
     
             @include desktop-small {
               order: 0;

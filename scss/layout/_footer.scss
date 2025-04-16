@@ -199,8 +199,8 @@
     }
 
     .title {
-      @include typography(text-sm, regular);
-      text-transform: capitalize !important;
+      @include typography(text-sm, extra_bold);
+      text-transform: capitalize ;
     }
     .flexcontainer {
       margin-top: 16px;
