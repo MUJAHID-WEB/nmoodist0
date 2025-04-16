@@ -1,3 +1,7 @@
+.page-about .no-hero-section {
+  padding: 60px 0;
+}
+
 .page-about .no-hero-section .no-hero-wrapper .head-content h1{
   @include typography('display-xl', bold);
   font-family: var(--secondary-font);
@@ -68,6 +72,18 @@
           }
         }
       }
+
+      h4 {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        color: var(--color-text-dark);
+        border-radius: 10px;
+        background: var(--color-primary);
+        padding: 6px 28px;
+      }
+    
 
       .no-hero-breadcrumb {
         // display: flex;

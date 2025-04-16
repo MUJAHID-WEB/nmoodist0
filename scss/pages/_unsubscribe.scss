@@ -42,7 +42,7 @@
     #unsubscribe {
       .form-input {
         border-radius: 8px;
-        border: none;
+        border: 1px solid var(--color-gray);
         background: var(--color-white, #FFF) !important;
         box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05) !important;
 

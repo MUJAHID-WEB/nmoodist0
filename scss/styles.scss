@@ -368,6 +368,10 @@ ol,
 ul {
   &:not(.breadcrumb) {
     margin-left: 1rem;
+
+    @include desktop-small{
+      margin-left: 0;
+    }
   }
 }
 
@@ -378,6 +382,14 @@ ul {
 .page-terms .footer-top-main {
   display: none;
 }
+
+@include desktop-small{
+  .page-dashboard .content-section {
+    padding-top: 50px;
+  }
+}
+
+
 
 // #unsubscribe {
 // 	.form-actions {

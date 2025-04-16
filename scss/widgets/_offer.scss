@@ -15,6 +15,26 @@
     padding: 80px 0 156px;
   }
 
+  .left_center{
+    position: absolute;
+    top: 46%;
+    left: -4%;
+
+    @include desktop-small {
+      display: none;
+    }
+  }
+
+  .right_bottom{
+    position: absolute;
+    bottom: -13%;
+    right: -1%;
+
+    @include desktop-small {
+      display: none;
+    }
+
+  }
 
   .container {
     display: flex;

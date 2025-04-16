@@ -41,16 +41,16 @@
         @include desktop-small {
           text-align: center;
         }
-         
-        
-  
+
         h3 {
           font-family: var(--secondary-font);
           color: var(--color-text-dark);
+          text-transform: uppercase;
           @include typography(display-md, semibold);
 
           @include desktop-small{
-            // @include typography(display-sm, semibold);
+            @include typography(display-md, bold);
+            text-transform: none;
           }
         }
 

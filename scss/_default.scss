@@ -31,8 +31,13 @@ body {
 .terms {
   li {
     margin: 10px;
+
+    @include desktop-small {
+      margin: 0;
+    }
   }
 }
+
 h1 {
   @include typography(display-xl);
   @include mobile {

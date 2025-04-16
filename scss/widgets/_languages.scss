@@ -52,6 +52,10 @@
         flex: 0 0 auto;
         text-decoration: none;
 
+        @include desktop-small{
+          width: 130px;
+        }
+
         &:hover {
           text-decoration: underline;
         }
